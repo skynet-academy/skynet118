@@ -1,32 +1,66 @@
-<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="header-description">
+  <h1> Skynet118 </h1>
+  <p> Need coding help with algorithms or programming itself? or maybe some challenge that you 
+      want to overcome, or just you want to become a better developer? do not waste time searching
+      hours. Here you can find classes from the basic level still advanced  in programming.
+  </p>
+  <strong><a href="#">Read more!</a></strong> 
+</div>
+<hr>
+<div class="about-us">
+  <h2> About us</h2>
+  <img class="logo-header" src="{% static "blog/images/nico.png" %}">
+  <p> Here goes a description </p>
+</div>
+<header>
+  <h2 class="courses-header">Courses</h2>
+  <p class="courses-paragraph"> The courses are for all </p>
+  <div class="course">
+    <div class="course-logo">
+      <img src="{% static "blog/images/python.png"%}" alt="course name 1"/>
+    </div>
+    <p class="course-name">Course: <strong>Python</strong></p>
+    <p class="age">Age: <strong>from 12 year old(recommended) </strong></p>
+    <p class="description"> This is a description of the course</p>
+    <a href="#">Read more</a> 
+  </div>
+  <div class="course">
+    <div class="course-logo">
+      <img src="{% static "blog/images/c_plus_plus.png"%}" alt="course name 2"/>
+    </div>
+    <p class="course-name">Course: <strong>C++</strong></p>
+    <p class="age">Age: <strong>from 14 year old(recommended) </strong></p>
+    <p class="description"> This is a description of the course</p>
+    <a href="#">Read more</a> 
+  </div>
+  <div class="course">
+    <div class="course-logo">
+      <img src="{% static "blog/images/html_css_js.png"%}" alt="course name 3"/>
+    </div>
+    <p class="course-name">Course: <strong>HTML, CSS, and JS</strong></p>
+    <p class="age">Age: <strong>from 14 year old(recommended) </strong></p>
+    <p class="description"> This is a description of the course</p>
+    <a href="#">Read more</a> 
+  </div>
+  <div class="course">
+    <div class="course-logo">
+      <img src="{% static "blog/images/scratch.png"%}" alt="course name 4"/>
+    </div>
+    <p class="course-name">Couse: <strong>SCRATCH</strong></p>
+    <p class="age">Age: <strong>from 7 years old(recommended) </strong></p>
+    <p class="description"> This is a description of the course</p>
+    <a href="#">Read more</a> 
+  </div>
+  <div class="cover">
+  </div>
+</header>
 
 
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <title>Skynet118</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% load static %}
-  <link rel="stylesheet" type= "text/css" href="{% static "blog/style.css" %}">
-</head>
-
-<body>
-    {% if latest_question_list %}
-        <ul>
-        {% for question in latest_question_list %}
-        <li><a href="{% url 'blog:detail' question.id %}">{{ question.question_text }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p> No blogs are available</p>
-    {% endif %}
-
-</body>
-</html>
-
-
-
+{% endblock content %}
 
 
 

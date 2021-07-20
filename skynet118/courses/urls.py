@@ -9,6 +9,7 @@ app_name = 'courses'
 
 urlpatterns = [
         path("", views.index, name = "index"),
+        path("/payment", views.payment(), name = "payment"),
         ]
 
 
