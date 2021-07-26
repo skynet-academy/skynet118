@@ -4,8 +4,10 @@
 <br>
 <br>
 <h1>Payments</h1>
-{% for element in courses %}
-<p><strong>{{ element.courses }}</strong> - {{element.teacher}}</p>
-{% endfor %}
-
+  {% for element in courses %}
+    <p><strong>{{ element.courses }}</strong> - {{element.teacher}}</p>
+    <p>{{ element.description }} </p>
+    <p>{{ element.pub_date }} </p>
+    {{ element.image }}
+  {% endfor %}
 {% endblock payment_content %}
