@@ -67,7 +67,7 @@ hr{
   white-space: nowrap; 
   text-decoration: none;
   color: #00AEFF;
-  padding: 0 20px;
+  padding: 0 10px;
   display: flex; 
   height: 100%;
   align-items: center;
@@ -197,13 +197,6 @@ hr{
 
 /* The course section */
 
-header {
-  text-align: center;
-  background-image: url("../../static/blog/images/background_site2.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
 
 header .courses-header{
   margin-top: 20px;
