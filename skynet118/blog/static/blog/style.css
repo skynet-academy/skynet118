@@ -63,25 +63,28 @@ hr{
   height: 100%;
 }
 
-.menu a{
+.links a, .links-burguer a{
   white-space: nowrap; 
   text-decoration: none;
   color: #00AEFF;
-  padding: 0 10px;
   display: flex; 
   height: 100%;
   align-items: center;
+  padding: 0 50px;
 }
 
-.menu a:hover{
+.links a:hover, .links-burguer a:hover{
   color:#0C0D13;
   background-color: #00AEFF;
 }
 
-.menu li{
-  list-style-type: none;
-  display: inline-block;
-  height: 100%;
+.links-burguer{
+    display: none;
+}
+
+.links-burguer img{
+    width: 4rem;
+    height: 3.5rem;
 }
 
 .logo{
@@ -100,35 +103,114 @@ hr{
   height: 30px;
 }
 
+.links li{
+    list-style-type: none;
+    display: inline-block;
+    height: 100%;
+}
+
+#menu_toggle{
+    opacity: 0;    
+    display: none;
+}
+
+.menu_btn{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu_btn > span, .menu_btn > span::before, .menu_btn > span::after{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color:#0C0D13 ;
+}
+
+.menu_btn > span::before{
+    content: '';
+    top: -8px;
+}
+
+.menu_btn > span::after{
+    content: '';
+    top: 8px;
+}
+
+.menu-box{
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 90%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #0C0D13;
+    box-shadow: 1px 0 6px rgba(0,0,0,0.8);
+}
+
+.menu-box a{
+    display: block;
+    padding: 12px 24px;
+    color: #00AEFF;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu-box a:hover{
+    background-color: #00AEFF;
+    color: #0C0D13;
+}
+
+#menu_toggle:checked ~.menu_btn > span{
+    transform: rotate(45deg);
+}
+
+#menu_toggle:checked ~.menu_btn > span::after{
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu_toggle:checked ~.menu_btn > span::before{
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu_toggle:checked ~.menu-box{
+    visibility: visible;
+    left: 0;
+}
+
+.menu_btn > span, .menu_btn > span::before, .menu_btn > span::after{
+    transition-duration: .25s;
+    background-color: #00AEFF;
+}
+.menu-box, .menu-box a{
+    transition-duration: .25s;
+}
+
 .languages{
   display: flex;
-  text-align: center;
-  min-width: 12rem;
-  margin-right: 2rem;
+  min-width: 6rem;
+  justify-content: center;
 }
 
-.languages p {
-  padding: 0 2rem;
-}
-
-.language {
-  display: flex;
-  background-color: #0C0D13;
-  border: 2px #00AEFF solid;
-  border-radius: 10px;
-  width: 100%;
-  height: 50%;
-  margin: auto;
-  justify-content: space-evenly;
-}
-
-.language a{
-  padding: 0;
-}
-
-.language img{
-  width: 100%;
-  height: 100%;
+.languages img{
+    display: flex;
+    width: 30%;
+    height: 40%;
+    margin: auto 0;
 }
 
 .search-field{
@@ -186,7 +268,7 @@ hr{
 }
 
 .search-box:hover > .search-txt {
-  width: 140px;
+  width: 240px;
   padding: 0 10px;
 }
 /* The var menu section */
@@ -197,40 +279,37 @@ hr{
 
 /* The course section */
 
-
-header .courses-header{
-  margin-top: 20px;
-  display: inline-block;
-  width: 160px;
-  height: 40px;
-  background-color: white;
-  border-radius: 5px;
-  border: 2px black solid;
+.courses {
+    display: inline-block;
+}
+.header-description p, .about-us p, .courses p{
+    margin: 1rem 4rem;
 }
 
-header .courses-paragraph{
+.courses-header{
+    text-align: center;
+}
+
+.courses-paragraph{
   background-color: white; 
 }
-
-
-.cover{
-  background-image: url("../../static/blog/images/background_site.jpeg");
+.courses-available {
+    text-align: center;
 }
-
-
 .course {
   display: inline-block;
-  min-width: 340px;
+  min-width: 240px;
   width: 25%;
   vertical-align: top;
   text-align: center; 
   box-shadow: 0 2px 5px gray;
   margin: 3rem;
   padding: 1rem;
-  opacity: 0.6;
+  opacity: 0.75;
   background-color: #0C0D13;
   color: #00AEFF;
   border-radius: 1rem;
+  min-height: 420px;
 }
 .course:hover{
   opacity: 1;
@@ -249,15 +328,45 @@ header .courses-paragraph{
 
 
 .footer-distributed{
+  display: flex;
   background-color: #0C0D13;
   box-sizing: border-box;
   width: 100%;
   text-align: center;
   padding: 20px 20px;
   color: #00AEFF;
+  justify-content: space-between;
+}
+
+.footer-left{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-center{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-right{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-left img{
+    width: 2rem;
+    height: 2.5rem;
 }
 
 .footer-links a {
+  display: inherit;
+  flex-direction: inherit;
   text-decoration: none;
   color: inherit;
 }
@@ -278,17 +387,19 @@ header .courses-paragraph{
 }
 
 .footer-company-about {
-  padding: 20px;
+    margin: 0 4rem;
 }
 
 .footer-company-about a{
   margin: 20px; 
 }
 
+
 .logo-header{
   width: 130px;
   height: 180px; 
   margin: 30px;
+  opacity: 0.75;
 }
 
 .footer-company-about a:hover, .header-description a:hover, .logo-link:hover, .course a:hover{
@@ -306,12 +417,17 @@ header .courses-paragraph{
   text-align: center;
 }
 
+.footer-icons {
+    margin: 2rem;
+}
+
 .footer-icons a{
   display: inline-block; 
   width: 30px;
   height: 30px;
   cursor: pointer;
   border-radius: 5px;
+  margin: 0.2rem;
 }
 
 .facebook {
@@ -340,7 +456,12 @@ header .courses-paragraph{
   height: 25px;
 }
 
-
-
-
 /* The footer section */
+
+.rights{
+    margin:0;
+    text-align: center;
+    border: 2px solid #00AEFF;
+    background-color: #0C0D13;
+    color: #00AEFF;
+}

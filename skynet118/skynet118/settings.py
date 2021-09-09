@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'blog.apps.BlogConfig',
     'payments.apps.PaymentsConfig',
+    'courses.apps.CoursesConfig',
 ]
 
 MIDDLEWARE = [
@@ -74,7 +75,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'skynet118.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -86,7 +86,6 @@ DATABASES = {
         'PASSWORD': "123321456britanicO!@",
         'HOST': "localhost",
         'PORT': '5432', 
-        
     }
 }
 

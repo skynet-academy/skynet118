@@ -11,13 +11,19 @@ from django.utils import timezone
 
 
 def payment_view(request):
-    courses = Courses.objects.order_by('-pub_date')[:5] 
-    context = {
-             "courses": courses
-             }
+    return render(request, 'payments/index_payment.html', {})
 
-    return render(request, "payments/index_payment.html", context)
+def payment_view_dollars(request):
+    return render(request, 'payments/index_payment_dollars.html', {})
 
+#def payment_view(request):
+#    courses = Courses.objects.order_by('-pub_date')[:5] 
+#    context = {
+#             "courses": courses
+#             }
+#
+#    return render(request, "payments/index_payment.html", context)
+#
 #
 #def payment_course(request):
 #    pass
