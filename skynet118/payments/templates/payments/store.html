@@ -1,0 +1,20 @@
+{% extends 'payments/base_payment.html' %}
+{% block payment_content %}
+    <div class="container">
+        <div class="row">
+            {% for course in courses %}
+            <div class="col-lg-6">
+                <h4>{{ course.name}}</h4>
+                <img src={{course.image_url}} alt="">
+                <hr>
+                <p>{{course.description}}</p>
+                <hr>
+                <h4>${{course.price}}</h4>
+                <hr>
+                <a href="{% url 'payments:checkout' course.id %}" class="btn btn-sm btn-warning">Buy Now!</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock payment_content %}

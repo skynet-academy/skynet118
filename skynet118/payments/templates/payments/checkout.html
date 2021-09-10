@@ -1,0 +1,89 @@
+{% extends 'payments/base_payment.html' %}
+{% block payment_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg">
+                <br>
+                <img src="{{ course.image_url }}" alt="">
+            </div>
+
+            <div class="col-lg">
+                <br>
+                <div class="card card-body">
+                    <h3>{{ product.name }}</h3>
+                    <hr>
+                    <h4>Total: ${{course.price}}</h4>
+                    <hr>
+                    <div id="paypal-button-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AdRidJzjDHcLlvxEcLaH2wAtw1jhU6qO-0Gk0F51x-xjDEuzdFW6NjVpHE1l5rjyeIe3vLRa26PPsHYE&currency=USD"></script>
+    <script>
+
+        function getCookie(name){
+            let cookieValue = null;
+        	if (document.cookie && document.cookie !== '') {
+            	const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+	    			}
+            	}
+        	}
+        	return cookieValue;
+	    }
+		const csrftoken = getCookie('csrftoken'); 
+        let total = '{{course.price}}'
+        let course_id = '{{course.id}}'
+
+        function complete_order(){
+            let url = "{% url 'payments:complete' %}"
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-type':'application/json',
+					'X-CSRFToken':csrftoken,
+                },
+                body: JSON.stringify({'course_id': course_id})
+            })
+        }
+
+      // Render the PayPal button into #paypal-button-container
+      paypal.Buttons({
+
+          // Set up the transaction
+          createOrder: function(data, actions) {
+              return actions.order.create({
+                  purchase_units: [{
+                      amount: {
+                          value: total 
+                      }
+                  }]
+              });
+          },
+
+          // Finalize the transaction
+          onApprove: function(data, actions) {
+              return actions.order.capture().then(function(orderData) {
+                  // Successful capture! For demo purposes:
+                  console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                  var transaction = orderData.purchase_units[0].payments.captures[0];
+                  complete_order()
+                  alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+
+                  // Replace the above to show a success message within this page, e.g.
+                  // const element = document.getElementById('paypal-button-container');
+                  // element.innerHTML = '';
+                  // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                  // Or go to another URL:  actions.redirect('thank_you.html');
+              });
+          }
+      }).render('#paypal-button-container');
+    </script>  
+{% endblock payment_content %}
