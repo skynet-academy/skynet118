@@ -4,7 +4,9 @@ from .models import Course
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
-
+def index(request):
+    context = {}
+    return render(request , 'courses/index_courses.html', context)
 
 def post_detail(request, slug):
     template_name = 'post_detail.html'

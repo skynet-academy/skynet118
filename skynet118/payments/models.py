@@ -7,7 +7,7 @@ class Course(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(max_length=1000, default="")
     teacher = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="images/")
+    image = models.ImageField(upload_to="images")
     image_url = models.CharField(max_length=1000, null=True, blank=True)
     price = models.FloatField(null=True, blank=True)
 

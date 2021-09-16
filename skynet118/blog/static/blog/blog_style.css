@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+  font-family: "Poppins","Times New Roman", Times;
+}
+
+body {
+  margin: 0;
+
+}
+/* Particles js */
+
+.particles-section{
+  width: 100%;
+  height: 500px;
+  margin-top: 64px;
+}
+
+#particles-js {
+  height: 100%;
+  background-color: #014A8E;
+  background-image: url("../../static/blog/images/nico.png");
+  background-size: 5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* =================== */
+
+/* The content section */
+
+.header-description{
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+hr{
+  border: 2px solid #0C0D13;
+  border-radius: 4px;
+}
+
+
+
+.courses {
+    display: inline-block;
+}
+.header-description p, .about-us p, .courses p{
+    margin: 1rem 4rem;
+}
+
+.courses-header{
+    text-align: center;
+}
+
+.courses-paragraph{
+  background-color: white; 
+}
+.courses-available {
+    text-align: center;
+}
+.course {
+  display: inline-block;
+  min-width: 240px;
+  width: 25%;
+  vertical-align: top;
+  text-align: center; 
+  box-shadow: 0 2px 5px gray;
+  margin: 3rem;
+  padding: 1rem;
+  opacity: 0.75;
+  background-color: #0C0D13;
+  color: #00AEFF;
+  border-radius: 1rem;
+  min-height: 420px;
+}
+.course:hover{
+  opacity: 1;
+}
+
+
+.course img{
+  width: 50%;
+  height: 50%;
+}
+
+

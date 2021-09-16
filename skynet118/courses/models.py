@@ -9,7 +9,7 @@ class Course(models.Model):
     nro_tests = models.IntegerField()
    
 class Comment(models.Model):
-    post = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='comments')
+    comment = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=120)
     email = models.EmailField(max_length=120)
     body = models.TextField(max_length=300)

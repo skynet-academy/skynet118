@@ -1,0 +1,12 @@
+.my_block{
+    width: 500px;
+    height: 300px;
+    margin: 4rem;
+}
+
+.my_block button{
+    color: green;
+    background-color: black;
+    text-align: center;
+    margin: auto 0;
+}
