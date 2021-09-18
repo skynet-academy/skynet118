@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* The var menu section */
 .menu {
   position: fixed;
@@ -338,31 +339,11 @@
   margin: 0.2rem;
 }
 
-.facebook {
-  background-image: url("../../static/blog/images/facebook.svg");
+.facebook, .youtube, .github, .instagram, .twitter {
+    width: 25px;
+    height: 25px;
 }
 
-.youtube {
-  background-image: url("../../static/blog/images/youtube.svg");
-}
-
-.github {
-  background-image: url("../../static/blog/images/github.svg");
-}
-
-.instagram {
-  background-image: url("../../static/blog/images/instagram.svg");
-}
-
-.twitter {
-  background-image: url("../../static/blog/images/twitter.svg");
-}
-
-.footer-icons i {
-  background-image: url("../../static/blog/images/twitter.svg");
-  width: 25px;
-  height: 25px;
-}
 
 /* The footer section */
 

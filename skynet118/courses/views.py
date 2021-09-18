@@ -8,6 +8,14 @@ def index(request):
     context = {}
     return render(request , 'courses/index_courses.html', context)
 
+def detail_course(request):
+    context = {}
+    return render(request, 'courses/detail_course.html', context)
+
+def create_course(request):
+    context = {}
+    return render(request, 'courses/create_course.html', context)
+
 def post_detail(request, slug):
     template_name = 'post_detail.html'
     course = get_object_or_404(Course, slug=slug)
