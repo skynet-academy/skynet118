@@ -69,10 +69,9 @@ def vote(request, question_id):
         selected_choice.save()
         return HttpResponseRedirect(reverse('blog:results', args=(question.id,)))
 
-
-
-
-
+def profile(request):
+    context = {}
+    return render(request, 'blog/profile.html', context)
 
 
 

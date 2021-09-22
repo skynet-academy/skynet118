@@ -1,0 +1,236 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+
+<section class="about-me">
+    <h1>My profile</h1>
+    <img src="{% static 'blog/images/nico_profile.jpg' %}" alt="">
+    <h1>About Me</h1>
+    <p class="about-me-text">
+        I'm a Full stack developer, my stack is Django, JavaScript, capable of managing technology from concept to completion, passionate about big data technologies, machine learning, deep learning, and the delivery of effective solutions through creative problem solving. I really enjoy working with OS linux based and learn something new related to the IT world.
+    </p>
+</section>
+
+<hr>
+
+<article class="skills">
+    <section class="programming-skill">
+        <h1><strong>Programming language skills</strong></h1>
+        <table class="table-skills">
+            <tr>
+                <th class="description-skill">Programming language</th>
+                <th class="level-skill">level</th>
+                <th class="years-skill">years</th>
+                <th class="obs-skill">obs</th>
+            </tr>
+            <tr>
+                <td><strong>Python</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill python">80%</div>
+                    </div>
+                </td>
+                <td>3</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>SQL(Postgresql</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill sql">70%</div>
+                    </div>
+                </td>
+                <td>2</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>C/C++</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill c_plus_plus">70%</div>
+                    </div>
+                </td>
+                <td>2</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td><strong>JavaScript, HTML, CSS</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill javascript">75%</div>
+                    </div>
+                </td>
+                <td>1</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td><strong>Matlab</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill matlab">60%</div>
+                    </div>
+                </td>
+                <td>1</td>
+                <td>-</td>
+            </tr>
+        </table>
+    </section>
+    <hr>
+    
+    <section class="software-skills">
+        <h1><strong>Software Skills</strong></h1>
+        <table class="table-skills">
+            <tr>
+                <th class="description-skill">Software</th>
+                <th class="level-skill">level</th>
+                <th class="years-skill">years</th>
+                <th class="obs-skill">obs</th>
+            </tr>
+            <tr>
+                <td><strong>Linux Systems</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill linux">85%</div>
+                    </div>
+                </td>
+                <td>3</td>
+                <td>Ubuntu, Kali Linux</td>
+            </tr>
+            <tr>
+                <td><strong>Windows OS</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill windows">80%</div>
+                    </div>
+                </td>
+                <td>2</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>Git and GitHub</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill github">80%</div>
+                    </div>
+                </td>
+                <td>2</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td><strong>Apache</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill apache">75%</div>
+                    </div>
+                </td>
+                <td>1</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td><strong>Django Framework</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill django">70%</div>
+                    </div>
+                </td>
+                <td>1</td>
+                <td>-</td>
+            </tr>
+        </table>
+
+    </section>
+    <hr>
+    <section class="languages-skills">
+        <h1>Language skills</h1>
+        <table class="table-skills">
+            <tr>
+                <th class="description-skill">Software</th>
+                <th class="level-skill">level</th>
+                <th class="years-skill">years</th>
+                <th class="obs-skill">obs</th>
+            </tr>
+            <tr>
+                <td><strong>English</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill english">75%</div>
+                    </div>
+                </td>
+                <td>2</td>
+                <td>C1</td>
+            </tr>
+
+            <tr>
+                <td><strong>Spanish</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill spanish">100%</div>
+                    </div>
+                </td>
+                <td>-</td>
+                <td>Native Speaker</td>
+            </tr>
+
+            <tr>
+                <td><strong>Russian</strong></td>
+                <td>
+                    <div class="skill-container">
+                        <div class="skill russian">70%</div>
+                    </div>
+                </td>
+                <td>3</td>
+                <td>B2+</td>
+            </tr>
+        </table>
+
+
+    </section>
+</article>
+<hr>
+
+<article class="experience">
+    <section class="job">
+        <h1>My work experience</h1>
+        <h2>From 2020-05-04 to present:</h2>
+        <p>Working as teacher of programming, I am teaching python, JS, HTML and CSS, and scratch. I teach in different languages(spanish and english) in the IT school "Hello World".</p>
+        <h2>From 2012-01-01 to 2017.01.01:</h2>
+        <p>I Worked as instructor in the peruvian army, I fulfilled the position of instructor in the degrees of lieutenant and sub-lieutenant".</p>
+ 
+    </section>
+</article>
+<hr>
+
+<article class="education">
+    <h1>My Education</h1>
+
+    <section class="university">
+        <h2>University</h2>
+        <p>
+            Master of science in Computer Science and Knowledge discovery at Saint Petersburg Electrotechnical university ETU “LETI”. Sankt-Petersburg, RF.
+        </p>
+    </section>    
+    <hr>
+    
+    <section class="military">
+        <h2>Military School</h2>
+
+        <h3>From 2017-02-01 to 2017-06-31</h3>
+        <p>Specialized supply and maintenance program for major and minor weapons and optical devices. Lima, Peru</p>
+
+        <h3>From 2012 to 2013</h3>
+        <p>Supplementary program for officers of the army by specialty. Lima, Peru</p>
+        <h3>From 2008 to 2012</h3>
+        <p>Military School of Chorrillos “Crl Francisco Bolognesi
+        Chorrillos”. Lima, Peru</p>
+    </section>
+</article>
+
+
+{% endblock content %}
