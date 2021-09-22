@@ -8,11 +8,13 @@
     <link rel="stylesheet" type="text/css" href="{% static "courses/courses_style.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "blog/style.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "blog/media.css" %}">
+    <link rel="icon" type="image/gif" href="{% static "blog/images/favicon.ico" %}">
     <title></title>
 </head>
 <body>
     {% include 'blog/menu_var.html' %}
     {% block content %}
+
     {% endblock content %}
     {% include 'blog/footer.html' %}
 </body>

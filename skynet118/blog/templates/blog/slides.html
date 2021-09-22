@@ -1,0 +1,82 @@
+{% load static %}
+
+<h2 class="courses-header">Courses</h2>
+<p class="courses-paragraph"> The courses are for all </p>
+
+<header class="courses">
+    <div class="courses-available">
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+
+        <div class="course first">
+            <div class="course-container">
+                <div class="course-logo">
+                    <img src="{% static "blog/images/python.png"%}" alt="course name 1"/>
+                </div>
+                <p class="course-name">Course: <strong>Python</strong></p>
+                <p class="age">Age: <strong>from 12 year old(recommended) </strong></p>
+                <p class="description"> This is a description of the course</p>
+                <a href="#">Read more</a> 
+            </div>
+        </div>
+
+        <div class="course">
+            <div class="course-container">
+                <div class="course-logo">
+                    <img src="{% static "blog/images/c_plus_plus.png"%}" alt="course name 2"/>
+                </div>
+                <p class="course-name">Course: <strong>C++</strong></p>
+                <p class="age">Age: <strong>from 14 year old(recommended) </strong></p>
+                <p class="description"> This is a description of the course</p>
+                <a href="#">Read more</a> 
+            </div>
+        </div>
+        
+        <div class="course">
+            <div class="course-container">
+                <div class="course-logo">
+                    <img src="{% static "blog/images/html_css_js.png"%}" alt="course name 3"/>
+                </div>
+                <p class="course-name">Course: <strong>HTML, CSS, and JS</strong></p>
+                <p class="age">Age: <strong>from 14 year old(recommended) </strong></p>
+                <p class="description"> This is a description of the course</p>
+                <a href="#">Read more</a> 
+            </div>
+        </div>
+
+        <div class="course">
+            <div class="course-container">
+                <div class="course-logo">
+                    <img src="{% static "blog/images/scratch.png"%}" alt="course name 4"/>
+                </div>
+                <p class="course-name">Couse: <strong>SCRATCH</strong></p>
+                <p class="age">Age: <strong>from 7 years old(recommended) </strong></p>
+                <p class="description"> This is a description of the course</p>
+                <a href="#">Read more</a> 
+            </div>
+        </div>
+        <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+        </div>
+    </div>
+    <div class="navigation">
+        <label for="radio1" class="navigation-btn"></label>
+        <label for="radio2" class="navigation-btn"></label>
+        <label for="radio3" class="navigation-btn"></label>
+        <label for="radio4" class="navigation-btn"></label>
+    </div>
+</header>
+<script type="text/javascript">
+    let counter = 1;
+    setInterval(function(){
+        document.getElementById('radio' + counter).checked = true;
+        counter++;
+
+    if(counter > 4){counter = 1;}
+    }, 5000);
+</script>

@@ -6,18 +6,20 @@
   <title>Skynet118</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv='X-UA-Compatible' content='IE-edge'> 
+  <link rel="stylesheet" type= "text/css" href="{% static "blog/style.css" %}">
   <link rel="stylesheet" type= "text/css" href="{% static "payments/style.css" %}">
-  <link rel="stylesheet" type= "text/css" href="{% static "payments/media.css" %}">
+  <link rel="stylesheet" type= "text/css" href="{% static "blog/media.css" %}">
+  <link rel="icon" type="image/gif" href="{% static "blog/images/favicon.ico" %}">
   </head>
 <body>
-    {% include "payments/menu_var.html" %}
+    {% include "blog/menu_var.html" %}
 
     
     {% block payment_content %}
 
     {% endblock payment_content %}
 
-    {% include "payments/footer_payment.html" %}
+    {% include "blog/footer.html" %}
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'payments/js/cart.js' %}"></script>
