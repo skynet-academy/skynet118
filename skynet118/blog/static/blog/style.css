@@ -2,12 +2,22 @@
 /* The var menu section */
 *{
   font-family: "Poppins","Times New Roman", Times;
+  font-size: 18px;
 }
 
 body {
   margin: 0;
-
 }
+
+hr{
+  width: 80%;
+  border: 2px solid #00AEFF;
+  border-radius: 1rem;
+  height: 3px;
+  background-color: #0c0D13;
+  margin: 2rem auto;
+}
+
 
 .menu {
   position: fixed;
@@ -251,7 +261,7 @@ body {
   display: grid;
   grid-template-areas: 'footer-left footer-center footer-right' 'footer-icons footer-icons footer-icons';
   grid-template-columns: 0.75fr 1fr 1.5fr;
-  grid-template-rows: 350px 80px;
+  grid-template-rows: 300px 80px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   background-color: #0C0D13;

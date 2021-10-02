@@ -19,6 +19,11 @@
     .links{
         padding: 0 0 0 12rem;
     }
+    .navigation-btn, .navigation-auto div{
+        padding: 2px 15px;
+    }
+
+
 }
 
 
@@ -77,12 +82,24 @@
     .footer-right{
         width: unset;
     }
+
+    .courses{
+        width: 100%;
+    }
+    .course-container{
+        width: 75%;
+    }
 }
 
 @media(max-width: 414px){
     .course{
         padding: 0;
-        margin: 2rem 0; 
+    }
+    .courses{
+        width: 100%;
+    }
+    .course-container{
+        width: 75%;
     }
 }
 

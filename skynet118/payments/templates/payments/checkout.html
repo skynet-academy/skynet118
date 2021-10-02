@@ -1,6 +1,35 @@
 {% extends 'payments/base_payment.html' %}
 {% block payment_content %}
-    <div class="container">
+	<section class="info-customer">
+		<form action="">
+			<fieldset>
+				<legend>Information</legend>
+				<input type="text" placeholder="Name">
+				<input type="email" placeholder="Email">
+				<input type="tel" placeholder="Telephone">
+				
+			</fieldset>
+			<fieldset>
+				<h3>information course</h3>
+				<input type="text">
+				<label for="">You selected Python</label>
+				<br>
+				<label for="">Do you want to change the course?</label>
+				<input type="checkbox">
+				<br>
+				
+				<label for="courses">choose a course:</label>
+				<select id="courses" name="">
+					<option value="Python">Python</option>
+				</select>
+			</fieldset>
+			
+			
+		</form>
+	</section>
+
+
+    <div class="container-products">
         <div class="row">
             <div class="col-lg">
                 <br>
@@ -12,7 +41,7 @@
                 <div class="card card-body">
                     <h3>{{ product.name }}</h3>
                     <hr>
-                    <h4>Total: ${{course.price}}</h4>
+                    <h4 class="product-price" >Total: ${{course.price}}</h4>
                     <hr>
                     <div id="paypal-button-container">
                     </div>

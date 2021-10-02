@@ -1,17 +1,18 @@
 {% extends 'payments/base_payment.html' %}
 {% block payment_content %}
-    <div class="container">
-        <div class="row">
+    <div class="container-products">
+        <div class="row-product">
             {% for course in courses %}
-            <div class="col-lg-6">
-                <h4>{{ course.name}}</h4>
-                <img src={{course.image_url}} alt="">
+            <div class="product-details">
+                <h4 class="product-name">{{ course.name}}</h4>
+				<div class="product-img">
+                	<img src={{course.image_url}} alt="">
+				</div>
                 <hr>
-                <p>{{course.description}}</p>
+                <p class="product-description">{{course.description}}</p>
                 <hr>
-                <h4>${{course.price}}</h4>
-                <hr>
-                <a href="{% url 'payments:checkout' course.id %}" class="btn btn-sm btn-warning">Buy Now!</a>
+                <h4 class="product-price">${{course.price}}</h4>
+                <a href="{% url 'payments:checkout' course.id %}" class="button-price">Buy Now!</a>
             </div>
             {% endfor %}
         </div>

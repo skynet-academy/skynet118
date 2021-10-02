@@ -1,12 +1,74 @@
-.my_block{
-    width: 500px;
-    height: 300px;
-    margin: 4rem;
+.list-courses{
+    margin: 4rem auto;
+    width: 90%;
 }
 
-.my_block button{
-    color: green;
-    background-color: black;
-    text-align: center;
-    margin: auto 0;
+.list-courses ul{
+    list-style-type: none;    
 }
+
+.course-pricing{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.list-price-available{
+    display: flex;    
+    background-color: #f2f2f2;
+    margin: 2rem auto;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+} 
+
+.price{
+    padding: 1rem;
+    min-width: 300px;
+}
+
+.price ul{
+    list-style-type: none;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 5px gray;
+}
+
+.price ul li{
+    border: 1px solid grey;
+    padding: 1rem 0;
+}
+
+.basic ul li:nth-child(1){
+    background-color: black;
+    color: white;
+}
+
+.popular ul li:nth-child(1){
+    background-color: red;
+    color: white;
+}
+
+.premium ul li:nth-child(1){
+    background-color: #055B73;
+    color: white;
+}
+
+.price button{
+    background-color: white;
+    padding: 0.5rem 2rem;
+    color: black; 
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.price button:hover{
+    background-color: black;
+    color: white; 
+}
+
+
+
+

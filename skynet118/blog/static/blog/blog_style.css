@@ -26,15 +26,6 @@
   padding: 10px;
 }
 
-hr{
-  width: 80%;
-  border: 2px solid #00AEFF;
-  border-radius: 1rem;
-  height: 3px;
-  background-color: #0c0D13;
-  margin: 2rem auto;
-}
-
 .courses {
     height: 40rem;
     border-radius: 5px;

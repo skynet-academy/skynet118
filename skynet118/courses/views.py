@@ -8,10 +8,6 @@ def index(request):
     context = {}
     return render(request , 'courses/index_courses.html', context)
 
-def detail_course(request):
-    context = {}
-    return render(request, 'courses/detail_course.html', context)
-
 def create_course(request):
     context = {}
     return render(request, 'courses/create_course.html', context)

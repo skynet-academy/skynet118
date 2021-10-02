@@ -1,6 +1,75 @@
 {% extends 'courses/base.html' %}
 {% block content %}
+{% load static %}
+<section class="list-courses">
+    <h1>This is the list of all courses availables</h1>
+    <ul>
+        <li><strong>Python</strong></li>
+        <li><strong>Web Development</strong></li>
+        <li><strong>C/C++</strong></li>
+        <li><strong>Scratch</strong></li>
+    </ul>
 
+</section>
 
+<section class="course-pricing">
+    <h2>Python Course</h2>
+    <img src="{% static 'courses/images/python_code.jpeg' %}" width="220" height="240" alt="python-course">
+    <article class="course-description">
+        <p>Python is one of the most popular programming language in the world
+        its easy syntax allow us to learn it faster, and understand the how computers work.
+        </p>
+        <p>Why Python?...</p>
+        <ul>
+            <li>We show the basics of python, the use of mathematics modules</li>
+            <li>Programming object oriented</li>
+            <li>Use of the arcade module for creating videogames in 2D</li>
+            <li>Algorithms that usually ask on interviews</li>
+        </ul>
+        <aside>
+            <h3>More about python</h3>
+            Here we're gonna write some extra info about the language
+        </aside>
 
+    </article>
+    <article class="list-price-available">
+        <div class="price basic">
+            <ul>
+                <li><strong>Basic package</strong></li>
+                <li>6 lessons</li>
+                <li>55 minutes per lesson</li>
+                <li class="price-course">
+                    <p>Cost per lesson: <span>$20</span> </p>
+                    <p>cancel your lesson as maximum 8 hours before it</p>
+                </li>
+                <li> <button type="button"><strong>But it</strong></button></li>
+            </ul>
+        </div>
+        <div class="price popular">
+            <ul>
+                <li><strong>The most popular package</strong></li>
+                <li>12 lessons</li>
+                <li>55 minutes per lesson</li>
+                <li class="price-course">
+                    <p>Cost per lesson: <span>$18</span> </p>
+                    <p>cancel your lesson as maximum 8 hours before it</p>
+                </li>
+                <li> <button type="button"><strong>But it</strong></button></li>
+            </ul>
+        </div>
+        <div class="price premium">
+            <ul>
+                <li><strong>Basic premium</strong></li>
+                <li>24 lessons</li>
+                <li>55 minutes per lesson</li>
+                <li class="price-course">
+                    <p>Cost per lesson: <span>$15</span> </p>
+                    <p>cancel your lesson as maximum 8 hours before it</p>
+                </li>
+                <li> <button type="button"><strong>But it</strong></button></li>
+            </ul>
+        </div>
+
+    </article>
+</section>
 {% endblock content %}
