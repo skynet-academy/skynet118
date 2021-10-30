@@ -1,20 +1,19 @@
 {% extends 'payments/base_payment.html' %}
 {% block payment_content %}
+<div class="all-products">
+    {% for course in courses %}
     <div class="container-products">
-        <div class="row-product">
-            {% for course in courses %}
-            <div class="product-details">
-                <h4 class="product-name">{{ course.name}}</h4>
-				<div class="product-img">
-                	<img src={{course.image_url}} alt="">
-				</div>
-                <hr>
-                <p class="product-description">{{course.description}}</p>
-                <hr>
-                <h4 class="product-price">${{course.price}}</h4>
-                <a href="{% url 'payments:checkout' course.id %}" class="button-price">Buy Now!</a>
-            </div>
-            {% endfor %}
-        </div>
+    	<div class="img-product img-list">
+    		<img src={{ course.image.url }} alt="{{course.course_name}}">
+    	</div>
+		<h3>{{ course.course_name}}</h3>
+        <p class="product-description">{{course.description}}</p>
+		<p>Number of lessons: {{course.nro_lessons}}</p>
+		<p>Number of tests: {{course.nro_tests}}</p>
+		<p>Published: {{course.date_pub}}</p>
+        <h4 class="product-price">${{course.price}}</h4>
+        <a href="{% url 'payments:checkout' course.id %}" class="button-price">Buy Now!</a>
     </div>
+  {% endfor %}
+</div>
 {% endblock payment_content %}

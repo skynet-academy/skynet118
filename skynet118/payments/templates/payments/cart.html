@@ -1,0 +1,18 @@
+{% extends 'payments/base_payment.html' %}
+{% block payment_content %}
+    <section class="cart-details">
+        <table>
+            <tr>
+                <th></th>
+            </tr>
+            <tr>
+                {% for item in items %}
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.product.price }}</td>
+                    <td>{{ item.product.quantity }}</td>
+                    <td>{{ item.product.get_total }}</td>
+                {% endfor %}
+            </tr>
+        </table>
+    </section>
+{% endblock payment_content %}

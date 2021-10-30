@@ -4,10 +4,9 @@
 <section class="list-courses">
     <h1>This is the list of all courses availables</h1>
     <ul>
-        <li><strong>Python</strong></li>
-        <li><strong>Web Development</strong></li>
-        <li><strong>C/C++</strong></li>
-        <li><strong>Scratch</strong></li>
+        {% for course in courses %}
+            <li><strong>{{ course.course_name }}</strong></li>
+        {% endfor %}
     </ul>
 
 </section>

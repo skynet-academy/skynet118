@@ -4,52 +4,37 @@
 		<form action="">
 			<fieldset>
 				<legend>Information</legend>
-				<input type="text" placeholder="Name">
-				<input type="email" placeholder="Email">
-				<input type="tel" placeholder="Telephone">
-				
+				<input type="text" placeholder="Name" value="">
+				<input type="email" placeholder="Email" value="">
+				<input type="tel" placeholder="Telephone" value="">
 			</fieldset>
 			<fieldset>
 				<h3>information course</h3>
-				<input type="text">
-				<label for="">You selected Python</label>
+				<label for="">You selected: {{ course.course_name }}</label>
 				<br>
 				<label for="">Do you want to change the course?</label>
-				<input type="checkbox">
 				<br>
-				
-				<label for="courses">choose a course:</label>
-				<select id="courses" name="">
-					<option value="Python">Python</option>
+				<label for="my-courses">choose a course:</label>
+				<select id="my-courses" name="">
+					{% for course in list_courses %}
+						<option value="{{ course.course_name }}">{{ course.course_name }}</option>
+					{% endfor %}
 				</select>
 			</fieldset>
-			
-			
 		</form>
 	</section>
-
-
     <div class="container-products">
-        <div class="row">
-            <div class="col-lg">
-                <br>
-                <img src="{{ course.image.url }}" alt="">
-            </div>
-
-            <div class="col-lg">
-                <br>
-                <div class="card card-body">
-                    <h3>{{ product.name }}</h3>
-                    <hr>
-                    <h4 class="product-price" >Total: ${{course.price}}</h4>
-                    <hr>
-                    <div id="paypal-button-container">
-                    </div>
-                </div>
-            </div>
-        </div>
+       <div class="img-product">
+	      <img src="{{ course.image.url }}" alt="{{couse.course_name}}">
+       </div>
+       <div class="purchase-info">
+          <h3>{{ course.course_name }} course</h3>
+          <h4 class="product-price" >Total: ${{course.price}}</h4>
+          <div id="paypal-button-container">
+          </div>
+       </div>
     </div>
-    <script src="https://www.paypal.com/sdk/js?client-id=AdRidJzjDHcLlvxEcLaH2wAtw1jhU6qO-0Gk0F51x-xjDEuzdFW6NjVpHE1l5rjyeIe3vLRa26PPsHYE&currency=USD"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AXxd9QdfXqpru1EFidIM-U5x8S9RMBnxML-QZQRkCl2K13XLey9ouNrEzOu28Q_J9SLmELwl_HyoC-21&currency=USD"></script>
     <script>
 
         function getCookie(name){

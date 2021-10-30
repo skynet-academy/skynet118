@@ -8,6 +8,7 @@ app_name = 'courses'
 urlpatterns = [
         path("", views.index, name = "index"),
         path("create/", views.create_course, name = "create"),
+        path("detail/", views.post_detail, name = "detail"),
         ]
 
 

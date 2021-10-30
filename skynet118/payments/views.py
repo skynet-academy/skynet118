@@ -10,6 +10,7 @@ from django.utils import timezone
 
 # Create your views here.
 
+
 def simple_checkout(request):
     return render(request, 'payments/simple_checkout.html')
 
@@ -19,9 +20,23 @@ def store(request):
     return render(request, 'payments/store.html', context)
 
 def checkout(request, pk):
+    customer = request.user 
+    list_courses = Course.objects.all()
     course = Course.objects.get(id=pk)
-    context = {'course':course}
+    context = {'course':course, 'list_courses': list_courses, 'customer': customer}
+
     return render(request, 'payments/checkout.html', context)
+
+def cart(request):
+    if(request.user.is_authenticated):
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+    else:
+        items  = []
+    context = {'items': items}
+    return render(request, 'payments/cart.html', context)
+
 
 def payment_complete(request):
     body = json.loads(request.body)
