@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+    path('', include('frontend.urls')),
     path('blog/', include("blog.urls")),
     path('payments/', include("payments.urls")),
     path('courses/', include("courses.urls")),

@@ -29,12 +29,12 @@
        </div>
        <div class="purchase-info">
           <h3>{{ course.course_name }} course</h3>
-          <h4 class="product-price" >Total: ${{course.price}}</h4>
+          <h4 class="product-price" >Total: ${{course.price}} </h4>
           <div id="paypal-button-container">
           </div>
        </div>
     </div>
-    <script src="https://www.paypal.com/sdk/js?client-id=AXxd9QdfXqpru1EFidIM-U5x8S9RMBnxML-QZQRkCl2K13XLey9ouNrEzOu28Q_J9SLmELwl_HyoC-21&currency=USD"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AWw0wNEoQtKQsAlFgFUjx59Qs7CZSCujq01Ml-cysbffLlvHpFHPcqg1lKNRO5SffFKszQeZVqQ56G77&currency=USD"></script>
     <script>
 
         function getCookie(name){
@@ -53,7 +53,7 @@
         	return cookieValue;
 	    }
 		const csrftoken = getCookie('csrftoken'); 
-        let total = '{{course.price}}'
+        let total = '1.0'
         let course_id = '{{course.id}}'
 
         function complete_order(){

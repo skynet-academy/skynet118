@@ -39,7 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # 3th apps
 
+    'rest_framework',
+    
+    # my apps
+    'frontend.apps.FrontendConfig',
     'blog.apps.BlogConfig',
     'payments.apps.PaymentsConfig',
     'courses.apps.CoursesConfig',
@@ -128,6 +134,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 MEDIA_URL = '/images/'
 
