@@ -1,4 +1,4 @@
-from .models import Comment, Course
+from .models import Comment, Course, Package 
 from django import forms
 
 class CommentForm(forms.ModelForm):
@@ -11,4 +11,8 @@ class CourseForm(forms.ModelForm):
         model = Course
         fields = ('course_name', 'date_pub', 'nro_lessons')
 
+class PackageForm(forms.ModelForm):
+    class Meta:
+        model = Package
+        fields = '__all__'
 

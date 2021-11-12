@@ -21,6 +21,17 @@ class Course(models.Model):
             url = ''
         return url
 
+class Package(models.Model):
+    course_package = models.ForeignKey(Course, on_delete=models.CASCADE, related_name= 'course_package', null=True)
+    package_name = models.CharField(max_length=200)
+    price = models.FloatField(default=0)
+    nro_lessons = models.IntegerField()
+    comment = models.CharField(max_length=500)
+    time = models.IntegerField()
+    
+    def __str__(self):
+        return self.package_name
+
 
 class Comment(models.Model):
     comment = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='comments')

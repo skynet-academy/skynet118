@@ -5,11 +5,11 @@
       <img src="{% static "blog/images/nico.png" %}" alt="skynet118 logo">
       <h3> skynet118</h3>
       <p class="footer-links">
-        <a href="#">Home</a>
-        <a href="#">Blog</a>
-        <a href="#">Pricing</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+          <a href="{% url 'blog:index' %}">Home</a>
+          <a href="{% url 'courses:index_course' %}">Courses</a>
+          <a href="{% url 'blog:profile' %}">About me</a>
+          <a href="#">Sign up</a>
+          <a href="#">Login</a>
       </p>
     </div>
     <div class="footer-center">

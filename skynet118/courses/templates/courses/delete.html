@@ -1,0 +1,13 @@
+{% extends "courses/base.html" %}
+{% block content %}
+
+
+<p>Are you sure you want to delete "{{item}}"?</p>
+<form action="{% url 'courses:delete_package' item.id %}" method="POST">
+    {% csrf_token  %}
+    <a href="{% url 'courses:index_course' %}">Cancel</a>
+    <input type="submit" name="confirm" value="confirm"/>
+</form>
+
+
+{% endblock content %}

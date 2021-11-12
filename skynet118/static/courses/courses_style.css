@@ -23,7 +23,8 @@
 
 .price{
     padding: 1rem;
-    min-width: 300px;
+    min-width: 250px;
+    max-width: 450px;
 }
 
 .price ul{
@@ -31,7 +32,12 @@
     background-color: white;
     padding: 0;
     margin: 0;
-    box-shadow: 0 2px 5px gray;
+    transition: .5s;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.5);
+}
+
+.price ul:hover{
+    box-shadow: 0 20px 40px 0 rgba(0,0,0, 0.5);
 }
 
 .price ul li{
@@ -39,22 +45,18 @@
     padding: 1rem 0;
 }
 
-.basic ul li:nth-child(1){
-    background-color: black;
-    color: white;
+.package-name{background-color: black; color: white;}
+.Basic{ background-color: black; color: white;}
+.Regular{ background-color: red; color: white;}
+.Recommended{ background-color: blue; color: white;}
+.Premium{ background-color: green; color: white;}
+
+.price p {
+    word-wrap: break-word;
 }
 
-.popular ul li:nth-child(1){
-    background-color: red;
-    color: white;
-}
 
-.premium ul li:nth-child(1){
-    background-color: #055B73;
-    color: white;
-}
-
-.price button{
+.link-buy{
     background-color: white;
     padding: 0.5rem 2rem;
     color: black; 
@@ -62,9 +64,10 @@
     border: 2px solid black;
     border-radius: 10px;
     cursor: pointer;
+    text-decoration: none; 
 }
 
-.price button:hover{
+.link-buy:hover{
     background-color: black;
     color: white; 
 }

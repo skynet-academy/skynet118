@@ -15,9 +15,9 @@
     </div>
     <nav class="links">
         <ul> 
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">About me</a></li>
+            <li><a href="{% url 'blog:index' %}">Home</a></li>
+            <li><a href="{% url 'courses:index_course' %}">Courses</a></li>
+            <li><a href="{% url 'blog:profile' %}">About me</a></li>
             <li><a href="#">Sign up</a></li>
             <li><a href="#">Login</a></li>
         </ul>
@@ -33,9 +33,9 @@
    <input type="checkbox" id="menu_toggle">
    <label for="menu_toggle" class="menu_btn"><span></span></label>
    <ul class="menu-box">
-       <li><a href="#">Home</a></li>
-       <li><a href="#">Topics</a></li>
-       <li><a href="#">About me</a></li>
+       <li><a href="{% url 'blog:index' %}">Home</a></li>
+       <li><a href="{% url 'courses:index_course' %}">Courses</a></li>
+       <li><a href="{% url 'blog:profile' %}">About me</a></li>
        <li><a href="#">Sign up</a></li>
        <li><a href="#">Login</a></li>
    </ul>

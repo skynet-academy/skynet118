@@ -1,0 +1,20 @@
+{% extends "courses/base.html" %}
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token  %}
+    <h1>Create a new package:</h1>
+    <fieldset>
+        <legend>Fill the form</legend>
+        <label for="">Select a course: {{ form.course_package}}</label><br/>
+        <label for="">Package name: {{form.package_name }}</label> <br/>
+        <label for="">Price: {{ form.price }}</label> <br/>
+        <label for="">Number of lessons: {{ form.nro_lessons }}</label> <br/>
+        <label for="">Comment: {{ form.comment }}</label> <br/>
+        <label for="">Time per lesson: {{ form.time }}</label>
+    </fieldset>
+    <button type="submit">Send</button>
+</form>
+
+
+{% endblock content %}

@@ -1,8 +1,9 @@
 from django.db import models
 from blog.models import Customer
-from courses.models import Course
+from courses.models import Course, Package
 
 # Create your models here.
+
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, max_length=200, null=True, blank=True, on_delete = models.CASCADE)
@@ -28,6 +29,7 @@ class Order(models.Model):
 class OrderItem(models.Model):
     product = models.ForeignKey(Course, on_delete=models.SET_NULL, blank=True, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)
+    package = models.ForeignKey(Package, on_delete=models.SET_NULL, blank=True, null=True)
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
@@ -35,6 +37,3 @@ class OrderItem(models.Model):
     def get_total(self):
         total = self.product.price * self.quantity
         return total
-
-
-

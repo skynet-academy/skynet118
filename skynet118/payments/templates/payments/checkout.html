@@ -15,25 +15,25 @@
 				<label for="">Do you want to change the course?</label>
 				<br>
 				<label for="my-courses">choose a course:</label>
-				<select id="my-courses" name="">
-					{% for course in list_courses %}
-						<option value="{{ course.course_name }}">{{ course.course_name }}</option>
-					{% endfor %}
-				</select>
 			</fieldset>
+
 		</form>
 	</section>
+	<a class="go-pricing" href="{% url 'courses:index_course' %}">Go to pricing</a>
     <div class="container-products">
        <div class="img-product">
-	      <img src="{{ course.image.url }}" alt="{{couse.course_name}}">
+	      <img src="{{ course.image.url }}" alt="{{course.course_name}}">
        </div>
        <div class="purchase-info">
           <h3>{{ course.course_name }} course</h3>
-          <h4 class="product-price" >Total: ${{course.price}} </h4>
+		  <p>Number of lessons: {{package.nro_lessons}}</p>
+          <h4 class="product-price" >Total: ${{package.price}} </h4>
           <div id="paypal-button-container">
           </div>
        </div>
     </div>
+
+
     <script src="https://www.paypal.com/sdk/js?client-id=AWw0wNEoQtKQsAlFgFUjx59Qs7CZSCujq01Ml-cysbffLlvHpFHPcqg1lKNRO5SffFKszQeZVqQ56G77&currency=USD"></script>
     <script>
 

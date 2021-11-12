@@ -2,15 +2,15 @@
 {% block content %}
 {% load static %}
 <section class="list-courses">
-    <h1>This is the list of all courses availables</h1>
-    <ul>
+    <label for="courses">Choose a course:</label>
+    <select id="" name="">
         {% for course in courses %}
-            <li><strong>{{ course.course_name }}</strong></li>
+        <option value="{{ course.course_name }}">
+            <strong>{{ course.course_name }}</strong>
+        </option>
         {% endfor %}
-    </ul>
-
+    </select>
 </section>
-
 <section class="course-pricing">
     <h2>Python Course</h2>
     <img src="{% static 'courses/images/python_code.jpeg' %}" width="220" height="240" alt="python-course">
@@ -32,43 +32,25 @@
 
     </article>
     <article class="list-price-available">
-        <div class="price basic">
+        {% for package in packages %}
+        <div class="price">
             <ul>
-                <li><strong>Basic package</strong></li>
-                <li>6 lessons</li>
-                <li>55 minutes per lesson</li>
-                <li class="price-course">
-                    <p>Cost per lesson: <span>$20</span> </p>
-                    <p>cancel your lesson as maximum 8 hours before it</p>
-                </li>
-                <li> <button type="button"><strong>But it</strong></button></li>
-            </ul>
-        </div>
-        <div class="price popular">
-            <ul>
-                <li><strong>The most popular package</strong></li>
-                <li>12 lessons</li>
-                <li>55 minutes per lesson</li>
-                <li class="price-course">
-                    <p>Cost per lesson: <span>$18</span> </p>
-                    <p>cancel your lesson as maximum 8 hours before it</p>
-                </li>
-                <li> <button type="button"><strong>But it</strong></button></li>
-            </ul>
-        </div>
-        <div class="price premium">
-            <ul>
-                <li><strong>Basic premium</strong></li>
-                <li>24 lessons</li>
-                <li>55 minutes per lesson</li>
-                <li class="price-course">
-                    <p>Cost per lesson: <span>$15</span> </p>
-                    <p>cancel your lesson as maximum 8 hours before it</p>
-                </li>
-                <li> <button type="button"><strong>But it</strong></button></li>
-            </ul>
-        </div>
+                <li class="package-name {{package.package_name}}"><strong>{{ package.package_name }}</strong></li>
 
+                <li>Number of lessons: {{ package.nro_lessons }}</li>
+                <li>Duration: {{ package.time }} minutes</li>
+                <li class="price-course">
+                    <p>Total cost: <span>${{ package.price }}</span></p>
+                    <p>{{ package.comment }}</p>
+                </li>
+                <li>
+                    <a class= "link-buy" href="{% url 'payments:checkout' pk=package.course_package.id name=package.package_name %}">
+                        <strong>Buy it</strong>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
     </article>
 </section>
 {% endblock content %}
