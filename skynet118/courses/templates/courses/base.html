@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static "courses/courses_style.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "blog/style.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "blog/media.css" %}">
@@ -20,5 +21,6 @@
 
     {% endblock content %}
     {% include 'blog/footer.html' %}
+    <script src="{% static 'courses/js/toggle_course.js' %}"></script>
 </body>
 </html>

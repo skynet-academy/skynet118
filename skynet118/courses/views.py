@@ -11,9 +11,39 @@ def index(request):
     context = {'courses': courses, 'packages': packages}
     return render(request , 'courses/index_courses.html', context)
 
+
 def create_course(request):
-    context = {}
+    form = CourseForm()
+    if(request.method == "POST"):
+        form = CourseForm(request.POST)
+        if(form.is_valid()):
+            form.save()
+            return redirect('/courses/')
+    context = {'form': form}
     return render(request, 'courses/create_course.html', context)
+
+
+def update_course(request, pk):
+    course = Course.objects.get(id=pk)
+    form = CourseForm(instance=course)
+    if(request.method == "POST"):
+        form = CourseForm(request.POST, instance=course)
+        if(form.is_valid()):
+            form.save()
+            return redirect("/courses/")
+    context = {'form': form}
+    return render(request, 'courses/update_course.html', context)
+
+
+def delete_course(request, pk):
+    course = Course.objects.get(id=pk)
+    if(request.method == "POST"):
+        package.delete()
+        return redirect("/courses/")
+
+    context = {"item": course}
+    return render(request, 'courses/delete_course.html', context)
+
 
 def post_detail(request, slug):
     template_name = 'post_detail.html'
@@ -60,8 +90,6 @@ def update_package(request, pk):
         if(form.is_valid()):
             form.save()
             return redirect("/courses/")
-
-
     context = {'form': form}
     return render(request, 'courses/update_package.html', context)
 
