@@ -175,6 +175,12 @@ hr{
     transition-duration: .25s;
 }
 
+.space-menu{
+	display: block;
+	height: 4rem;
+	width: 100%;
+}
+
 .languages{
   display: flex;
   min-width: 6rem;

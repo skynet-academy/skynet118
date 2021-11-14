@@ -1,12 +1,12 @@
 {% extends 'payments/base_payment.html' %}
 {% block payment_content %}
-	<section class="info-customer">
+	<!--<section class="info-customer">
 		<form action="">
 			<fieldset>
 				<legend>Information</legend>
-				<input type="text" placeholder="Name" value="">
-				<input type="email" placeholder="Email" value="">
-				<input type="tel" placeholder="Telephone" value="">
+				<input type="text" placeholder="Name" value="" />
+				<input type="email" placeholder="Email" value="" />
+				<input type="tel" placeholder="Telephone" value="" />
 			</fieldset>
 			<fieldset>
 				<h3>information course</h3>
@@ -18,7 +18,7 @@
 			</fieldset>
 
 		</form>
-	</section>
+	</section>-->
 	<a class="go-pricing" href="{% url 'courses:index_course' %}">Go to pricing</a>
     <div class="container-products">
        <div class="img-product">
@@ -27,16 +27,14 @@
        <div class="purchase-info">
           <h3>{{ course.course_name }} course</h3>
 		  <p>Number of lessons: {{package.nro_lessons}}</p>
+		  <p>You are buying a <strong>{{package.package_name}}</strong> package</p>
           <h4 class="product-price" >Total: ${{package.price}} </h4>
           <div id="paypal-button-container">
           </div>
        </div>
     </div>
-
-
     <script src="https://www.paypal.com/sdk/js?client-id=AWw0wNEoQtKQsAlFgFUjx59Qs7CZSCujq01Ml-cysbffLlvHpFHPcqg1lKNRO5SffFKszQeZVqQ56G77&currency=USD"></script>
     <script>
-
         function getCookie(name){
             let cookieValue = null;
         	if (document.cookie && document.cookie !== '') {
@@ -53,7 +51,7 @@
         	return cookieValue;
 	    }
 		const csrftoken = getCookie('csrftoken'); 
-        let total = '1.0'
+		let total = '{{package.price}}'
         let course_id = '{{course.id}}'
 
         function complete_order(){
@@ -67,10 +65,8 @@
                 body: JSON.stringify({'course_id': course_id})
             })
         }
-
       // Render the PayPal button into #paypal-button-container
       paypal.Buttons({
-
           // Set up the transaction
           createOrder: function(data, actions) {
               return actions.order.create({

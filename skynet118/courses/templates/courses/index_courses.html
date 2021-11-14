@@ -3,27 +3,18 @@
 {% load static %}
 <section class="list-courses">
     <label for="courses">Choose a course:</label>
-    <select id="course_selection" name="">
-        {% for course in courses %}
-        <option value="{{ course.course_name }}" id="{{ course.course_name}}">
-            <strong>{{ course.course_name }}</strong>
-        </option>
-        {% endfor %}
-    </select>
-    <script type="text/javascript">
-        $(document).on('change', '#course_selection', function(e){
-            e.preventDefault();
-            console.log("working");
-            $.ajax({
-                type: 'POST',
-                url: '',
-                data: {
-                    name: $('#course.course_name').val(),
-                }
-            });
-        });
-
-    </script>
+    <form action="course_selection">
+        {% csrf_token %}
+        <select name="">
+            {% for course in courses %}
+                <option value="{{ course.course_name }}" id="{{ course.course_name}}">
+                    <strong>{{ course.course_name }}</strong>
+                </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="show">
+    </form>
+    <h2 id="intro"></h2>
     <a href="{% url 'courses:create_course' %}">Create course</a>
 </section>
 <section class="course-pricing">

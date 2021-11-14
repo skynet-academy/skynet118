@@ -3,7 +3,6 @@
 .particles-section{
   width: 100%;
   height: 500px;
-  margin-top: 64px;
 }
 
 #particles-js {
@@ -221,3 +220,10 @@
 .english{width: 75%; background-color: #0C0D13; border-radius: 10px;}
 .spanish{width: 100%; background-color: #00AEFF; border-radius: 10px;}
 .russian{width: 70%; background-color: #0036a8; border-radius: 10px;}
+
+
+.space-menu{
+	display: block;
+	height: 4rem;
+	width: 100%;
+}
