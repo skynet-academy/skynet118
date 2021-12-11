@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<form action="">
+    {% csrf_token %}
+
+    {{ portfolio.media }}
+    {{ portfolio.as_p }}
+    
+
+    {{ portfolio.body|safe }}
+    <button type="submit">Submit</button>
+</form>
+
+
+{% endblock %}

@@ -7,6 +7,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv='X-UA-Compatible' content='IE-edge'> 
+  <meta name="description" content="{% block description %}{% endblock %}" />
+  <meta name="keywords" content="{% block keywords %}{% endblock %}" />
+  <link rel="canonical" href="{{request.path}}">
   <link rel="stylesheet" type= "text/css" href="{% static "blog/blog_style.css" %}">
   <link rel="stylesheet" type= "text/css" href="{% static "blog/style.css" %}">
   <link rel="stylesheet" type= "text/css" href="{% static "blog/media.css" %}">

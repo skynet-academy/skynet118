@@ -32,7 +32,7 @@
     overflow: hidden;
 }
 
-.header-description p, .about-us p, .courses p{
+.header-description p, .about-us p{
     margin: 1rem 4rem;
 }
 
@@ -58,11 +58,9 @@
   min-width: 16rem;
   width: 20%;
   text-align: center; 
-  box-shadow: 0 2px 5px gray;
-  opacity: 0.75;
   color: #00AEFF;
   max-height: 28rem;
-  transition: 2s;
+  transition: .5s;
 }
 
 .course-container{
@@ -71,12 +69,12 @@
   margin: auto;
   height: 100%;
   border-radius: 2rem;
+  transition: .5s;
 }
 
-.course:hover{
-  opacity: 1;
+.course-container:hover{
+  box-shadow: 0 2px 5px gray;
 }
-
 
 .course img{
   width: 20%;
@@ -87,7 +85,7 @@
     display: flex;
     position: absolute;
     width: 20%; 
-    margin: -10rem auto auto;
+    margin: -14rem auto auto;
     left: 0;
     right: 0;
     justify-content: center;
@@ -95,14 +93,11 @@
 
 .navigation-btn{
     border: 2px solid #00AEFF;
-    background-color: #0C0D13;
     padding: 3px;
     border-radius: 1rem;
     cursor: pointer;
-    width: 30px;
     transition: 1s;
 }
-
 
 .navigation-btn:not(:last-child){
     margin-right: 3rem;
@@ -113,16 +108,16 @@
     background-color: #00AEFF;
 }
 
-#radio1:checked ~ .first{margin-left: 0;}
-#radio2:checked ~ .first{margin-left: -20%;}
-#radio3:checked ~ .first{margin-left: -40%;}      
-#radio4:checked ~ .first{margin-left: -60%;}  
+#radio1:checked ~ .course-4{margin-left: 0%;}
+#radio2:checked ~ .course-4{margin-left: -20%;}
+#radio3:checked ~ .course-4{margin-left: -40%;}      
+#radio4:checked ~ .course-4{margin-left: -60%;}  
 
 .navigation-auto{
     display: flex;
     position: absolute;
     width: 20%; 
-    margin: 30rem auto;
+    margin: 26rem auto;
     left: 0;
     right: 0;
     justify-content: center;
@@ -130,11 +125,9 @@
 
 .navigation-auto div{
     border: 2px solid #00AEFF;
-    background-color: #0C0D13;
     padding: 3px;
     border-radius: 1rem;
     cursor: pointer;
-    width: 30px;
     transition: 1s;
 }
 
@@ -144,25 +137,21 @@
 
 #radio1:checked ~ .navigation-auto .auto-btn1{
     background: #00AEFF; 
-    border: 2px solid #0C0D13;
     z-index:1;
 }
 
 #radio2:checked ~ .navigation-auto .auto-btn2{
     background: #00AEFF; 
-    border: 2px solid #0C0D13;
     z-index:1;
 }
 
 #radio3:checked ~ .navigation-auto .auto-btn3{
     background: #00AEFF; 
-    border: 2px solid #0C0D13;
     z-index:1;
 }
 
 #radio4:checked ~ .navigation-auto .auto-btn4{
     background: #00AEFF;
-    border: 2px solid #0C0D13;
     z-index:1;
 }
 
@@ -208,22 +197,12 @@
 .javascript{width: 75%; background-color: #ceb330; border-radius: 10px;}
 .matlab{width: 60%; background-color: #a63326; border-radius: 10px;}
 
-
 .linux{width: 85%; background-color: #fe6309; border-radius: 10px;}
 .windows{width: 80%; background-color: #0da1ef; border-radius: 10px;}
 .github{width: 80%; background-color: black; border-radius: 10px;}
 .apache{width: 75%; background-color: #c51b50; border-radius: 10px;}
 .django{width: 70%; background-color: #0f3e2e; border-radius: 10px;}
 
-
-
 .english{width: 75%; background-color: #0C0D13; border-radius: 10px;}
 .spanish{width: 100%; background-color: #00AEFF; border-radius: 10px;}
 .russian{width: 70%; background-color: #0036a8; border-radius: 10px;}
-
-
-.space-menu{
-	display: block;
-	height: 4rem;
-	width: 100%;
-}

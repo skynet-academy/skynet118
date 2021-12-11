@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<form action="" method='POST'>
+    {% csrf_token %}
+    <label for="">Name:</label>
+    {{ contact.name }}
+    <label for="">Email:</label>
+    {{ contact.email }}
+    <label for="">Message:</label>
+    {{ contact.message }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

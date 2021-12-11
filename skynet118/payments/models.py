@@ -1,12 +1,12 @@
 from django.db import models
-from blog.models import Customer
+from blog.models import UserProfile
 from courses.models import Course, Package
 
 # Create your models here.
 
 
 class Order(models.Model):
-    customer = models.ForeignKey(Customer, max_length=200, null=True, blank=True, on_delete = models.CASCADE)
+    user = models.ForeignKey(UserProfile, max_length=200, null=True, blank=True, on_delete = models.CASCADE)
     course_name = models.ForeignKey(Course, max_length=200, null=True, blank=True, on_delete = models.SET_NULL)
     created = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False, null=True, blank=False)

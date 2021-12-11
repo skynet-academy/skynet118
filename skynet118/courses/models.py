@@ -7,6 +7,7 @@ class Course(models.Model):
     price = models.FloatField(default=0)
     nro_lessons = models.IntegerField()
     nro_tests = models.IntegerField()
+    description = models.CharField(max_length=500, default="Description")
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):

@@ -2,17 +2,16 @@
 {% block content %}
 {% load static %}
 <section class="list-courses">
-    <label for="courses">Choose a course:</label>
     <form action="course_selection">
         {% csrf_token %}
-        <select name="">
+        <select name="" onchange="changeCourse(this.value)">
+            <option disabled selected value>Choose a course:</option>
             {% for course in courses %}
-                <option value="{{ course.course_name }}" id="{{ course.course_name}}">
+                <option value="{{ course.id }}" id="{{ course.name}}">
                     <strong>{{ course.course_name }}</strong>
                 </option>
             {% endfor %}
         </select>
-        <input type="submit" value="show">
     </form>
     <h2 id="intro"></h2>
     <a href="{% url 'courses:create_course' %}">Create course</a>
@@ -59,4 +58,5 @@
         {% endfor %}
     </article>
 </section>
+<script src="{% static 'courses/js/courses.js' %}"></script>
 {% endblock content %}

@@ -1,25 +1,22 @@
 {% extends 'payments/base_payment.html' %}
+{% load static %}
 {% block payment_content %}
-	<!--<section class="info-customer">
-		<form action="">
-			<fieldset>
-				<legend>Information</legend>
-				<input type="text" placeholder="Name" value="" />
-				<input type="email" placeholder="Email" value="" />
-				<input type="tel" placeholder="Telephone" value="" />
-			</fieldset>
-			<fieldset>
-				<h3>information course</h3>
-				<label for="">You selected: {{ course.course_name }}</label>
-				<br>
-				<label for="">Do you want to change the course?</label>
-				<br>
-				<label for="my-courses">choose a course:</label>
-			</fieldset>
-
-		</form>
-	</section>-->
 	<a class="go-pricing" href="{% url 'courses:index_course' %}">Go to pricing</a>
+	<div class="wise">
+		<p>You can also transfer me using my link in Wise.</p>
+		<a href="https://wise.com/invite/u/nicolass337" target="_blank">Go to Wise</a>
+	</div>
+	<div class="bank-accounts">
+		<p>You also can select transfer via an international account</p>
+		<label for="banks">Select an account</label>
+		<select id="bank-account" name="banks" onchange="changeAccount(this.value)">
+			<option disabled selected value>Select an option</option>
+			<option value="usa">USA</option>
+			<option value="canada">CANADA</option>
+			<option value="europe">EU</option>
+		</select>
+		<div id="info-account"></div>
+	</div>
     <div class="container-products">
        <div class="img-product">
 	      <img src="{{ course.image.url }}" alt="{{course.course_name}}">
@@ -33,7 +30,8 @@
           </div>
        </div>
     </div>
-    <script src="https://www.paypal.com/sdk/js?client-id=AWw0wNEoQtKQsAlFgFUjx59Qs7CZSCujq01Ml-cysbffLlvHpFHPcqg1lKNRO5SffFKszQeZVqQ56G77&currency=USD"></script>
+	<script src="{% static 'payments/js/accounts.js' %}"></script>
+	<script src="https://www.paypal.com/sdk/js?client-id=AWw0wNEoQtKQsAlFgFUjx59Qs7CZSCujq01Ml-cysbffLlvHpFHPcqg1lKNRO5SffFKszQeZVqQ56G77&currency=USD"></script>
     <script>
         function getCookie(name){
             let cookieValue = null;
@@ -67,6 +65,13 @@
         }
       // Render the PayPal button into #paypal-button-container
       paypal.Buttons({
+		style: {
+          shape: 'rect',
+          color: 'blue',
+          layout: 'vertical',
+          label: 'buynow',
+          
+        },
           // Set up the transaction
           createOrder: function(data, actions) {
               return actions.order.create({
@@ -77,7 +82,6 @@
                   }]
               });
           },
-
           // Finalize the transaction
           onApprove: function(data, actions) {
               return actions.order.capture().then(function(orderData) {
@@ -86,7 +90,6 @@
                   var transaction = orderData.purchase_units[0].payments.captures[0];
                   complete_order()
                   alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
-
                   // Replace the above to show a success message within this page, e.g.
                   // const element = document.getElementById('paypal-button-container');
                   // element.innerHTML = '';
@@ -95,5 +98,6 @@
               });
           }
       }).render('#paypal-button-container');
-    </script>  
+    </script>
+	
 {% endblock payment_content %}

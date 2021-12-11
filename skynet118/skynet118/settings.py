@@ -43,12 +43,14 @@ INSTALLED_APPS = [
     # 3th apps
 
     'rest_framework',
-    
+    'ckeditor',
+
     # my apps
     'frontend.apps.FrontendConfig',
     'blog.apps.BlogConfig',
     'payments.apps.PaymentsConfig',
     'courses.apps.CoursesConfig',
+    'student.apps.StudentConfig',
 ]
 
 MIDDLEWARE = [

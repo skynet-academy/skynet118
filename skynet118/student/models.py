@@ -3,9 +3,14 @@ from django.db import models
 # Create your models here.
 
 class Student(models.Model):
-    name = models.CharField(max_lenght=200)
-    surname = models.CharField(max_lenght=200)
-    age = models.IntegerField(max_lenght=3)
+    name = models.CharField(max_length=200)
+    surname = models.CharField(max_length=200)
+    age = models.IntegerField()
+    FRESHMAN = 'FR'
+    SOPHOMORE = 'SO'
+    JUNIOR = 'JR'
+    SENIOR = 'SR'
+    GRADUATE = 'GR'
     YEAR_IN_SCHOOL_CHOICES = [
         (FRESHMAN, "Freshman"),
         (SOPHOMORE, "Sophomore"),
@@ -13,6 +18,6 @@ class Student(models.Model):
         (SENIOR, "Senior"),
         (GRADUATE, "Graduate"),
             ]
-    year_in_school = models.CharField(max_lenght=2, choices= YEAR_IN_SCHOOL_CHOICES, default=FRESHMAN,)
+    year_in_school = models.CharField(max_length=2, choices= YEAR_IN_SCHOOL_CHOICES, default=FRESHMAN,)
 
     

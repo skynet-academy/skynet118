@@ -1,5 +1,4 @@
 {% load static %}
-
 <h2 class="courses-header">Courses</h2>
 <p class="courses-paragraph"> The courses are for all </p>
 
@@ -9,54 +8,19 @@
         <input type="radio" name="radio-btn" id="radio2">
         <input type="radio" name="radio-btn" id="radio3">
         <input type="radio" name="radio-btn" id="radio4">
-
-        <div class="course first">
+        {% for course in courses %}
+        <div class="course course-{{course.pk }}">
             <div class="course-container">
                 <div class="course-logo">
-                    <img src="{% static "blog/images/python.png"%}" alt="course name 1"/>
+                    <img src="{{ course.image.url }}" alt="{{ course.course_name }}"/>
                 </div>
-                <p class="course-name">Course: <strong>Python</strong></p>
+                <p class="course-name">Course: <strong>{{ course.course_name }}</strong></p>
                 <p class="age">Age: <strong>from 12 year old(recommended) </strong></p>
-                <p class="description"> This is a description of the course</p>
+                <p class="description">Description: {{ course.description }}</p>
                 <a href="{% url "courses:index_course" %}">Read more</a> 
             </div>
         </div>
-
-        <div class="course">
-            <div class="course-container">
-                <div class="course-logo">
-                    <img src="{% static "blog/images/c_plus_plus.png"%}" alt="course name 2"/>
-                </div>
-                <p class="course-name">Course: <strong>C++</strong></p>
-                <p class="age">Age: <strong>from 14 year old(recommended) </strong></p>
-                <p class="description"> This is a description of the course</p>
-                <a href="{% url "courses:index_course" %}">Read more</a> 
-            </div>
-        </div>
-        
-        <div class="course">
-            <div class="course-container">
-                <div class="course-logo">
-                    <img src="{% static "blog/images/html_css_js.png"%}" alt="course name 3"/>
-                </div>
-                <p class="course-name">Course: <strong>HTML, CSS, and JS</strong></p>
-                <p class="age">Age: <strong>from 14 year old(recommended) </strong></p>
-                <p class="description"> This is a description of the course</p>
-                <a href="{% url "courses:index_course" %}">Read more</a> 
-            </div>
-        </div>
-
-        <div class="course">
-            <div class="course-container">
-                <div class="course-logo">
-                    <img src="{% static "blog/images/scratch.png"%}" alt="course name 4"/>
-                </div>
-                <p class="course-name">Couse: <strong>SCRATCH</strong></p>
-                <p class="age">Age: <strong>from 7 years old(recommended) </strong></p>
-                <p class="description"> This is a description of the course</p>
-                <a href="{% url "courses:index_course" %}">Read more</a> 
-            </div>
-        </div>
+        {% endfor %}
         <div class="navigation-auto">
             <div class="auto-btn1"></div>
             <div class="auto-btn2"></div>

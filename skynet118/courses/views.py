@@ -19,13 +19,13 @@ def index(request):
 
 
 def create_course(request):
-    form = CourseForm()
+    course = CourseForm()
     if(request.method == "POST"):
-        form = CourseForm(request.POST)
-        if(form.is_valid()):
-            form.save()
+        course = CourseForm(request.POST)
+        if(course.is_valid()):
+            course.save()
             return redirect('/courses/')
-    context = {'form': form}
+    context = {'course': course}
     return render(request, 'courses/create_course.html', context)
 
 
