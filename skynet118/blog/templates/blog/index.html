@@ -3,18 +3,17 @@
 {% load static %}
 <div class="header-description">
   <h1> Skynet118 </h1>
-  <p> Need coding help with algorithms or programming itself? or maybe some challenge that you 
-      want to overcome, or just you want to become a better developer? do not waste time searching
-      hours. Here you can find classes from the basic level still advanced  in programming.
+  <p> Do you need coding help with algorithms or programming itself? or maybe some challenge that you want to overcome, or just you want to become a better developer? do not waste time searching
+      hours. Here you will find classes from basic level to advanced in programming.
   </p>
-  <strong><a href="#">Read more!</a></strong> 
+  <strong><a href="{% url 'courses:index_course' %}">Read more!</a></strong> 
 </div>
 <hr>
 <div class="about-us">
   <h2> About us</h2>
   <img class="logo-header" src="{% static "blog/images/nico.png" %}">
-  <p> Fullstack Developer with more than <strong>3 years</strong> of experiance in programming</p>
-  <p> I've worked with children since I was 14 years old, experiance giving instructions to soldiers for more than 4 years. I've got a master degree in "Computer Science" in Saint Peterburg - Rusia. I'm currently teaching kids between 10 and 16 years old <a href="{% url 'blog:profile' %}">read more!</a></p>
+  <p> I'm a Fullstack Developer with more than <strong>3 years</strong> of experiance in programming</p>
+  <p> I've worked with children since I was 14 years old . . .  continue <a href="{% url 'blog:profile' %}">here.</a></p>
 </div>
 
 {% include "blog/slides.html" %} 

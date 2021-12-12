@@ -35,7 +35,7 @@ let displayInfo = (account) =>{
     }
     for(const x in account){
         var item = document.createElement("P");
-        item.innerHTML = x + " : " + account[x]
+        item.innerHTML = `<strong>${x}</strong> : ${account[x]}`;
         info.appendChild(item)
     }
 }

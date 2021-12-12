@@ -9,10 +9,11 @@ from django.shortcuts import render, get_object_or_404
 def index(request):
     courses = Course.objects.all()
     packages = Package.objects.all()
-    if(request.method == "POST"):
-        name = request.POST['name']
-        context = "hello world"
-        return HttpResponse(context)
+    if(request.method == "GET"):
+        print(request)
+    elif(request.method == "POST"):
+        print(request)
+        #return HttpResponse(context)
 
     context = {'courses': courses, 'packages': packages}
     return render(request , 'courses/index_courses.html', context)

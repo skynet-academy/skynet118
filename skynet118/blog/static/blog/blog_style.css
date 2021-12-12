@@ -36,12 +36,9 @@
     margin: 1rem 4rem;
 }
 
-.courses-header{
+.courses-header, .courses-paragraph{
     text-align: center;
-}
-
-.courses-paragraph{
-  background-color: white; 
+	font-size: 18px;
 }
 
 .courses-available {
