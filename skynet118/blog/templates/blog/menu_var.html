@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <header class="menu">
     <div class="logo">
         <div class="logo-img">
@@ -8,7 +9,7 @@
     </div>
     <div class="search-field">
         <form class="search-box" action="" method="GET">
-            <input type="text" name="text" class="search-txt" placeholder="Search here">
+            <input type="text" name="text" class="search-txt" placeholder="{% trans 'Search here' %}">
             <input type="submit" name="submit" class="search-btn" value="Search">
             <i> </i>
         </form>
@@ -18,15 +19,29 @@
             <li><a href="{% url 'blog:index' %}">Home</a></li>
             <li><a href="{% url 'courses:index_course' %}">Courses</a></li>
             <li><a href="{% url 'blog:profile' %}">About me</a></li>
-            <li><a href="#">Sign up</a></li>
+            <!--<li><a href="#">Sign up</a></li>
             <li><a href="#">Login</a></li>
+            -->
         </ul>
     </nav>
-    
     <div class="languages">
-        <p>Lang</p>
-        <img src="{% static 'blog/images/world_language.svg' %}">
-        <img src="{% static 'blog/images/vector.svg' %}">
+        <form id="set-language" action="{% url 'set_language' %}" method="POST">{% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            <select id="language-selection" name="language" onchange='changeLanguage(this.value, "{% url 'set_language' %}")'>
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{language.code}}" 
+                        {% if language.code == LANGUAGE_CODE %} selected {% endif %}
+                        style="background-color:#0C0D13; color:#00AEFF; border:2px solid #00AEFF;">
+                        {{language.name_local}}({{language.code}})
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
+        <div id="content-hidden"></div>
+        <h1>{% trans 'hello world' %}</h1>
     </div>
 </header>
 <nav class="links-burguer">
@@ -36,9 +51,10 @@
        <li><a href="{% url 'blog:index' %}">Home</a></li>
        <li><a href="{% url 'courses:index_course' %}">Courses</a></li>
        <li><a href="{% url 'blog:profile' %}">About me</a></li>
-       <li><a href="#">Sign up</a></li>
+       <!--<li><a href="#">Sign up</a></li>
        <li><a href="#">Login</a></li>
+       -->
    </ul>
-   <!--<img src="{% static 'blog/images/nico.png' %}" alt="">-->
 </nav>
 <span class="space-menu"></span>
+<script src="{% static 'blog/js/languages.js' %}"></script>

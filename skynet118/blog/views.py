@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+from django.utils.translation import gettext as _
 
 from .forms import (
         SkillForm,
@@ -32,44 +33,26 @@ from .models import (
 
 # Create your views here.
 
-
-class index(generic.TemplateView):
+def index(request):
     template_name = "blog/index.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        courses = Course.objects.all()
+    courses = Course.objects.all()
+    if(request.method == "POST"):
+        data = request.body.decode('utf-8')
 
-        testimonials = Testimonial.objects.filter(is_active=True)
-        certificates = Certificate.objects.filter(is_active=True)
-        Comments = Comment.objects.filter(is_active=True)
-        portfolio = Portfolio.objects.filter(is_active=True)
 
-        context["testimonials"] = testimonials
-        context["certificates"] = certificates 
-        context["Comments"] = Comments 
-        context["portfolio"] = portfolio 
-        context["courses"] = courses 
-        return context
-
-#def index(request):
-#    template_name = "blog/index.html"
-#
-#    courses = Course.objects.all()
-#
-#    testimonials = Testimonial.objects.filter(is_active=True)
-#    certificates = Certificate.objects.filter(is_active=True)
-#    blogs = Blog.objects.filter(is_active=True)
-#    portfolio = Portfolio.objects.filter(is_active=True)
-#
-#    context = {
-#            "testimonials": testimonials,
-#            "certificates": certificates,
-#            "blogs": blogs,
-#            "portfolio": portfolio,
-#            "courses": courses
-#            }
-#    return render(request, 'blog/index.html', context) 
+    testimonials = Testimonial.objects.filter(is_active=True)
+    certificates = Certificate.objects.filter(is_active=True)
+    Comments = Comment.objects.filter(is_active=True)
+    portfolio = Portfolio.objects.filter(is_active=True)
+    context = {
+            "testimonials": testimonials,
+            "certificates": certificates,
+            "Comments": Comments,
+            "portfolio": portfolio,
+            "courses": courses
+            }
+    return render(request, 'blog/index.html', context) 
 
 class ContactView(generic.FormView):
     template_name = "blog/contact.html"

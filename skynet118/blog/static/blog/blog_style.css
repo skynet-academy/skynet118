@@ -153,7 +153,14 @@
 }
 
 .about-me, .experience, .education{
+	width: 80%;
     text-align: center;
+	margin: 0 auto;
+}
+
+.about-me-text{
+	text-align: justify;
+	text-indent: 40px;
 }
 
 .about-me img{
@@ -203,3 +210,15 @@
 .english{width: 75%; background-color: #0C0D13; border-radius: 10px;}
 .spanish{width: 100%; background-color: #00AEFF; border-radius: 10px;}
 .russian{width: 70%; background-color: #0036a8; border-radius: 10px;}
+
+#set-language{
+	margin: auto;
+}
+
+#language-selection{
+	color: #00AEFF;
+	background-color: #0C0D13;
+	border: 2px solid #0C0D13;
+}
+
+

@@ -6,7 +6,8 @@ app_name = 'blog'
 
 
 urlpatterns = [
-        path("", views.index.as_view(), name = "index"),
+        #path("", views.index.as_view(), name = "index"),
+        path("", views.index, name = "index"),
         path("profile/", views.profile , name = "profile"),
         path("contact/", views.ContactView.as_view(), name = "contact"),
         path("contact_create/", views.contact_create, name = "contact-create"),

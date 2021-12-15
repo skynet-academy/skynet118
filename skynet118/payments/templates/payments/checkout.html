@@ -3,10 +3,10 @@
 {% block payment_content %}
 	<a class="go-pricing" href="{% url 'courses:index_course' %}">Go to pricing</a>
 	<div class="wise">
-		<p class="wise-text">If you want to pay using <strong>Wise</strong>, please use this link.</p>
+		<h2 class="wise-text">If you want to pay using <strong>Wise</strong>, please use this link.</h2>
 		<a href="https://wise.com/invite/u/nicolass337" target="_blank">Go to Wise</a>
 		<div class="bank-accounts">
-			<p>Also you can transfer me using the following accounts:</p>
+			<h3>Also you can transfer me using the following accounts:</h3>
 			<label for="banks">Select an account</label>
 			<select id="bank-account" name="banks" onchange="changeAccount(this.value)">
 				<option disabled selected value>Select an option</option>
