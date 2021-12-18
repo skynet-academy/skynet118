@@ -10,6 +10,11 @@ from .models import (
         Certificate
         )
 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
+
+
 
 class SkillForm(forms.ModelForm):
     
@@ -58,4 +63,14 @@ class CertificateForm(forms.ModelForm):
     class Meta:
         model = Certificate 
         fields = '__all__'
+
+# Models for the user registration
+
+
+
+class RegisterUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        #fields = '__all__' # not recommended 
+        fields = ['username','first_name', 'last_name', 'email', 'password1', 'password2'] 
 

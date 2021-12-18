@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 #from django.template import loader
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
@@ -15,7 +17,8 @@ from .forms import (
         MediaForm,
         PortfoliForm,
         CommentForm,
-        CertificateForm
+        CertificateForm,
+        RegisterUserForm
         )
 
 # importing models 
@@ -31,6 +34,8 @@ from .models import (
 
 # importing forms
 
+from django.contrib.auth.forms import UserCreationForm
+
 # Create your views here.
 
 def index(request):
@@ -39,8 +44,12 @@ def index(request):
     courses = Course.objects.all()
     if(request.method == "POST"):
         data = request.body.decode('utf-8')
-
-
+        print(data)
+        print(request.method)
+    if(request.method == "GET"):
+        data = request.body.decode('utf-8')
+        print(request.method)
+        print(data)
     testimonials = Testimonial.objects.filter(is_active=True)
     certificates = Certificate.objects.filter(is_active=True)
     Comments = Comment.objects.filter(is_active=True)
@@ -123,11 +132,42 @@ def profile(request):
     return render(request, 'blog/profile.html', context)
 
 
+def registerPage(request):
+    if(request.user.is_authenticated):
+        return redirect("/blog/")
+    else:
+        form = RegisterUserForm()
+        if(request.method == "POST"):
+            form = RegisterUserForm(request.POST)
+            if(form.is_valid()):
+                form.save()
+                user= form.cleaned_data.get('username')
+                messages.success(request, "The account was successful created for " + user)
+                messages.error(request, "Here is an error")
+                return redirect("/blog/login/")
+
+        context = {'form': form}
+        return render(request, 'blog/register.html', context)
 
 
+def loginPage(request):
+    if(request.user.is_authenticated):
+        return redirect("/blog/")
+    else:
+        if(request.method == "POST"):
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            user = authenticate(request, username=username, password=password)
+            if(user is not None):
+                login(request, user)
+                return redirect("/blog/")
+            else:
+                messages.info(request, "The username or password is incorrect")
+        context = {}
+        return render(request, 'blog/login.html', context)
 
-
-
-
+def logoutUser(request):
+    logout(request)
+    return redirect('/blog/')
 
 

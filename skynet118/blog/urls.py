@@ -6,7 +6,11 @@ app_name = 'blog'
 
 
 urlpatterns = [
-        #path("", views.index.as_view(), name = "index"),
+        # 
+        path("register/", views.registerPage, name = "register"),
+        path("login/", views.loginPage, name = "login-page"),
+        path("logout/", views.logoutUser, name = "logout"),
+
         path("", views.index, name = "index"),
         path("profile/", views.profile , name = "profile"),
         path("contact/", views.ContactView.as_view(), name = "contact"),
@@ -18,17 +22,5 @@ urlpatterns = [
         path("comment/", views.CommentView.as_view(), name = "comments"),
         path("comment/<slug:slug>", views.CommentDetailView.as_view(), name = "comment-detail"),
         ]
-
-
-
-
-
-
-
-
-
-
-
-
 
 

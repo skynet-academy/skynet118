@@ -16,44 +16,51 @@
     </div>
     <nav class="links">
         <ul> 
-            <li><a href="{% url 'blog:index' %}">Home</a></li>
-            <li><a href="{% url 'courses:index_course' %}">Courses</a></li>
-            <li><a href="{% url 'blog:profile' %}">About me</a></li>
-            <!--<li><a href="#">Sign up</a></li>
-            <li><a href="#">Login</a></li>
-            -->
+            <li><a href="{% url 'blog:index' %}">{% trans 'Home' %}</a></li>
+            <li><a href="{% url 'courses:index_course' %}">{% trans 'Courses' %}</a></li>
+            <li><a href="{% url 'blog:profile' %}">{% trans 'About me' %}</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'blog:logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'blog:register' %}">Sign up</a></li>
+            <li><a href="{% url 'blog:login-page' %}">Login</a></li>
+            {% endif %}
         </ul>
     </nav>
+    <div>
+        {% if user.is_authenticated %}
+        <p>{{ request.user }}</p>
+        {% endif %}
+    </div>
+    <div>
+    </div>
     <div class="languages">
-        <form id="set-language" action="{% url 'set_language' %}" method="POST">{% csrf_token %}
+        <form id="set-language" action="{% url 'set_language' %}" method="POST">
+            {% csrf_token %}
             <input name="next" type="hidden" value="{{ redirect_to }}">
             <select id="language-selection" name="language" onchange='changeLanguage(this.value, "{% url 'set_language' %}")'>
                 {% get_current_language as LANGUAGE_CODE %}
                 {% get_available_languages as LANGUAGES %}
                 {% get_language_info_list for LANGUAGES as languages %}
                 {% for language in languages %}
-                    <option value="{{language.code}}" 
-                        {% if language.code == LANGUAGE_CODE %} selected {% endif %}
-                        style="background-color:#0C0D13; color:#00AEFF; border:2px solid #00AEFF;">
-                        {{language.name_local}}({{language.code}})
+                    <option value="{{language.code}}" {% if language.code == LANGUAGE_CODE %} selected {% endif %} style="background-color:#0C0D13; color:#00AEFF; border:2px solid #00AEFF;">
+                        ({{language.code}})
                     </option>
                 {% endfor %}
             </select>
         </form>
         <div id="content-hidden"></div>
-        <h1>{% trans 'hello world' %}</h1>
     </div>
 </header>
 <nav class="links-burguer">
    <input type="checkbox" id="menu_toggle">
    <label for="menu_toggle" class="menu_btn"><span></span></label>
    <ul class="menu-box">
-       <li><a href="{% url 'blog:index' %}">Home</a></li>
-       <li><a href="{% url 'courses:index_course' %}">Courses</a></li>
-       <li><a href="{% url 'blog:profile' %}">About me</a></li>
-       <!--<li><a href="#">Sign up</a></li>
-       <li><a href="#">Login</a></li>
-       -->
+       <li><a href="{% url 'blog:index' %}">{% trans 'Home' %}</a></li>
+       <li><a href="{% url 'courses:index_course' %}">{% trans 'Courses' %}</a></li>
+       <li><a href="{% url 'blog:profile' %}">{% trans 'About me' %}</a></li>
+       <li><a href="{% url 'blog:register' %}">Sign up</a></li>
+       <li><a href="{% url 'blog:login-page' %}">Login</a></li>
    </ul>
 </nav>
 <span class="space-menu"></span>

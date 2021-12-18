@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="">User name:</label>
+    <input type="text" name="username">
+    <label for="">Password:</label>
+    <input type="password" name="password">
+    <input type="submit" value="Log in">
+    {% for message in messages %}
+        <p>{{message}}</p>
+    {% endfor %}
+    <p>Don't have an account? <a href="{% url 'blog:register' %}">Sign up</a></p>
+
+</form>
+
+
+
+{% endblock %}
+

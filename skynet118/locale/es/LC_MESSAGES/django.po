@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-15 12:13+0300\n"
+"POT-Creation-Date: 2021-12-16 14:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,8 @@ msgstr "Cambiar contraseña"
 msgid "Log out"
 msgstr "Cerrar sesion"
 
-#: blog/templates/admin/base.html:65
+#: blog/templates/admin/base.html:65 blog/templates/blog/footer.html:8
+#: blog/templates/blog/menu_var.html:19 blog/templates/blog/menu_var.html:50
 msgid "Home"
 msgstr "Home"
 
@@ -62,10 +63,98 @@ msgstr "Ninguno disponible"
 msgid "Unknown content"
 msgstr "Contenido desconocido"
 
+#: blog/templates/blog/footer.html:9 blog/templates/blog/menu_var.html:20
+#: blog/templates/blog/menu_var.html:51
+msgid "Courses"
+msgstr "Cursos"
+
+#: blog/templates/blog/footer.html:10 blog/templates/blog/menu_var.html:21
+#: blog/templates/blog/menu_var.html:52
+msgid "About me"
+msgstr "Acerca de nosotros"
+
+#: blog/templates/blog/footer.html:16
+msgid "Direction"
+msgstr "Direction"
+
+#: blog/templates/blog/footer.html:20
+msgid "Telephone number"
+msgstr "Numero de telefono"
+
+#: blog/templates/blog/footer.html:24
+msgid "Email"
+msgstr "Correo"
+
+#: blog/templates/blog/footer.html:29
+msgid "The best way to learn is teaching"
+msgstr "La mejor forma de aprender es enseñando"
+
+#: blog/templates/blog/footer.html:35
+msgid "Follow us here"
+msgstr "Siguenos aqui"
+
+#: blog/templates/blog/index.html:7
+msgid ""
+"Do you need coding help with algorithms or programming itself? or maybe some "
+"challenge that you want to overcome, or just you want to become a better "
+"developer? do not waste time searching hours. Here you will find classes "
+"from basic level to advanced in programming."
+msgstr "Necesitas ayuda para escribir algoritmos en codigo o con programacion? o talvez algunos"
+
+#: blog/templates/blog/index.html:8
+msgid "Read more!"
+msgstr ""
+
+#: blog/templates/blog/index.html:12
+msgid "About us"
+msgstr ""
+
+#: blog/templates/blog/index.html:14
+msgid ""
+"I'm a Fullstack Developer with more than <strong>3 years</strong> of "
+"experiance in programming."
+msgstr ""
+
+#: blog/templates/blog/index.html:15
+msgid "I've worked with children since I was 14 years old . . .  continue "
+msgstr ""
+
+#: blog/templates/blog/index.html:15
+msgid "here."
+msgstr ""
+
 #: blog/templates/blog/menu_var.html:12
 msgid "Search here"
 msgstr "buscar aqui"
 
-#: blog/templates/blog/menu_var.html:62
+#: blog/templates/blog/menu_var.html:43
 msgid "hello world"
 msgstr "Hola mundo"
+
+#: blog/templates/blog/slides.html:4
+msgid "The courses are for all"
+msgstr ""
+
+#: blog/templates/blog/slides.html:18
+msgid "Course"
+msgstr ""
+
+#: blog/templates/blog/slides.html:18
+msgid "{{ course.course_name }}"
+msgstr ""
+
+#: blog/templates/blog/slides.html:19
+msgid "Age"
+msgstr ""
+
+#: blog/templates/blog/slides.html:19
+msgid "from 12 year old(recommended)"
+msgstr ""
+
+#: blog/templates/blog/slides.html:20
+msgid "Description: {{ course.description }}"
+msgstr ""
+
+#: blog/templates/blog/slides.html:21
+msgid "Read more"
+msgstr ""

@@ -1,19 +1,18 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 {% load static %}
+{% load i18n %}
 <div class="header-description">
-  <h1> Skynet118 </h1>
-  <p> Do you need coding help with algorithms or programming itself? or maybe some challenge that you want to overcome, or just you want to become a better developer? do not waste time searching
-      hours. Here you will find classes from basic level to advanced in programming.
-  </p>
-  <strong><a href="{% url 'courses:index_course' %}">Read more!</a></strong> 
+  <h1>Skynet118</h1>
+  <p>{% trans 'Do you need coding help with algorithms or programming itself? or maybe some challenge that you want to overcome, or just you want to become a better developer? do not waste time searching hours. Here you will find classes from basic level to advanced in programming.' %}</p>
+  <strong><a href="{% url 'courses:index_course' %}">{% trans 'Read more!' %}</a></strong> 
 </div>
 <hr>
 <div class="about-us">
-  <h2> About us</h2>
+  <h2>{% trans 'About us' %}</h2>
   <img class="logo-header" src="{% static "blog/images/nico.png" %}">
-  <p> I'm a Fullstack Developer with more than <strong>3 years</strong> of experiance in programming</p>
-  <p> I've worked with children since I was 14 years old . . .  continue <a href="{% url 'blog:profile' %}">here.</a></p>
+  <p>{% trans "I'm a Fullstack Developer with more than <strong>3 years</strong> of experiance in programming." %}</p>
+  <p>{% trans "I've worked with children since I was 14 years old . . .  continue " %}<a href="{% url 'blog:profile' %}">{% trans 'here.' %}</a></p>
 </div>
 
 {% include "blog/slides.html" %} 

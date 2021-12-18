@@ -1,38 +1,38 @@
 {% load static %}
-
+{% load i18n %}
 <footer class="footer-distributed">
     <div class="footer-left">
       <img src="{% static "blog/images/nico.png" %}" alt="skynet118 logo">
-      <h3> skynet118</h3>
+      <h3>skynet118</h3>
       <p class="footer-links">
-          <a href="{% url 'blog:index' %}">Home</a>
-          <a href="{% url 'courses:index_course' %}">Courses</a>
-          <a href="{% url 'blog:profile' %}">About me</a>
+          <a href="{% url 'blog:index' %}">{% trans 'Home' %}</a>
+          <a href="{% url 'courses:index_course' %}">{% trans 'Courses' %}</a>
+          <a href="{% url 'blog:profile' %}">{% trans 'About me' %}</a>
       </p>
     </div>
     <div class="footer-center">
         <div class="direction">
 
-            <i><strong>Direction:  <br></strong>Saint Petersburg - Russia</i> 
+            <i><strong>{% trans 'Direction' %}:  <br></strong>Saint Petersburg - Russia</i> 
         </div> 
         <div class="telephone">
             <br>
-            <i><strong>Telephone number: </strong><a href="#">+79213161064</a></i> 
+            <i><strong>{% trans 'Telephone number' %}: </strong><a href="#">+79213161064</a></i> 
         </div> 
         <div class="email">
             <br>
-            <i><strong>Email: </strong><a href="#">nico_8830_3@hotmail.com</a></i> 
+            <i><strong>{% trans 'Email' %}: </strong><a href="#">nico_8830_3@hotmail.com</a></i> 
         </div>
     </div>
     <div class="footer-right">
         <p class="footer-company-about">
-            The best way to learn is teaching &#129299;.
+            {% trans 'The best way to learn is teaching' %} &#129299;.
             <br>
             <br>
         </p>
     </div>
     <div class="footer-icons">
-        <p>Follow us here: </p>
+        <p>{% trans 'Follow us here' %}: </p>
         <a href="https://twitter.com/nickolas126" class="twitter" target="_blank" >
             <img src="{% static 'blog/images/twitter.svg' %}" alt=""/>
         </a>

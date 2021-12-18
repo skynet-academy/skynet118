@@ -1,6 +1,7 @@
 {% load static %}
+{% load i18n %}
 <h2 class="courses-header">Courses</h2>
-<p class="courses-paragraph"> The courses are for all </p>
+<p class="courses-paragraph">{% trans 'The courses are for all' %}</p>
 
 <header class="courses">
     <div class="courses-available">
@@ -14,10 +15,10 @@
                 <div class="course-logo">
                     <img src="{{ course.image.url }}" alt="{{ course.course_name }}"/>
                 </div>
-                <p class="course-name">Course: <strong>{{ course.course_name }}</strong></p>
-                <p class="age">Age: <strong>from 12 year old(recommended) </strong></p>
-                <p class="description">Description: {{ course.description }}</p>
-                <a href="{% url "courses:index_course" %}">Read more</a> 
+                <p class="course-name">{% trans 'Course' %}: <strong> {{ course.course_name }} </strong></p>
+                <p class="age">{% trans 'Age' %}: <strong>{% trans 'from 12 year old(recommended)' %}</strong></p>
+                <p class="description">{% trans 'Description: {{ course.description }}' %}</p>
+                <a href="{% url "courses:index_course" %}">{% trans 'Read more' %}</a> 
             </div>
         </div>
         {% endfor %}
