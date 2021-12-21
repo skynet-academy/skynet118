@@ -16,9 +16,9 @@ def simple_checkout(request):
 def checkout(request, pk, name):
     customer = request.user 
     course = Course.objects.get(id=pk)
-    package = Package.objects.get(package_name=name)
+    package = Package.objects.filter(course_package=pk, package_name=name)[0]
+    #package = Package.objects.filter(course_package=pk).filter(package_name=name).only()
     context = {'package': package, 'course': course, 'customer': customer}
-
     return render(request, 'payments/checkout.html', context)
 
 def cart(request):

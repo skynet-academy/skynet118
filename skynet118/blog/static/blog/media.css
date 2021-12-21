@@ -2,7 +2,6 @@
     .links a{
         padding: 0 15px;
     }
-    
     .search-box:hover > .search-txt {
         width: 150px;
     }
@@ -25,6 +24,12 @@
     .languages p{
         display: none;
     }
+	.particles-section{
+		height: 400px;
+	}
+	.create-account form, .login-account form{
+		width: 50%;
+	}
 }
 
 
@@ -39,6 +44,12 @@
     .languages p{
         display: none;
     }
+	.particles-section{
+		height: 350px;
+	}
+	.create-account form, .login-account form{
+		width: 60%;
+	}
 
 }
 
@@ -65,8 +76,14 @@
     }
     
     .particles-section{
-        margin-top: 0;
+		height: 300px;
     }
+	.space-menu{
+		display: none;
+	}
+	.create-account form, .login-account form{
+		width: 70%;
+	}
 }
 
 @media(max-width: 680px){
@@ -93,6 +110,12 @@
     .price{
         margin: 0;
     }
+	.particles-section{
+		height: 250px;
+	}
+	.create-account form, .login-account form{
+		width: 80%;
+	}
 }
 
 @media(max-width: 414px){
@@ -105,4 +128,10 @@
     .course-container{
         width: 75%;
     }
+	.particles-section{
+		height: 200px;
+	}
+	.create-account form, .login-account form{
+		width: 100%;
+	}
 }

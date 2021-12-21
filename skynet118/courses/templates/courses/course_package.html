@@ -1,0 +1,29 @@
+{% extends 'courses/base.html' %}
+{% block content %}
+{% load static %}
+
+<h1>{{ course.course_name }}</h1>
+<article class="list-price-available">
+    {% for elem in package %}
+    <div class="price">
+        <ul>
+            <li class="package-name {{elem.package_name}}">
+                <strong>{{ elem.package_name }}
+                </strong>
+            </li>
+            <li>Number of lessons: {{ elem.nro_lessons }}</li>
+            <li>Duration: {{ elem.time }} minutes</li>
+            <li class="price-course">
+                <p>Total cost: <span>${{ elem.price }}</span></p>
+                <p>{{ elem.comment }}</p>
+            </li>
+            <li>
+                <a class= "link-buy" href="{% url 'payments:checkout' pk=elem.course_package.id name=elem.package_name %}">
+                    <strong>Buy it</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+    {% endfor %}
+</article>
+{% endblock %}

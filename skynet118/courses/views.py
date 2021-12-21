@@ -8,16 +8,15 @@ from django.shortcuts import render, get_object_or_404
 
 def index(request):
     courses = Course.objects.all()
-    packages = Package.objects.all()
-    if(request.method == "GET"):
-        print(request)
-    elif(request.method == "POST"):
-        print(request)
-        #return HttpResponse(context)
-
-    context = {'courses': courses, 'packages': packages}
+    context = {'courses': courses}
     return render(request , 'courses/index_courses.html', context)
 
+
+def course_package_view(request, fk):
+    course = Course.objects.get(id=fk)
+    package = Package.objects.all().filter(course_package=fk)
+    context = {'package': package, 'course': course }
+    return render(request, 'courses/course_package.html', context)
 
 def create_course(request):
     course = CourseForm()

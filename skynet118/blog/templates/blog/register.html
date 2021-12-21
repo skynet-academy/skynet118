@@ -1,36 +1,50 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
-<form action="" method="POST">{% csrf_token %}
+<section class="create-account">
+    <h1>Create a free account</h1>
+    <form action="" method="POST">{% csrf_token %}
+        <section>
+            {{ form.username }}
+        </section>
+        <section>
+            {{ form.first_name }}    
+        </section>
+        <section>
+            {{ form.last_name }} 
+        </section>
+
+        <section>
+            {{ form.email }}     
+        </section>
+
+        <section>
+            {{ form.password1 }}      
+        </section>
+
+        <section>
+            {{ form.password2 }} 
+        </section>
+        <input type="submit" value="Sign Up" id="register-button">
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <strong>  
+                        {{ error|escape }} <br>
+                    </strong>
     
-    {{ form.username.label }}
-    {{ form.username }}
-    
-    {{ form.first_name.label }}
-    {{ form.first_name }}
-
-    {{ form.last_name.label }}
-    {{ form.last_name }}
-
-    {{ form.email.label }}
-    {{ form.email }}
-
-    {{ form.password1.label }}
-    {{ form.password1 }}
-
-    {{ form.password2.label }}
-    {{ form.password2 }}
-    <input type="submit" value="Register">
-    
-    {% if form.errors %}
-        {% for field in form %}
-            {% for error in field.errors %}
-                <strong>  
-                    {{ error|escape }} <br>
-                </strong>
-
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-    {% endif %}
-    <p>are you already registered? <a href="{% url 'blog:login-page' %}">Login</a> </p>
-</form>
+        {% endif %}
+        <p style="font-size:18px; color: grey;">Are you already registered? <a href="{% url 'blog:login-page' %}"><strong>Login</strong></a> </p>
+    </form>
+</section>
+<script>
+    document.getElementsByName('username')[0].placeholder= "  User Name";
+    document.getElementsByName('first_name')[0].placeholder = "  First Name";
+    document.getElementsByName('last_name')[0].placeholder = "  Last Name";
+    document.getElementsByName('email')[0].placeholder = "  Email";
+    document.getElementsByName('password1')[0].placeholder = "  Enter a password";
+    document.getElementsByName('password2')[0].placeholder = "  confirm your password";
+</script>
 {% endblock %}

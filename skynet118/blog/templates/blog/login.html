@@ -1,21 +1,23 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<form action="" method="POST">
-    {% csrf_token %}
-    <label for="">User name:</label>
-    <input type="text" name="username">
-    <label for="">Password:</label>
-    <input type="password" name="password">
-    <input type="submit" value="Log in">
-    {% for message in messages %}
-        <p>{{message}}</p>
-    {% endfor %}
-    <p>Don't have an account? <a href="{% url 'blog:register' %}">Sign up</a></p>
+<section class="login-account">
+    <h1>Start Learning!</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <section>
+            <input type="text" name="username" id="login_user" placeholder="  User Name">
+        </section>
+        <section>
+            <input type="password" name="password" id="login_password" placeholder= "  Password">
+        </section>
 
-</form>
-
-
-
+        <input type="submit" value="Log in" id="login">
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+        <p style="font-size: 18px; color: grey;" >Don't have an account? <a href="{% url 'blog:register' %}"><strong>Sign up</strong></a></p>
+    </form>
+</section>
 {% endblock %}
 

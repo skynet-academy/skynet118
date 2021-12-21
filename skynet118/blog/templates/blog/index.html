@@ -3,11 +3,17 @@
 {% load static %}
 {% load i18n %}
 <div class="header-description">
-  <h1>Skynet118</h1>
-  <p>{% trans 'Do you need coding help with algorithms or programming itself? or maybe some challenge that you want to overcome, or just you want to become a better developer? do not waste time searching hours. Here you will find classes from basic level to advanced in programming.' %}</p>
-  <strong><a href="{% url 'courses:index_course' %}">{% trans 'Read more!' %}</a></strong> 
+    <div class="right-header">
+        <h1>Skynet118</h1>
+        <p>{% trans 'Do you need coding help with algorithms or programming itself? or maybe some challenge that you want to overcome, or just you want to become a better developer? do not waste time searching hours. Here you will find classes from basic level to advanced in programming.' %}</p>
+    </div>
+    <div class="left-header">
+        <img src="" alt="skynet118.png" height="300" width="300">
+    </div>
+    <strong><a href="{% url 'courses:index_course' %}">{% trans 'Read more!' %}</a></strong> 
+    <hr>
 </div>
-<hr>
+
 <div class="about-us">
   <h2>{% trans 'About us' %}</h2>
   <img class="logo-header" src="{% static "blog/images/nico.png" %}">

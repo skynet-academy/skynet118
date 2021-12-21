@@ -1,4 +1,4 @@
-const getCookie = (name) =>{
+const getCSRFTokenCookie = (name) =>{
     let cookieValue = null;
     if(document.cookie && document.cookie !== ''){
         const cookies = document.cookie.split(';');
@@ -14,7 +14,7 @@ const getCookie = (name) =>{
 }
 
 const changeLanguage = (val, url) =>{
-    const csrftoken = getCookie('csrftoken')
+    const csrftoken = getCSRFTokenCookie('csrftoken')
     //payload = document.getElementById("set-language").elements; 
 	document.getElementById("set-language").submit();
     const request = new Request(

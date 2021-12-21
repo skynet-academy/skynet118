@@ -1,29 +1,14 @@
 {% extends 'courses/base.html' %}
 {% block content %}
 {% load static %}
-<section class="list-courses">
-    <form action="" id="course_selection">
-        {% csrf_token %}
-            <select name="" onchange="changeCourse(this.value)">
-                <option disabled selected value>Choose a course:</option>
-                {% for course in courses %}
-                    <option id="course{{course.id}}" value="{{ course.course_name}}">
-                        <strong>{{ course.course_name }}</strong>
-                    </option>
-                {% endfor %}
-            </select>
-    </form>
-    <h2 id="intro"></h2>
-    <a href="{% url 'courses:create_course' %}">Create course</a>
-</section>
-<section class="course-pricing">
-    <h2>Python Course</h2>
-    <img id ="img-course" src="{% static 'courses/images/python_code.jpeg' %}" width="220" height="240" alt="python-course">
+
+<section class="course-description">
+    {% for course in courses %}
+    <h2>{{ course.course_name }}</h2>
+    <img id ="img-course" src="{{ course.image.url }}" width="220" height="240" alt="python-course">
     <article class="course-description">
-        <p>Python is one of the most popular programming language in the world
-        its easy syntax allow us to learn it faster, and understand the how computers work.
-        </p>
-        <p>Why Python?...</p>
+        <p>{{ course.description }}</p>
+        <p>and Why {{course.course_name }}?...</p>
         <ul>
             <li>We show the basics of python, the use of mathematics modules</li>
             <li>Programming object oriented</li>
@@ -31,32 +16,12 @@
             <li>Algorithms that usually ask on interviews</li>
         </ul>
         <aside>
-            <h3>More about python</h3>
+            <h3>More about {{ course.course_name }}:</h3>
             Here we're gonna write some extra info about the language
         </aside>
-
     </article>
-    <article class="list-price-available">
-        {% for package in packages %}
-        <div class="price">
-            <ul>
-                <li class="package-name {{package.package_name}}"><strong>{{ package.package_name }}</strong></li>
-
-                <li>Number of lessons: {{ package.nro_lessons }}</li>
-                <li>Duration: {{ package.time }} minutes</li>
-                <li class="price-course">
-                    <p>Total cost: <span>${{ package.price }}</span></p>
-                    <p>{{ package.comment }}</p>
-                </li>
-                <li>
-                    <a class= "link-buy" href="{% url 'payments:checkout' pk=package.course_package.id name=package.package_name %}">
-                        <strong>Buy it</strong>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        {% endfor %}
-    </article>
+    <a href="{% url 'courses:course_packages' fk=course.id %}">Pricing</a>
+    {% endfor %}
 </section>
 <script src="{% static 'courses/js/courses.js' %}"></script>
 {% endblock content %}

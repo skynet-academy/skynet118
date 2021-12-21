@@ -1,8 +1,16 @@
 /* Particles js */
 
+:root{
+	--bluedark: #0C0D13;
+	--bluedark2: #014A8E;
+	--turquoise: #00AEFF;
+	--text-size: 16px;
+	--text-title: 24px;
+}
+
 .particles-section{
   width: 100%;
-  height: 500px;
+  height: 450px;
 }
 
 #particles-js {
@@ -20,16 +28,9 @@
 
 .header-description{
   text-align: center;
-  margin: 10px;
   padding: 10px;
-}
-
-.courses {
-    height: 40rem;
-    border-radius: 5px;
-    margin: 2rem auto;
-    width: 80%;
-    overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .header-description p, .about-us p{
@@ -55,7 +56,7 @@
   min-width: 16rem;
   width: 20%;
   text-align: center; 
-  color: #00AEFF;
+  color: var(--turquoise);
   max-height: 28rem;
   transition: .5s;
 }
@@ -89,7 +90,7 @@
 }
 
 .navigation-btn{
-    border: 2px solid #00AEFF;
+    border: 2px solid var(--turquoise);
     padding: 3px;
     border-radius: 1rem;
     cursor: pointer;
@@ -101,8 +102,8 @@
 }
 
 .navigation-btn:hover{
-    border: 2px solid #0C0D13;
-    background-color: #00AEFF;
+    border: 2px solid var(--bluedark);
+    background-color: var(--turquoise);
 }
 
 #radio1:checked ~ .course-4{margin-left: 0%;}
@@ -121,7 +122,7 @@
 }
 
 .navigation-auto div{
-    border: 2px solid #00AEFF;
+    border: 2px solid var(--turquoise);
     padding: 3px;
     border-radius: 1rem;
     cursor: pointer;
@@ -133,22 +134,22 @@
 }
 
 #radio1:checked ~ .navigation-auto .auto-btn1{
-    background: #00AEFF; 
+    background: var(--turquoise); 
     z-index:1;
 }
 
 #radio2:checked ~ .navigation-auto .auto-btn2{
-    background: #00AEFF; 
+    background: var(--turquoise); 
     z-index:1;
 }
 
 #radio3:checked ~ .navigation-auto .auto-btn3{
-    background: #00AEFF; 
+    background: var(--turquoise); 
     z-index:1;
 }
 
 #radio4:checked ~ .navigation-auto .auto-btn4{
-    background: #00AEFF;
+    background: var(--turquoise);
     z-index:1;
 }
 
@@ -211,14 +212,40 @@
 .spanish{width: 100%; background-color: #00AEFF; border-radius: 10px;}
 .russian{width: 70%; background-color: #0036a8; border-radius: 10px;}
 
-#set-language{
-	margin: auto;
+.create-account, .login-account{
+	width: 80%;
+	margin: var(--text-title) auto;
+	text-align: center;
 }
 
-#language-selection{
-	color: #00AEFF;
-	background-color: #0C0D13;
-	border: 2px solid #0C0D13;
+.create-account form, .login-account form{
+	width: 40%;
+	margin: 0 auto;
 }
 
+.create-account section, .login-account section{
+	margin: 20px 0;
+}
 
+#id_username, #id_first_name, #id_last_name, #id_email, #id_password1, #id_password2, #login_user, #login_password{
+	border: 1px solid var(--turquoise);
+	height: 32px;
+	border-radius: 5px;
+	font-size: var(--text-size);
+	width: 100%;
+	padding: 0;
+}
+
+#register-button, #login{
+	border: 1px solid var(--turquoise);
+	border-radius: 5px;
+	color: white;
+	background-color: var(--bluedark2);
+	height: 32px;
+	width: 100%;
+}
+
+#register-button:hover, #login:hover{
+	color: var(--bluedark2);
+	background-color: white;
+}
