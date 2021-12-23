@@ -42,31 +42,41 @@
 	font-size: 18px;
 }
 
-.courses-available {
-    width: 500%;
-    height: 40rem;
-    display: flex;
+.courses{
+	width: 40%;
+	margin: 100px auto;
+	height: 500px;
+	display: flex;
+	flex-wrap: wrap;
 }
 
-.courses-available input{
-    display: none;    
+
+.courses-available {
+    height: 100%;
+	width: 100%;
+	display: block;
+	position: relative;
+	overflow: hidden;
 }
 
 .course {
-  min-width: 16rem;
-  width: 20%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   text-align: center; 
   color: var(--turquoise);
-  max-height: 28rem;
   transition: .5s;
+  display: none;
+  z-index: 0;
+}
+.course-1{
+	display: initial;
 }
 
 .course-container{
-  background-color: #0C0D13;
-  width: 50%;
+  width: 100%;
   margin: auto;
   height: 100%;
-  border-radius: 2rem;
   transition: .5s;
 }
 
@@ -79,78 +89,53 @@
   height: 20%;
 }
 
-.navigation{
-    display: flex;
-    position: absolute;
-    width: 20%; 
-    margin: -14rem auto auto;
-    left: 0;
-    right: 0;
-    justify-content: center;
-}
-
-.navigation-btn{
-    border: 2px solid var(--turquoise);
-    padding: 3px;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.navigation-btn:not(:last-child){
-    margin-right: 3rem;
-}
-
-.navigation-btn:hover{
-    border: 2px solid var(--bluedark);
-    background-color: var(--turquoise);
-}
-
-#radio1:checked ~ .course-4{margin-left: 0%;}
-#radio2:checked ~ .course-4{margin-left: -20%;}
-#radio3:checked ~ .course-4{margin-left: -40%;}      
-#radio4:checked ~ .course-4{margin-left: -60%;}  
-
 .navigation-auto{
     display: flex;
-    position: absolute;
+    position: relative;
     width: 20%; 
-    margin: 26rem auto;
-    left: 0;
-    right: 0;
-    justify-content: center;
+    margin: auto;
+    justify-content: space-around;
 }
 
-.navigation-auto div{
-    border: 2px solid var(--turquoise);
-    padding: 3px;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: 1s;
+.buttons-change{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	z-index: 10;
+	margin-left: 5px;
+	margin-right: 5px;
+	top: 50%;
 }
 
-.navigation-auto div:not(:last-child){
-    margin-right: 3rem;
+#left-side, #right-side{
+	width:30px;
+	height: 30px;
+	border-radius: 15px;
+	border: none;
 }
 
-#radio1:checked ~ .navigation-auto .auto-btn1{
-    background: var(--turquoise); 
-    z-index:1;
+/*
+	Arrows styling 
+*/
+
+.arrow{ 
+	transition: .5s;
+	position: relative;
+	width: 60px;
+	height: 150px;
 }
 
-#radio2:checked ~ .navigation-auto .auto-btn2{
-    background: var(--turquoise); 
-    z-index:1;
+.arrow:hover{
+	transform: translate(15px, 0);
+}
+.left-arrow{
+	rotate: 180deg;
+	-webkit-rotate: 180deg;
 }
 
-#radio3:checked ~ .navigation-auto .auto-btn3{
-    background: var(--turquoise); 
-    z-index:1;
-}
-
-#radio4:checked ~ .navigation-auto .auto-btn4{
-    background: var(--turquoise);
-    z-index:1;
+.upper-side, .lower-side{
+	stroke: var(--turquoise);
+	stroke-width: 4px;
 }
 
 .about-me, .experience, .education{

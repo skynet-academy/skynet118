@@ -27,7 +27,7 @@
 	.particles-section{
 		height: 400px;
 	}
-	.create-account form, .login-account form{
+	.create-account form, .login-account form, .courses{
 		width: 50%;
 	}
 }
@@ -47,7 +47,7 @@
 	.particles-section{
 		height: 350px;
 	}
-	.create-account form, .login-account form{
+	.create-account form, .login-account form, .courses{
 		width: 60%;
 	}
 
@@ -81,7 +81,7 @@
 	.space-menu{
 		display: none;
 	}
-	.create-account form, .login-account form{
+	.create-account form, .login-account form, .courses{
 		width: 70%;
 	}
 }
@@ -101,19 +101,13 @@
         width: unset;
     }
 
-    .courses{
-        width: 100%;
-    }
-    .course-container{
-        width: 75%;
-    }
     .price{
         margin: 0;
     }
 	.particles-section{
 		height: 250px;
 	}
-	.create-account form, .login-account form{
+	.create-account form, .login-account form, .courses {
 		width: 80%;
 	}
 }
@@ -122,16 +116,10 @@
     .course{
         padding: 0;
     }
-    .courses{
-        width: 100%;
-    }
-    .course-container{
-        width: 75%;
-    }
 	.particles-section{
 		height: 200px;
 	}
-	.create-account form, .login-account form{
+	.create-account form, .login-account form, .courses{
 		width: 100%;
 	}
 }

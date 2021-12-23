@@ -41,7 +41,7 @@ from django.contrib.auth.forms import UserCreationForm
 def index(request):
     template_name = "blog/index.html"
 
-    courses = Course.objects.all()
+    courses = Course.objects.all().order_by('id')
     if(request.method == "POST"):
         data = request.body.decode('utf-8')
         print(data)

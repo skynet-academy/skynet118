@@ -2,45 +2,47 @@
 {% load i18n %}
 <h2 class="courses-header">Courses</h2>
 <p class="courses-paragraph">{% trans 'The courses are for all' %}</p>
-
 <header class="courses">
     <div class="courses-available">
-        <input type="radio" name="radio-btn" id="radio1">
-        <input type="radio" name="radio-btn" id="radio2">
-        <input type="radio" name="radio-btn" id="radio3">
-        <input type="radio" name="radio-btn" id="radio4">
         {% for course in courses %}
         <div class="course course-{{course.pk }}">
             <div class="course-container">
                 <div class="course-logo">
                     <img src="{{ course.image.url }}" alt="{{ course.course_name }}"/>
+
                 </div>
-                <p class="course-name">{% trans 'Course' %}: <strong> {{ course.course_name }} </strong></p>
-                <p class="age">{% trans 'Age' %}: <strong>{% trans 'from 12 year old(recommended)' %}</strong></p>
-                <p class="description">{% trans 'Description: {{ course.description }}' %}</p>
+                <p class="course-name"><strong> {{ course.course_name }}</strong></p>
+                <p class="age">{% trans 'Age' %}:{% trans 'from 12 year old' %}</p>
                 <a href="{% url "courses:index_course" %}">{% trans 'Read more' %}</a> 
             </div>
         </div>
+
         {% endfor %}
-        <div class="navigation-auto">
-            <div class="auto-btn1"></div>
-            <div class="auto-btn2"></div>
-            <div class="auto-btn3"></div>
-            <div class="auto-btn4"></div>
+        <div class="buttons-change">
+            <div class="arrow left-arrow">
+                <svg width="24" height="90">
+                    <line class="upper-side" x1="24" y1="0" x2="0" y2="46"></line>
+                    <line class="lower-side" x1="0" y1="44" x2="24" y2="90"></line>
+                </svg>
+            </div>
+            <div class="arrow right-arrow">
+                <svg width="24" height="90">
+                    <line class="upper-side" x1="0" y1="0" x2="24" y2="46"></line>
+                    <line class="lower-side" x1="0" y1="90" x2="24" y2="44"></line>
+                </svg>
+            </div>
         </div>
     </div>
-    <div class="navigation">
-        <label for="radio1" class="navigation-btn"></label>
-        <label for="radio2" class="navigation-btn"></label>
-        <label for="radio3" class="navigation-btn"></label>
-        <label for="radio4" class="navigation-btn"></label>
-    </div>
+    <div class="navigation-auto">
+        {% for course in courses %}
+        <div id="radio-selection">
+            <input type="radio" name="radio-btn" id="radio{{course.pk}}" value="{{course.pk}}">
+        </div>
+        {% endfor %}
+        </div>
+
+
+
+
 </header>
-<script type="text/javascript">
-    let counter = 1;
-    setInterval(function(){
-        document.getElementById('radio' + counter).checked = true;
-        counter++;
-    if(counter > 4){counter = 1;}
-    }, 10000);
-</script>
+<script src="{% static 'blog/js/slices.js' %}"></script>
