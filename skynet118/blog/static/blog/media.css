@@ -33,6 +33,9 @@
 	.courses{
 		height: 400px;
 	}
+	.course-name, .age{
+		margin: 16px;
+	}
 }
 
 
@@ -90,6 +93,9 @@
 	.courses{
 		height: 350px;
 	}
+	.course-name, .age{
+		margin: 10px;
+	}
 }
 
 @media(max-width: 680px){
@@ -119,6 +125,13 @@
 	.courses{
 		height: 300px;
 	}
+	.header-description{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.course-name, .age, .about-us p, .right-header p, .left-header p, .courses-paragraph{
+		font-size: var(--text-size);
+	}
 }
 
 @media(max-width: 414px){
@@ -133,5 +146,8 @@
 	}
 	.courses{
 		height: 250px;
+	}
+	.course-name, .age{
+		margin: 5px;
 	}
 }

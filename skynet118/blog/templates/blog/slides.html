@@ -9,26 +9,24 @@
             <div class="course-container">
                 <div class="course-logo">
                     <img src="{{ course.image.url }}" alt="{{ course.course_name }}"/>
-
                 </div>
-                <p class="course-name"><strong> {{ course.course_name }}</strong></p>
-                <p class="age">{% trans 'Age' %}:{% trans 'from 12 year old' %}</p>
+                <p class="course-name"><strong>Course: {{ course.course_name }}</strong></p>
+                <p class="age">{% trans 'Age' %}: {% trans 'from 12 year old' %}</p>
                 <a href="{% url "courses:index_course" %}">{% trans 'Read more' %}</a> 
             </div>
         </div>
-
         {% endfor %}
         <div class="buttons-change">
             <div class="arrow left-arrow">
                 <svg width="24" height="90">
-                    <line class="upper-side" x1="24" y1="0" x2="0" y2="46"></line>
-                    <line class="lower-side" x1="0" y1="44" x2="24" y2="90"></line>
+                    <line class="upper-side" x1="24" y1="0" x2="2" y2="46"></line>
+                    <line class="lower-side" x1="2" y1="44" x2="24" y2="90"></line>
                 </svg>
             </div>
             <div class="arrow right-arrow">
                 <svg width="24" height="90">
-                    <line class="upper-side" x1="0" y1="0" x2="24" y2="46"></line>
-                    <line class="lower-side" x1="0" y1="90" x2="24" y2="44"></line>
+                    <line class="upper-side" x1="0" y1="0" x2="22" y2="46"></line>
+                    <line class="lower-side" x1="0" y1="90" x2="22" y2="44"></line>
                 </svg>
             </div>
         </div>
@@ -39,10 +37,6 @@
             <input type="radio" name="radio-btn" id="radio{{course.pk}}" value="{{course.pk}}">
         </div>
         {% endfor %}
-        </div>
-
-
-
-
+    </div>
 </header>
 <script src="{% static 'blog/js/slices.js' %}"></script>

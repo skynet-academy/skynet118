@@ -2,36 +2,24 @@
 {% load i18n %}
 <footer class="footer-distributed">
     <div class="footer-left">
-      <img src="{% static "blog/images/nico.png" %}" alt="skynet118 logo">
+      <div class="footer-img">
+        <img src="{% static "blog/images/nico.png" %}" alt="skynet118 logo">
+      </div>
       <h3>skynet118</h3>
-      <p class="footer-links">
-          <a href="{% url 'blog:index' %}">{% trans 'Home' %}</a>
-          <a href="{% url 'courses:index_course' %}">{% trans 'Courses' %}</a>
-          <a href="{% url 'blog:profile' %}">{% trans 'About me' %}</a>
+      <p class="footer-company-about">
+          {% trans 'The best way to learn is teaching' %}
       </p>
     </div>
     <div class="footer-center">
-        <div class="direction">
-
-            <i><strong>{% trans 'Direction' %}:  <br></strong>Saint Petersburg - Russia</i> 
-        </div> 
-        <div class="telephone">
-            <br>
-            <i><strong>{% trans 'Telephone number' %}: </strong><a href="#">+79213161064</a></i> 
-        </div> 
-        <div class="email">
-            <br>
-            <i><strong>{% trans 'Email' %}: </strong><a href="#">nico_8830_3@hotmail.com</a></i> 
-        </div>
+      <p class="footer-links">
+          <a href="{% url 'blog:index' %}">{% trans 'Home' %}</a>
+          <a href="{% url 'courses:index_course' %}">{% trans 'Courses' %}</a>
+          <a href="{% url 'blog:profile' %}">{% trans 'About us' %}</a>
+          <a href="{% url 'blog:register' %}">{% trans 'Sign up' %}</a>
+          <a href="{% url 'blog:login-page' %}">{% trans 'Login' %}</a>
+      </p>
     </div>
     <div class="footer-right">
-        <p class="footer-company-about">
-            {% trans 'The best way to learn is teaching' %} &#129299;.
-            <br>
-            <br>
-        </p>
-    </div>
-    <div class="footer-icons">
         <p>{% trans 'Follow us here' %}: </p>
         <a href="https://twitter.com/nickolas126" class="twitter" target="_blank" >
             <img src="{% static 'blog/images/twitter.svg' %}" alt=""/>
@@ -48,6 +36,19 @@
         <a href="https://www.instagram.com/sky.net.118/" class="instagram" target="_blank" >
             <img src="{% static 'blog/images/instagram.svg' %}" alt=""/>
         </a>
+    </div>
+    <div class="footer-info">
+        <div class="direction">
+            <i><strong>{% trans 'Direction' %}:  <br></strong>Saint Petersburg - Russia</i> 
+        </div> 
+        <div class="telephone">
+            <br>
+            <i><strong>{% trans 'Telephone number' %}: </strong><a href="#">+79213161064</a></i> 
+        </div> 
+        <div class="email">
+            <br>
+            <i><strong>{% trans 'Email' %}: </strong><a href="#">nico_8830_3@hotmail.com</a></i> 
+        </div>
     </div>
 </footer>
 <p class="rights"><strong>@skynet118</strong> - all the rights are reserved</p>
