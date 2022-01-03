@@ -33,7 +33,7 @@ hr{
   justify-content: space-between;
   width: 100vw; 
   height: 4rem;
-  z-index: 4;
+  z-index: 20;
 }
 
 .menu ul{
@@ -281,7 +281,7 @@ hr{
   grid-template-areas: 'footer-left footer-center footer-right'
  					   'footer-info footer-info footer-info';
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 200px 60px;
+  grid-template-rows: 200px 40px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   background-color: var(--bluedark);
@@ -321,9 +321,13 @@ hr{
 .footer-info{
     grid-area: footer-info;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
+.telephone a, .email a{
+	color: var(--turquoise);
+	text-decoration: none;
+}
 
 .footer-links a {
   display: inherit;
@@ -347,13 +351,6 @@ hr{
   padding: 5px;
 }
 
-
-.logo-header{
-  width: 130px;
-  height: 180px; 
-  margin: 30px;
-  opacity: 0.75;
-}
 
 .header-description a:hover, .logo-link:hover, .course a:hover{
   color: #FFF;
@@ -400,3 +397,41 @@ hr{
 	margin: auto;
 }
 
+
+.dropbtn{
+	background-color: var(--bluedark);
+	color: var(--turquoise);
+	border: none;
+}
+
+.dropdown{
+	position: relative;
+	display: inline-block;
+	top: 25%;
+}
+
+.dropdown-content{
+	display: none;
+	position: absolute;
+	background-color: var(--bluedark);
+	min-width: 160px;
+	z-index: 1;
+}
+
+.dropdown-content a{
+	color: var(--turquoise);
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: var(--turquoise);
+	color: var(--bluedark);
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {
+	background-color:var(--turquoise);
+	color: var(--bluedark);
+}

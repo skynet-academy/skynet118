@@ -4,20 +4,21 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
+#importing for user
+from django.contrib.auth.models import User
+
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from django.utils.translation import gettext as _
 
+from .decorators import unauthenticated_user, portfolio_created 
+
+
 from .forms import (
-        SkillForm,
         UserProfileForm,
-        ContactProfileForm,
-        TestimonialForm,
-        MediaForm,
-        PortfoliForm,
+        PortfolioForm,
         CommentForm,
-        CertificateForm,
         RegisterUserForm
         )
 
@@ -27,9 +28,7 @@ from courses.models import Course
 from .models import (
             UserProfile,
             Comment,
-            Portfolio,
-            Testimonial,
-            Certificate
+            Portfolio
         )
 
 # importing forms
@@ -39,51 +38,41 @@ from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
 def index(request):
-    template_name = "blog/index.html"
-
     courses = Course.objects.all().order_by('id')
     if(request.method == "POST"):
         data = request.body.decode('utf-8')
-        print(data)
-        print(request.method)
-    if(request.method == "GET"):
-        data = request.body.decode('utf-8')
-        print(request.method)
-        print(data)
-    testimonials = Testimonial.objects.filter(is_active=True)
-    certificates = Certificate.objects.filter(is_active=True)
-    Comments = Comment.objects.filter(is_active=True)
-    portfolio = Portfolio.objects.filter(is_active=True)
     context = {
-            "testimonials": testimonials,
-            "certificates": certificates,
-            "Comments": Comments,
-            "portfolio": portfolio,
             "courses": courses
             }
     return render(request, 'blog/index.html', context) 
 
-class ContactView(generic.FormView):
-    template_name = "blog/contact.html"
-    form_class = ContactProfileForm()
-    success_url = "/"
-    
-    def form_valid(self, form):
-        form.save()
-        messages.success(self.request, "Thank you. We will be in touch soon.")
-        return super().form_valid(form)
+##################################################
+
+def contact_view(request):
+    if(request.user.is_authenticated):
+        user = User.objects.get(username=request.user) 
+        context = {
+                'user': user
+                }
+    return render(request, 'blog/contact.html', context)
+
+def contacts_view(request):
+    users = User.objects.all() 
+    context = {
+            'users': users
+            }
+    return render(request, 'blog/contacts.html', context)
+
 
 def contact_create(request):
-    contact = ContactProfileForm()
     if(request.method == 'POST'):
         contact = ContactProfileForm(request.POST)
-        if(contact.is_valid):
+        print(request.body)
+        if(contact.is_valid()):
             contact.save()
             return redirect('/blog/')
-    context = {'contact': contact}
-    return render(request, 'blog/contact_create.html', context)
-
-
+        context = {'contact': contact}
+        return render(request, 'blog/contact_create.html', context)
 
 def contact_update(request, pk):
     pass
@@ -91,29 +80,47 @@ def contact_update(request, pk):
 def contact_delete(request, pk):
     pass
 
+##################################################
 
-class PortfolioView(generic.ListView):
-    model = Portfolio
-    template_name = "blog/portfolio.html"
-    paginate_by = 10
+def portfolios_view(request):
+    portfolios = Portfolio.objects.all()
+    context = {'portfolios': portfolios}
+    return render(request, 'blog/portfolios.html', context)
 
     def get_queryset(self):
         return super().get_queryset().filter(is_active=True)
 
+
+def portfolio_view(request, id):
+    portfolio_exists = Portfolio.objects.filter(user=id).exists()
+    if(portfolio_exists):
+        portfolio = Portfolio.objects.get(user=request.user)
+        context = {'portfolio': portfolio}
+        return render(request, 'blog/portfolio.html', context)
+    else:
+        return redirect('/blog/portfolio_create/')
+    
+
+    def get_queryset(self):
+        return super().get_queryset().filter(is_active=True)
+
+@portfolio_created
 def portfolio_create(request):
-    portfolio = PortfoliForm()
+    portfolio = PortfolioForm()
     if(request.method == 'POST'):
-        portfolio = PortfoliForm(request.POST)
+        portfolio = PortfolioForm(request.POST)
         if(portfolio.is_valid()):
             portfolio.save()
+            portfolio_name = portfolio.cleaned_data.get('name')
+            messages.success(request, "The portfolio was successful created for " + portfolio_name)
+            messages.error(request, "Here is an error")
             return redirect('/blog/')
-    context = { 'portfolio': portfolio }
+
+    context = {'portfolio': portfolio }
     return render(request, 'blog/portfolio_create.html', context)
 
-class PortfolioDetailView(generic.DetailView):
-    model = Portfolio
-    template_name = "blog/portfolio_detail.html"
 
+##################################################
 
 class CommentView(generic.ListView):
     model = Comment 
@@ -123,51 +130,66 @@ class CommentView(generic.ListView):
     def get_queryset(self):
         return super().get_queryset().filter(is_active=True)
 
+
 class CommentDetailView(generic.DetailView):
     model = Comment
     template_name = "blog/comment_detail.html"
 
-def profile(request):
-    context = {}
-    return render(request, 'blog/profile.html', context)
+##################################################
 
-
+@unauthenticated_user
 def registerPage(request):
-    if(request.user.is_authenticated):
-        return redirect("/blog/")
+    form = RegisterUserForm()
+    if(request.method == "POST"):
+        form = RegisterUserForm(request.POST)
+        if(form.is_valid()):
+            form.save()
+            user= form.cleaned_data.get('username')
+            messages.success(request, "The account was successful created for " + user)
+            messages.error(request, "Here is an error")
+            return redirect("/blog/login/")
+
+    context = {'form': form}
+    return render(request, 'blog/register.html', context)
+
+##################################################
+
+def profile_create(request):
+    profile = UserProfileForm()
+    if(request.method == "POST"):
+        profile = UserProfileForm(request.POST)
+        if(profile.is_valid()):
+            profile.save()
+            return redirect("/blog/") 
+    context = {"profile": profile}
+    return render(request, 'blog/profile_create.html', context)
+
+
+def profile_view(request, id):
+    profile_exists = UserProfile.objects.filter(user=id).exists()
+    if(profile_exists):
+        profile = UserProfile.objects.get(user=request.user)
+        context = {'profile': profile}
+        return render(request, 'blog/profile.html', context)
     else:
-        form = RegisterUserForm()
-        if(request.method == "POST"):
-            form = RegisterUserForm(request.POST)
-            if(form.is_valid()):
-                form.save()
-                user= form.cleaned_data.get('username')
-                messages.success(request, "The account was successful created for " + user)
-                messages.error(request, "Here is an error")
-                return redirect("/blog/login/")
+        return redirect('/blog/profile_create/')
+##################################################
 
-        context = {'form': form}
-        return render(request, 'blog/register.html', context)
-
-
+@unauthenticated_user
 def loginPage(request):
-    if(request.user.is_authenticated):
-        return redirect("/blog/")
-    else:
-        if(request.method == "POST"):
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-            user = authenticate(request, username=username, password=password)
-            if(user is not None):
-                login(request, user)
-                return redirect("/blog/")
-            else:
-                messages.info(request, "The username or password is incorrect")
-        context = {}
-        return render(request, 'blog/login.html', context)
+    if(request.method == "POST"):
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if(user is not None):
+            login(request, user)
+            return redirect("/blog/")
+        else:
+            messages.info(request, "The username or password is incorrect")
+    context = {}
+    return render(request, 'blog/login.html', context)
 
 def logoutUser(request):
     logout(request)
     return redirect('/blog/')
-
 

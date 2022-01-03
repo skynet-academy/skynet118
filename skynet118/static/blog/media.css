@@ -30,6 +30,15 @@
 	.create-account form, .login-account form, .courses{
 		width: 50%;
 	}
+	.courses{
+		height: 400px;
+	}
+	.course-name, .age{
+		margin: 16px;
+	}
+	.right-header p, .left-header p, .about-us p{
+		width: 70%;
+	}
 }
 
 
@@ -50,14 +59,15 @@
 	.create-account form, .login-account form, .courses{
 		width: 60%;
 	}
-
+	.right-header p, .left-header p, .about-us p{
+		width: 80%;
+	}
 }
 
 @media (max-width: 740px){
     .menu{
         visibility: hidden;
     } 
-
     .languages{
         display: none;
     }
@@ -70,11 +80,9 @@
        display: block; 
        height: 0;
     }
-
     .course{
         padding: 0;
     }
-    
     .particles-section{
 		height: 300px;
     }
@@ -83,6 +91,12 @@
 	}
 	.create-account form, .login-account form, .courses{
 		width: 70%;
+	}
+	.courses{
+		height: 350px;
+	}
+	.course-name, .age{
+		margin: 10px;
 	}
 }
 
@@ -100,7 +114,6 @@
     .footer-right{
         width: unset;
     }
-
     .price{
         margin: 0;
     }
@@ -109,6 +122,22 @@
 	}
 	.create-account form, .login-account form, .courses {
 		width: 80%;
+	}
+	.courses{
+		height: 300px;
+	}
+	.header-description{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.course-name, .age, .about-us p, .right-header p, .left-header p, .courses-paragraph{
+		font-size: var(--text-size);
+	}
+	.logo-header{
+		display: none;
+	}
+	.footer-info{
+		display: block;
 	}
 }
 
@@ -121,5 +150,11 @@
 	}
 	.create-account form, .login-account form, .courses{
 		width: 100%;
+	}
+	.courses{
+		height: 250px;
+	}
+	.course-name, .age{
+		margin: 5px;
 	}
 }

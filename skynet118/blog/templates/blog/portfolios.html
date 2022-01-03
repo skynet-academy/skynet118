@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load static %}
+{% load i18n %} 
+<section class="portfolios">
+    <section class="portfolio">
+        {% for portfolio in portfolios %}
+            <fieldset>
+                <legend>Personal Data - {{portfolio.user}}</legend>
+                <p>{{ portfolio.image|safe }}</p>
+                <label for="">User:</label>
+                <p>{{ portfolio.user }}</p>
+                <label for="">Name:</label>
+                <p>{{ portfolio.name }}</p>
+                <label for="">Description:</label>
+                <p>{{ portfolio.description }}</p>
+                <label for="">Skills</label>
+                <p>{{ portfolio.skills|safe }}</p>
+                <label for="">Link portfolio</label>
+                <p>{{ portfolio.slug }}</p>
+                <label for="">Is active?</label>
+                <p>{{ portfolio.is_active }}</p>
+
+            </fieldset>
+        {% endfor %}
+    </section>
+</section>
+{% endblock content %}

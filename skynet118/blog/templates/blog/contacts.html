@@ -1,0 +1,6 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for user in users %}
+        <p>{{ user }}</p> 
+    {% endfor %}
+{% endblock %}

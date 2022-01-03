@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # 3th apps
 
     'rest_framework',
+    'ckeditor_uploader',
     'ckeditor',
 
     # my apps
@@ -52,6 +53,8 @@ INSTALLED_APPS = [
     'courses.apps.CoursesConfig',
     'student.apps.StudentConfig',
 ]
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

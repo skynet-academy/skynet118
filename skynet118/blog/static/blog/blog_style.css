@@ -46,7 +46,7 @@
 .right-header{
 	grid-area: right-header;
 }
-.right-header{
+.left-header{
 	grid-area: left-header;
 }
 
@@ -55,18 +55,24 @@
 	margin: auto auto;
 }
 
-.right-header p, .left-header p{
+.right-header p, .left-header p, .about-us p{
 	font-size: var(--text-title);
 	text-align: justify;
 	text-justify: inter-word;
 	text-indent: 50px;
+	width: 60%;
+	margin: 20px auto;
 }
 
-.right-header img{
+.left-header img{
 	width: 200px;
 	height: 200px;
 }
 
+.right-header img{
+  width: 130px;
+  height: 180px; 
+}
 .courses-header, .courses-paragraph{
     text-align: center;
 }
@@ -79,16 +85,9 @@
 .about-us{
 	width: 80%;
 	text-align: center;
-
 	margin: 0 auto;
 }
 
-.about-us p{
-	font-size: var(--text-title);
-	text-align: justify;
-	text-justify: inter-word;
-	text-indent: 50px;
-}
 
 .courses{
 	width: 40%;
@@ -195,72 +194,13 @@
 	stroke-width: 5px;
 }
 
-.about-me, .experience, .education{
-	width: 80%;
-    text-align: center;
-	margin: 0 auto;
-}
-
-.about-me-text{
-	text-align: justify;
-	text-indent: 40px;
-}
-
-.about-me img{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-}
-.programming-skill, .software-skills, .languages-skills{
-    text-align: center;
-    margin: 2rem auto;
-}
-.table-skills{
-    width: 80%;
-    margin: 0 auto;
-}
-
-.description-skill{width: 20%;}
-.level-skill{width: 35%;}
-.years-skill{width: 10%;}
-.obs-skill{width: 35%;}
-
-.skill-container{
-    width: 100%;
-    background-color: #ddd;
-    border-radius: 10px;
-}
-
-.skill{
-    text-align: right;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: white;
-}
-
-.python{width: 80%; background-color: #3571a3; border-radius: 10px;}
-.sql{width: 60%; background-color: #2196F3; border-radius: 10px;}
-.c_plus_plus{width: 70%; background-color: #009900; border-radius: 10px;}
-.javascript{width: 75%; background-color: #ceb330; border-radius: 10px;}
-.matlab{width: 60%; background-color: #a63326; border-radius: 10px;}
-
-.linux{width: 85%; background-color: #fe6309; border-radius: 10px;}
-.windows{width: 80%; background-color: #0da1ef; border-radius: 10px;}
-.github{width: 80%; background-color: black; border-radius: 10px;}
-.apache{width: 75%; background-color: #c51b50; border-radius: 10px;}
-.django{width: 70%; background-color: #0f3e2e; border-radius: 10px;}
-
-.english{width: 75%; background-color: #0C0D13; border-radius: 10px;}
-.spanish{width: 100%; background-color: #00AEFF; border-radius: 10px;}
-.russian{width: 70%; background-color: #0036a8; border-radius: 10px;}
-
 .create-account, .login-account{
 	width: 80%;
 	margin: var(--text-title) auto;
 	text-align: center;
 }
 
-.create-account form, .login-account form{
+.create-account form, .login-account form, .about-me, .portfolios{
 	width: 40%;
 	margin: 0 auto;
 }
@@ -290,4 +230,9 @@
 #register-button:hover, #login:hover{
 	color: var(--bluedark2);
 	background-color: white;
+}
+
+.about-me fieldset, .portfolios fieldset{
+	border: 2px solid var(--turquoise);
+	margin: 2rem auto;
 }

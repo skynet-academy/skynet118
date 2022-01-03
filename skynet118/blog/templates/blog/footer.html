@@ -14,7 +14,7 @@
       <p class="footer-links">
           <a href="{% url 'blog:index' %}">{% trans 'Home' %}</a>
           <a href="{% url 'courses:index_course' %}">{% trans 'Courses' %}</a>
-          <a href="{% url 'blog:profile' %}">{% trans 'About us' %}</a>
+          <a href="{% url 'blog:portfolios' %}">{% trans 'About us' %}</a>
           <a href="{% url 'blog:register' %}">{% trans 'Sign up' %}</a>
           <a href="{% url 'blog:login-page' %}">{% trans 'Login' %}</a>
       </p>
@@ -39,14 +39,12 @@
     </div>
     <div class="footer-info">
         <div class="direction">
-            <i><strong>{% trans 'Direction' %}:  <br></strong>Saint Petersburg - Russia</i> 
+            <i><strong>{% trans 'Direction' %}: </strong>Saint Petersburg - Russia</i> 
         </div> 
         <div class="telephone">
-            <br>
             <i><strong>{% trans 'Telephone number' %}: </strong><a href="#">+79213161064</a></i> 
         </div> 
         <div class="email">
-            <br>
             <i><strong>{% trans 'Email' %}: </strong><a href="#">nico_8830_3@hotmail.com</a></i> 
         </div>
     </div>

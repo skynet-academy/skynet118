@@ -27,20 +27,67 @@
 /* The content section */
 
 .header-description{
+  display: grid;
+  grid-template-areas: 'left-header right-header'
+ 					   'header-link header-link';
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  grid-template-rows: 1fr 100px;
   text-align: center;
   padding: 10px;
   width: 80%;
   margin: 0 auto;
 }
 
-.header-description p, .about-us p{
-    margin: 1rem 4rem;
+.title-blog{
+	text-align: center;
 }
 
+.right-header{
+	grid-area: right-header;
+}
+.left-header{
+	grid-area: left-header;
+}
+
+.header-link{
+	grid-area: header-link;
+	margin: auto auto;
+}
+
+.right-header p, .left-header p, .about-us p{
+	font-size: var(--text-title);
+	text-align: justify;
+	text-justify: inter-word;
+	text-indent: 50px;
+	width: 60%;
+	margin: 20px auto;
+}
+
+.left-header img{
+	width: 200px;
+	height: 200px;
+}
+
+.right-header img{
+  width: 130px;
+  height: 180px; 
+}
 .courses-header, .courses-paragraph{
     text-align: center;
-	font-size: 18px;
 }
+.courses-paragraph{
+	font-size: var(--text-title);
+}
+
+
+/* The about us section */
+.about-us{
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+}
+
 
 .courses{
 	width: 40%;
@@ -64,29 +111,38 @@
   height: 100%;
   width: 100%;
   text-align: center; 
-  color: var(--turquoise);
+  color: var(--bluedark);
   transition: .5s;
   display: none;
   z-index: 0;
 }
+
 .course-1{
 	display: initial;
 }
 
 .course-container{
-  width: 100%;
+  width: 80%;
   margin: auto;
-  height: 100%;
+  height: 99%;
   transition: .5s;
 }
 
 .course-container:hover{
-  box-shadow: 0 2px 5px gray;
+  box-shadow: 0 5px 10px gray;
 }
 
-.course img{
-  width: 20%;
-  height: 20%;
+.course-logo{
+	width:100%;
+	height: 60%;
+}
+.course-logo img{
+	height: 100%;
+	max-width: 100%;
+}
+
+.course-name, .age{
+	font-size: var(--text-title);
 }
 
 .navigation-auto{
@@ -104,7 +160,7 @@
 	z-index: 10;
 	margin-left: 5px;
 	margin-right: 5px;
-	top: 50%;
+	top: 40%;
 }
 
 #left-side, #right-side{
@@ -119,83 +175,24 @@
 */
 
 .arrow{ 
-	transition: .5s;
+	transition: .7s;
 	position: relative;
-	width: 60px;
-	height: 150px;
+	width: 25px;
+	height: 90px;
 }
 
-.arrow:hover{
-	transform: translate(15px, 0);
+.right-arrow:hover{
+	transform: translate(5px, 0);
 }
-.left-arrow{
-	rotate: 180deg;
-	-webkit-rotate: 180deg;
+.left-arrow:hover{
+	transform: translate(-5px, 0);
 }
+
 
 .upper-side, .lower-side{
 	stroke: var(--turquoise);
-	stroke-width: 4px;
+	stroke-width: 5px;
 }
-
-.about-me, .experience, .education{
-	width: 80%;
-    text-align: center;
-	margin: 0 auto;
-}
-
-.about-me-text{
-	text-align: justify;
-	text-indent: 40px;
-}
-
-.about-me img{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-}
-.programming-skill, .software-skills, .languages-skills{
-    text-align: center;
-    margin: 2rem auto;
-}
-.table-skills{
-    width: 80%;
-    margin: 0 auto;
-}
-
-.description-skill{width: 20%;}
-.level-skill{width: 35%;}
-.years-skill{width: 10%;}
-.obs-skill{width: 35%;}
-
-.skill-container{
-    width: 100%;
-    background-color: #ddd;
-    border-radius: 10px;
-}
-
-.skill{
-    text-align: right;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: white;
-}
-
-.python{width: 80%; background-color: #3571a3; border-radius: 10px;}
-.sql{width: 60%; background-color: #2196F3; border-radius: 10px;}
-.c_plus_plus{width: 70%; background-color: #009900; border-radius: 10px;}
-.javascript{width: 75%; background-color: #ceb330; border-radius: 10px;}
-.matlab{width: 60%; background-color: #a63326; border-radius: 10px;}
-
-.linux{width: 85%; background-color: #fe6309; border-radius: 10px;}
-.windows{width: 80%; background-color: #0da1ef; border-radius: 10px;}
-.github{width: 80%; background-color: black; border-radius: 10px;}
-.apache{width: 75%; background-color: #c51b50; border-radius: 10px;}
-.django{width: 70%; background-color: #0f3e2e; border-radius: 10px;}
-
-.english{width: 75%; background-color: #0C0D13; border-radius: 10px;}
-.spanish{width: 100%; background-color: #00AEFF; border-radius: 10px;}
-.russian{width: 70%; background-color: #0036a8; border-radius: 10px;}
 
 .create-account, .login-account{
 	width: 80%;

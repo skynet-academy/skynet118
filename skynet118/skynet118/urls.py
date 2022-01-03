@@ -22,6 +22,8 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = [
         path('i18n/', include('django.conf.urls.i18n')),
         path('admin/', admin.site.urls),
+        path('ckdeditor/', include('ckeditor_uploader.urls')),
+
         path('', include('frontend.urls')),
         path('blog/', include("blog.urls")),
         path('student/', include("student.urls")),

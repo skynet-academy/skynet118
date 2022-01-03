@@ -1,15 +1,31 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-<form action="">
-    {% csrf_token %}
-
+{% if user.is_authenticated %}
+<form method="POST">{% csrf_token %}
     {{ portfolio.media }}
-    {{ portfolio.as_p }}
-    
-
-    {{ portfolio.body|safe }}
-    <button type="submit">Submit</button>
+    {{ portfolio.user }}
+    {{ portfolio.name}}
+    {{ portfolio.description}}
+    {{ portfolio.body|safe}}
+    {{ portfolio.image}}
+    {{ portfolio.slug }}
+    {{ portfolio.skills|safe }}
+    {{ portfolio.is_active }}
+    {% if portfolio.errors %}
+        {% for field in portfolio %}
+            {% for error in field.errors %}
+                <p>{{ error|safe|escape}}</p><br>
+            {% endfor %}
+        {% endfor %} 
+    {% endif %}
+    <input type="submit" value="Create"/>
 </form>
-
-
+<script>
+    document.getElementById('id_user').hidden = true;
+    a = document.getElementById('id_user');
+    a[0].value = "{{ request.user.id }}"
+    a[0].innerHTML = "{{ request.user }}"
+    a[0].selected = true
+</script>
+{% endif %}
 {% endblock %}

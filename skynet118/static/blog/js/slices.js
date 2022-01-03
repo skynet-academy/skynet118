@@ -20,7 +20,7 @@ let resetCarrusel = (len) => {
         container.style.left = "100%";
     }
 }
-let valueInput = (value) =>{ 
+let valueInput = (value) => { 
     resetCarrusel(stack)
     stack = value.target.value
     carrusel(stack, len)

@@ -33,7 +33,7 @@ hr{
   justify-content: space-between;
   width: 100vw; 
   height: 4rem;
-  z-index: 4;
+  z-index: 20;
 }
 
 .menu ul{
@@ -101,7 +101,7 @@ hr{
     width: 32px;
     height: 32px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 21;
 	background-color: white;
 	border-bottom-right-radius: 5px;
 	border-top-right-radius: 5px;
@@ -131,15 +131,18 @@ hr{
     visibility: hidden;
     top: 0;
     left: -100%;
-    width: 100%;
-    height: 90%;
+    width: 50%;
+    height: 50%;
     margin: 0;
     padding: 80px 0;
     list-style: none;
     text-align: center;
     background-color: var(--bluedark);
     box-shadow: 1px 0 6px rgba(0,0,0,0.8);
-    z-index: 1;
+    z-index: 20;
+}
+.menu-box p{
+	color: var(--turquoise);
 }
 
 .menu-box a{
@@ -154,6 +157,10 @@ hr{
 .menu-box a:hover{
     background-color: var(--turquoise);
     color: var(--bluedark);
+}
+
+#menu_toggle:checked ~.menu_btn{
+	background-color: var(--bluedark);
 }
 
 #menu_toggle:checked ~.menu_btn > span{
@@ -269,12 +276,12 @@ hr{
 
 /* The footer section */
 
-
 .footer-distributed{
   display: grid;
-  grid-template-areas: 'footer-left footer-center footer-right' 'footer-icons footer-icons footer-icons';
-  grid-template-columns: 0.75fr 1fr 1.5fr;
-  grid-template-rows: 200px 60px;
+  grid-template-areas: 'footer-left footer-center footer-right'
+ 					   'footer-info footer-info footer-info';
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 200px 40px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   background-color: var(--bluedark);
@@ -292,6 +299,18 @@ hr{
     justify-content: center;
 }
 
+.footer-img{
+	width: 100px;
+	height: 120px;
+}
+
+.footer-left img{
+    width: 100%;
+	height: 100%;
+}
+.footer-left h3, .footer-company-about{
+	margin:0;
+}
 .footer-center{
     grid-area: footer-center;
     display: flex;
@@ -299,16 +318,15 @@ hr{
     justify-content: center;
 }
 
-.footer-right{
-    grid-area: footer-right;
+.footer-info{
+    grid-area: footer-info;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
-.footer-left img{
-    width: 2rem;
-    height: 2.5rem;
+.telephone a, .email a{
+	color: var(--turquoise);
+	text-decoration: none;
 }
 
 .footer-links a {
@@ -323,52 +341,31 @@ hr{
   color: var(--turquoise);
 }
 
-.footer-company-about a , .header-description a, .logo-link, .course a {
+.header-description a, .logo-link, .course a {
   text-decoration: none;
   background-color: #006FB2;
   color: #FFF;
-  font-size: 14px;
+  font-size: var(--text-size);
   border: 1px var(--turquoise) solid;
   border-radius: 5px;
   padding: 5px;
 }
 
 
-.footer-company-about a{
-  margin: 20px; 
-}
-
-
-.logo-header{
-  width: 130px;
-  height: 180px; 
-  margin: 30px;
-  opacity: 0.75;
-}
-
-.footer-company-about a:hover, .header-description a:hover, .logo-link:hover, .course a:hover{
+.header-description a:hover, .logo-link:hover, .course a:hover{
   color: #FFF;
   background-color: #007BC6;
   border: solid 1px #79D4FF;
 }
 
-.about-us{
-  width: 100%;
-  padding: 40px 0;
-  text-align: center;
+.footer-right{
+  grid-area: footer-right;
 }
-.about-us h2{
-  text-align: center;
-}
-
-.footer-icons{
-  grid-area: footer-icons;
-}
-.footer-icons p{
+.footer-right p{
   margin: 0;
 }
 
-.footer-icons img{
+.footer-right img{
   display: inline-block; 
   width: 2.5rem;
   height: 2.5rem;
@@ -381,8 +378,6 @@ hr{
   text-decoration: none;
 }
 
-
-/* The footer section */
 
 .rights{
     margin:0;
@@ -402,3 +397,41 @@ hr{
 	margin: auto;
 }
 
+
+.dropbtn{
+	background-color: var(--bluedark);
+	color: var(--turquoise);
+	border: none;
+}
+
+.dropdown{
+	position: relative;
+	display: inline-block;
+	top: 25%;
+}
+
+.dropdown-content{
+	display: none;
+	position: absolute;
+	background-color: var(--bluedark);
+	min-width: 160px;
+	z-index: 1;
+}
+
+.dropdown-content a{
+	color: var(--turquoise);
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: var(--turquoise);
+	color: var(--bluedark);
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {
+	background-color:var(--turquoise);
+	color: var(--bluedark);
+}
