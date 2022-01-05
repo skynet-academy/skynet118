@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'ckeditor_uploader',
     'ckeditor',
-
+    'paypalcheckoutsdk',
+    'paypalpayoutssdk',
     # my apps
     'frontend.apps.FrontendConfig',
     'blog.apps.BlogConfig',

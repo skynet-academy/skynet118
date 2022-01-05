@@ -10,8 +10,7 @@
     <div class="search-field">
         <form class="search-box" action="" method="GET">
             <input type="text" name="text" class="search-txt" placeholder="{% trans 'Search here' %}">
-            <input type="submit" name="submit" class="search-btn" value="Search">
-            <i> </i>
+            <input type="submit" name="submit" class="search-btn" value="Find">
         </form>
     </div>
     <nav class="links">
@@ -63,21 +62,24 @@
    <input type="checkbox" id="menu_toggle">
    <label for="menu_toggle" class="menu_btn"><span></span></label>
    <ul class="menu-box">
-       {% if user.is_authenticated %}
-            <div class="dropdown">
-                <button class="dropbtn">{{request.user}}</button>
-                <div class="dropdown-content">
-                    <a href="{% url 'blog:profile' request.user.id %}">My profile</a>
-                    <a href="{% url 'blog:portfolio' request.user.id %}">My portfolio</a>
-                    <a href="{% url 'blog:logout' %}">Logout</a>
-                </div>
-            </div>
-       {% endif %}
        <li><a href="{% url 'blog:index' %}">{% trans 'Home' %}</a></li>
        <li><a href="{% url 'courses:index_course' %}">{% trans 'Courses' %}</a></li>
        <li><a href="{% url 'blog:portfolios' %}">{% trans 'About us' %}</a></li>
+       {% if user.is_authenticated %}
+       <li>
+         <div class="dropdown">
+           <button class="dropbtn">{{request.user}}</button>
+           <div class="dropdown-content">
+             <a href="{% url 'blog:profile' request.user.id %}">My profile</a>
+             <a href="{% url 'blog:portfolio' request.user.id %}">My portfolio</a>
+             <a href="{% url 'blog:logout' %}">Logout</a>
+           </div>
+         </div>
+       </li>
+       {% else %}
        <li><a href="{% url 'blog:register' %}">Sign up</a></li>
        <li><a href="{% url 'blog:login-page' %}">Login</a></li>
+       {% endif %}
    </ul>
 </nav>
 <span class="space-menu"></span>

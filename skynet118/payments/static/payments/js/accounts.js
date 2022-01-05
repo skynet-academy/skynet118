@@ -48,5 +48,4 @@ let changeAccount = (selection) =>{
     }else if(selection == "canada"){
         displayInfo(canada_account)
     }
-
 }

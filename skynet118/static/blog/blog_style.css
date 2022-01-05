@@ -200,7 +200,7 @@
 	text-align: center;
 }
 
-.create-account form, .login-account form{
+.create-account form, .login-account form, .about-me, .portfolios{
 	width: 40%;
 	margin: 0 auto;
 }
@@ -230,4 +230,9 @@
 #register-button:hover, #login:hover{
 	color: var(--bluedark2);
 	background-color: white;
+}
+
+.about-me fieldset, .portfolios fieldset{
+	border: 2px solid var(--turquoise);
+	margin: 2rem auto;
 }

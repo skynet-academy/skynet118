@@ -9,7 +9,7 @@
 
 .course-description{
     margin: 0 auto;
-    width: 90%;
+    width: 40%;
 }
 
 .list-price-available{
@@ -72,6 +72,29 @@
     color: white; 
 }
 
+.course-description fieldset{
+    border: 2px solid var(--turquoise);
+    margin: 2rem auto;
+}
 
+.title-course{
+    text-align: center;
+}
 
+.pricing{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    text-decoration: none;
+    background-color: #006FB2;
+    color: white;
+    font-size: var(--text-size);
+    border: 1px solid var(--turquoise);
+    border-radius: 5px;
+    padding: 5px;
+}
 
+.pricing:hover{
+    background-color: var(--turquoise);
+}

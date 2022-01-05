@@ -27,7 +27,7 @@
 	.particles-section{
 		height: 400px;
 	}
-	.create-account form, .login-account form, .courses, .about-me, .portfolios{
+	.create-account form, .login-account form, .courses, .about-me, .portfolios, .course-description{
 		width: 50%;
 	}
 	.courses{
@@ -56,7 +56,7 @@
 	.particles-section{
 		height: 350px;
 	}
-	.create-account form, .login-account form, .courses, .about-me, .portfolios{
+	.create-account form, .login-account form, .courses, .about-me, .portfolios, .course-description{
 		width: 60%;
 	}
 	.right-header p, .left-header p, .about-us p{
@@ -89,7 +89,7 @@
 	.space-menu{
 		display: none;
 	}
-	.create-account form, .login-account form, .courses, .about-me, .portfolios{
+	.create-account form, .login-account form, .courses, .about-me, .portfolios, .course-description{
 		width: 70%;
 	}
 	.courses{
@@ -130,7 +130,7 @@
 		display: flex;
 		flex-wrap: wrap;
 	}
-	.course-name, .age, .about-us p, .right-header p, .left-header p, .courses-paragraph{
+	.course-name, .age, .about-us p, .right-header p, .left-header p, .courses-paragraph, .course-description{
 		font-size: var(--text-size);
 	}
 	.logo-header{
@@ -148,7 +148,7 @@
 	.particles-section{
 		height: 200px;
 	}
-	.create-account form, .login-account form, .courses, .about-me, .portfolios{
+	.create-account form, .login-account form, .courses, .about-me, .portfolios, .course-description{
 		width: 100%;
 	}
 	.courses{

@@ -4,9 +4,9 @@
 
 <section class="course-description">
     {% for course in courses %}
-    <h2>{{ course.course_name }}</h2>
-    <img id ="img-course" src="{{ course.image.url }}" width="220" height="240" alt="python-course">
-    <article class="course-description">
+    <fieldset>
+        <legend>{{course.course_name}}</legend>
+        <img id ="img-course" src="{{ course.image.url }}" width="220" height="240" alt="python-course">
         <p>{{ course.description }}</p>
         <p>and Why {{course.course_name }}?...</p>
         <ul>
@@ -19,9 +19,8 @@
             <h3>More about {{ course.course_name }}:</h3>
             Here we're gonna write some extra info about the language
         </aside>
-    </article>
-    <a href="{% url 'courses:course_packages' fk=course.id %}">Pricing</a>
+        <a class="pricing" href="{% url 'courses:course_packages' fk=course.id %}">Pricing</a>
+    </fieldset>
     {% endfor %}
 </section>
-<script src="{% static 'courses/js/courses.js' %}"></script>
 {% endblock content %}

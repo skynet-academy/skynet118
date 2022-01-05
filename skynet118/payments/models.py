@@ -37,3 +37,20 @@ class OrderItem(models.Model):
     def get_total(self):
         total = self.product.price * self.quantity
         return total
+
+class Purchase(models.Model):
+    purchase_id = models.CharField(primary_key=True, max_length=100)
+    state = models.CharField(max_length=100)
+    cod_state = models.CharField(max_length=100)
+    #product = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
+    product = models.CharField(max_length=100)
+    total = models.DecimalField(max_digits=5, decimal_places=2)
+    name = models.CharField(max_length=100)
+    surname = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    address = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
