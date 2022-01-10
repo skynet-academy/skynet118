@@ -5,14 +5,14 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
 #importing for user
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from django.utils.translation import gettext as _
 
-from .decorators import unauthenticated_user, portfolio_created 
+from .decorators import unauthenticated_user, portfolio_created, allowed_users, admin_only 
 
 
 from .forms import (
@@ -105,6 +105,7 @@ def portfolio_view(request, id):
         return super().get_queryset().filter(is_active=True)
 
 @portfolio_created
+@allowed_users(allowed_roles=['admin'])
 def portfolio_create(request):
     portfolio = PortfolioForm()
     if(request.method == 'POST'):
@@ -143,9 +144,12 @@ def registerPage(request):
     if(request.method == "POST"):
         form = RegisterUserForm(request.POST)
         if(form.is_valid()):
-            form.save()
-            user= form.cleaned_data.get('username')
-            messages.success(request, "The account was successful created for " + user)
+            user = form.save()
+            username = form.cleaned_data.get('username')
+            group = Group.objects.get(name='customer')
+            user.groups.add(group)
+
+            messages.success(request, "The account was successful created for " + username)
             messages.error(request, "Here is an error")
             return redirect("/blog/login/")
 
@@ -173,6 +177,7 @@ def profile_view(request, id):
         return render(request, 'blog/profile.html', context)
     else:
         return redirect('/blog/profile_create/')
+
 ##################################################
 
 @unauthenticated_user

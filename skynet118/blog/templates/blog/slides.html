@@ -5,16 +5,16 @@
 <header class="courses">
     <div class="courses-available">
         {% for course in courses %}
-        <div class="course course-{{course.pk }}">
-            <div class="course-container">
-                <div class="course-logo">
-                    <img src="{{ course.image.url }}" alt="{{ course.course_name }}"/>
+            <div class="course course-{{course.pk }}">
+                <div class="course-container">
+                    <div class="course-logo">
+                        <img src="{{ course.image.url }}" alt="{{ course.course_name }}"/>
+                    </div>
+                    <p class="course-name"><strong>Course: {{ course.course_name }}</strong></p>
+                    <p class="age">{% trans 'Age' %}: {% trans 'from 12 year old' %}</p>
+                    <a href="{% url "courses:index_course" %}">{% trans 'Read more' %}</a> 
                 </div>
-                <p class="course-name"><strong>Course: {{ course.course_name }}</strong></p>
-                <p class="age">{% trans 'Age' %}: {% trans 'from 12 year old' %}</p>
-                <a href="{% url "courses:index_course" %}">{% trans 'Read more' %}</a> 
             </div>
-        </div>
         {% endfor %}
         <div class="buttons-change">
             <div class="arrow left-arrow">
@@ -33,9 +33,9 @@
     </div>
     <div class="navigation-auto">
         {% for course in courses %}
-        <div id="radio-selection">
-            <input type="radio" name="radio-btn" id="radio{{course.pk}}" value="{{course.pk}}">
-        </div>
+            <div id="radio-selection">
+                <input type="radio" name="radio-btn" id="radio{{course.pk}}" value="{{course.pk}}">
+            </div>
         {% endfor %}
     </div>
 </header>
