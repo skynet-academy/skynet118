@@ -1,8 +1,11 @@
 {% extends 'courses/base.html' %}
 {% block content %}
 {% load static %}
+<section class="title-course">
+    <h1>{{ course.course_name }}</h1>
+    <p>All packages available</p>
+</section>
 
-<h1 class="title-course"><strong>{{ course.course_name }}</strong></h1>
 <article class="list-price-available">
     {% for elem in package %}
     <div class="price">

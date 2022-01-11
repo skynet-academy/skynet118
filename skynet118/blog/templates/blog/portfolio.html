@@ -22,7 +22,11 @@
         <label for="">Body:</label>
         <p>{{ portfolio.body|safe }}</p>
         <label for="">Skills:</label>
-        <p>{{ portfolio.skills }}</p>
+        <ul>
+            {% for key, value in portfolio.skills.items %}
+            <li>{{value}}</li>
+            {% endfor %}
+        </ul>
         <label for="">Is active?</label>
         <p>{{ portfolio.is_active }}</p>
     </fieldset>

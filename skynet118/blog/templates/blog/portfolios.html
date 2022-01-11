@@ -15,7 +15,11 @@
                 <label for="">Description:</label>
                 <p>{{ portfolio.description }}</p>
                 <label for="">Skills</label>
-                <p>{{ portfolio.skills|safe }}</p>
+                <ul>
+                    {% for skill, value in portfolio.skills.items %}
+                    <li> {{value}} </li>
+                    {% endfor %}
+                </ul>
                 <label for="">Link portfolio</label>
                 <p>{{ portfolio.slug }}</p>
                 <label for="">Is active?</label>

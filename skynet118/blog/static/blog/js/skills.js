@@ -31,11 +31,14 @@ let addSkills = ()=> {
         button.disabled = false
         let selected = document.getElementById("mySelection").value
         let li = document.createElement('li')
+        console.log(myInp.value)
+        console.log(selected)
         li.innerHTML = `${myInp.value} - ${selected}`
         skills.appendChild(li)
         data = {}
         for(let i = 0; i < skills.childNodes.length; i++){
-            data[i] = `${skills.childNodes[i].textContent} - ${selected}`
+            data[i] = skills.childNodes[i].textContent
+            console.log(data[i])
         }
         allSkills.value = JSON.stringify(data)
         buttonskills.innerHTML = ""
