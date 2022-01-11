@@ -6,9 +6,9 @@
     <h1>My Profile</h1>
     <fieldset>
         <legend>Personal data</legend>
-        <label for="">My avatar:</label>
-        <p>{{ profile.avatar|safe }}</p>
-        <label for="">User name:</label>
+        <p for="">My avatar:</p>
+        <img src="/images/{{profile.avatar}}" alt="">
+        <p for="">User name:</p>
         <p>{{ profile.user }}</p>
     </fieldset>
 
@@ -19,7 +19,8 @@
         <label for="">Mi bio:</label>
         <p>{{ profile.bio }}</p>
         <label for="">My cv:</label>
-        <p>{{ profile.cv }}</p>
+        <a href="/images/{{ profile.cv }}" download="{{ profile.cv }}">Download</a>
+        <p></p>
     </fieldset>
 </section>
 {% endblock content %}

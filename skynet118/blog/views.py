@@ -12,7 +12,13 @@ from django.views import generic
 from django.utils import timezone
 from django.utils.translation import gettext as _
 
-from .decorators import unauthenticated_user, portfolio_created, allowed_users, admin_only 
+from .decorators import (
+        unauthenticated_user, 
+        portfolio_created, 
+        allowed_users, 
+        admin_only,
+        profile_created
+        )
 
 
 from .forms import (
@@ -157,7 +163,6 @@ def registerPage(request):
     return render(request, 'blog/register.html', context)
 
 ##################################################
-
 def profile_create(request):
     profile = UserProfileForm()
     if(request.method == "POST"):

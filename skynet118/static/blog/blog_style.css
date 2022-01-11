@@ -194,22 +194,30 @@
 	stroke-width: 5px;
 }
 
-.create-account, .login-account{
+.create-account, .login-account, .profile-create{
 	width: 80%;
 	margin: var(--text-title) auto;
 	text-align: center;
 }
 
-.create-account form, .login-account form, .about-me, .portfolios{
+.create-account form, .login-account form, .about-me, .portfolios, .profile-create form{
 	width: 40%;
 	margin: 0 auto;
 }
 
-.create-account section, .login-account section{
+.create-account section, .login-account section, .profile-create section{
 	margin: 20px 0;
 }
 
-#id_username, #id_first_name, #id_last_name, #id_email, #id_password1, #id_password2, #login_user, #login_password{
+#id_username, 
+#id_first_name, 
+#id_last_name, 
+#id_email, 
+#id_password1, 
+#id_password2, 
+#login_user, 
+#login_password
+{
 	border: 1px solid var(--turquoise);
 	height: 32px;
 	border-radius: 5px;
@@ -218,16 +226,25 @@
 	padding: 0;
 }
 
-#register-button, #login{
+#id_title,
+#id_bio{
+    border: 1px solid var(--turquoise);
+    border-radius: 5px;
+    width: 100%;
+    padding: 0;
+}
+
+#register-button, #login, #profile-button{
 	border: 1px solid var(--turquoise);
 	border-radius: 5px;
 	color: white;
 	background-color: var(--bluedark2);
 	height: 32px;
 	width: 100%;
+    cursor: pointer;
 }
 
-#register-button:hover, #login:hover{
+#register-button:hover, #login:hover, #profile-button:hover{
 	color: var(--bluedark2);
 	background-color: white;
 }

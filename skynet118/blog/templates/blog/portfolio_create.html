@@ -1,31 +1,64 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
 {% if user.is_authenticated %}
-<form method="POST">{% csrf_token %}
-    {{ portfolio.media }}
-    {{ portfolio.user }}
-    {{ portfolio.name}}
-    {{ portfolio.description}}
-    {{ portfolio.body|safe}}
-    {{ portfolio.image}}
-    {{ portfolio.slug }}
-    {{ portfolio.skills|safe }}
-    {{ portfolio.is_active }}
-    {% if portfolio.errors %}
-        {% for field in portfolio %}
-            {% for error in field.errors %}
-                <p>{{ error|safe|escape}}</p><br>
-            {% endfor %}
-        {% endfor %} 
-    {% endif %}
-    <input type="submit" value="Create"/>
-</form>
-<script>
-    document.getElementById('id_user').hidden = true;
-    a = document.getElementById('id_user');
-    a[0].value = "{{ request.user.id }}"
-    a[0].innerHTML = "{{ request.user }}"
-    a[0].selected = true
-</script>
+    <section class="my-portfolio">
+        <form method="POST">{% csrf_token %}
+                {{ portfolio.media }}
+            <section>
+                <h1>Hello, {{request.user}}, create your portfolio</h1>
+                {{ portfolio.user }}
+            </section>
+            <section>
+                {{ portfolio.name}}
+            </section>
+            <section>
+                {{ portfolio.description}}
+            </section>
+                <p>Add a body for your portfolio:</p>
+                {{ portfolio.body|safe}}
+            <section>
+                <p>Add an image:</p>
+                {{ portfolio.image}}
+            </section>
+            <section>
+                {{ portfolio.slug }}
+            </section>
+            <section>
+                <p>Add your skills:</p>
+                <ul id="skillAdded"></ul>
+                <span id="skillButtons"></span>
+                <button type="button" id="add_skills" onclick="addSkills()">Add skills</button>
+                {{ portfolio.skills|safe }}
+            </section>
+            <section>
+                <p>Is active?</p>
+                {{ portfolio.is_active }}
+            </section>
+            {% if portfolio.errors %}
+                {% for field in portfolio %}
+                    {% for error in field.errors %}
+                        <p>{{ error|safe|escape}}</p><br>
+                    {% endfor %}
+                {% endfor %} 
+            {% endif %}
+            <input id="portfolio-button" type="submit" value="Create"/>
+            <script src="{% static "blog/js/skills.js"  %}"></script>
+        </form>
+    </section>
+    <script>
+        document.getElementById("id_name").placeholder = " Name"
+        document.getElementById("id_description").placeholder = " Add a description"
+        document.getElementById("id_slug").placeholder = " add slug for your portfolio"
+        let skillsList = document.getElementById("id_skills")
+        skillsList.style.display = "none"
+
+        document.getElementById("id_user").hidden = true;
+    
+        a = document.getElementById('id_user');
+        a[0].value = "{{ request.user.id }}"
+        a[0].innerHTML = "{{ request.user }}"
+        a[0].selected = true
+    </script>
 {% endif %}
 {% endblock %}

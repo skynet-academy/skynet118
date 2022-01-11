@@ -16,8 +16,8 @@ def portfolio_created(portfolio_create):
     def evaluation(request, *args, **kwargs):
         portfolio_exists = Portfolio.objects.filter(user=request.user).exists()
         if(portfolio_exists):
-            portfolio_created = Portfolio.objects.get(user=request.user)
-            if(str(portfolio_created.user) == request.user.username):
+            portfolio = Portfolio.objects.get(user=request.user)
+            if(str(portfolio.user) == request.user.username):
                 return redirect('/blog/')
             else:
                 return portfolio_create(request, *args, **kwargs)
@@ -25,6 +25,18 @@ def portfolio_created(portfolio_create):
             return portfolio_create(request, *args, **kwargs)
     return evaluation
 
+def profile_created(profile_create):
+    def evaluation(request, *args, **kwargs):
+        profile_exists = UserProfile.objects.filter(user=request.user).exists()
+        if(profile_exists):
+            profile = UserProfile.objects.get(user=request.user)
+            if(str(profile.user) == request.user.username):
+                return redirect('/blog/')
+            else:
+                return profile_create(request, *args, **kwargs)
+        else:
+            return profile_create(request, *args, **kwargs)
+    return evaluation
 
 def allowed_users(allowed_roles=[]):
     def decorator(view_func):
