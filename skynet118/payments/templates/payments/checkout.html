@@ -20,7 +20,7 @@
 		<h3 class="wise-text">If you want to pay using Wise, please use this link.</h3>
 		<a href="https://wise.com/invite/u/nicolass337" target="_blank">Go to Wise</a>
 		<div class="bank-accounts">
-			<h3>Also you can transfer me using the following accounts:</h3>
+			<h3>Also you can do it using the following accounts:</h3>
 			<label for="banks">Select an account</label>
 			<select id="bank-account" name="banks" onchange="changeAccount(this.value)">
 				<option disabled selected value>Select an option</option>
@@ -52,18 +52,7 @@
         const csrftoken = getCookie('csrftoken');
         let total = '{{package.price}}'
         let course_id = '{{course.id}}'
-        //function complete_order(){
-        //    let url = "{% url 'payments:complete' %}"
-        //    fetch(url, {
-        //        method: 'POST',
-        //        headers: {
-        //            'Content-type':'application/json',
-        //            'X-CSRFToken':csrftoken,
-        //        },
-        //        body: JSON.stringify({'course_id': course_id})
-        //    })
-        //}
-        // Render the PayPal button into #paypal-button-container
+
         paypal.Buttons({
             style: {
                 shape: 'rect',
@@ -88,11 +77,20 @@
                 method: 'POST',
                 headers: {'content-type': 'application/json', 'X-CSRFToken':csrftoken},
                 body: JSON.stringify({orderID: data.orderID })
-             }).then(function(res){
-                return res.json();
-             }).then(function(details) {
-                alert(details.message);}
-            )}
+                }).then(response =>{
+
+                    if(!response.ok){
+                        throw new Error('There was an error');
+                    }
+                    return response.json();
+                }).then(details =>{
+                    window.location.replace(`/payments/success/${details.name}/${details.id}`)
+
+                }).catch((error) => {
+                    window.location.replace(`/payments/error/`)
+                    console.log("Error:", error)
+                })
+             }
             //onApprove: function(data, actions) {
             //    return actions.order.capture().then(function(orderData) {
             //        // Successful capture! For demo purposes:

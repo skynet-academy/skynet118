@@ -1,17 +1,18 @@
 from django.db import models
 # Create your models here.
+
 class Course(models.Model):
     course_name = models.CharField(max_length=200)
     date_pub = models.DateTimeField("Date Published")
     price = models.FloatField(default=0)
     nro_lessons = models.IntegerField()
     nro_tests = models.IntegerField()
+    details = models.JSONField(default=dict)
     description = models.CharField(max_length=500, default="Description")
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.course_name
-
 
     @property
     def imageURL(self):

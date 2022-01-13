@@ -5,7 +5,7 @@ from . import views
 app_name = "payments"
 
 urlpatterns = [
-        path(r"checkout/<int:pk>/<str:name>/", views.checkout, name="checkout"),
-        path("complete/", views.payment_complete,  name="complete"),
+        path("checkout/<int:pk>/<str:name>/", views.checkout, name="checkout"),
+        path("success/<str:name>/<str:idpay>", views.payment_complete,  name="success"),
         path("cart/", views.cart,  name="cart"),
         ]

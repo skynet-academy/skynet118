@@ -98,3 +98,18 @@
     width: 70%;
     margin: 0 auto;
 }
+
+.payment_details{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.payment_details fieldset{
+    width: 100%;
+}
+
+.payment_details img{
+    width: 150px;
+    height: 150px;
+}
+

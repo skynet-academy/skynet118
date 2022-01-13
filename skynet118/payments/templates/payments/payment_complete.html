@@ -1,0 +1,45 @@
+{% extends 'payments/base_payment.html' %}
+{% block payment_content %}
+{% load static %}
+<section class="payment_details">
+
+    <img src="{% static 'payments/images/payment_successful.png' %}" alt="">
+    <h1>Your payment was successful</h1>
+    <fieldset>
+        <legend><h2>Details</h2></legend>
+        <section>
+            <p>Hello, {{purchase.name}}, the details of your purchase:</p>
+        </section>
+        <section>
+            <label for="">Purchase id:</label>
+            <p>{{purchase.purchase_id}}</p>
+        </section>
+        <section>
+            <label for="">Code state:</label>
+            <p>{{purchase.cod_state}}</p>
+        </section>   
+        <section>
+            <label for="">Course:</label>
+            <p>{{purchase.course}}</p>
+        </section>    
+        <section>
+            <label for="">Package:</label>
+            <p>{{purchase.package}}</p>
+        </section>    
+        <section>
+            <label for="">Total:</label>
+            <p>${{purchase.total}}</p>
+        </section>    
+        <section>
+            <label for="">State:</label>
+            <p>{{purchase.state}}</p>
+        </section>   
+        <section>
+            <p>Login to start learning 
+                <a href="{% url 'blog:login-page' %}">here</a> 
+                or if you don't have an account, create one 
+                <a href="{% url 'blog:register' %}">here</a></p>
+        </section>
+    </fieldset>
+</section>
+{% endblock payment_content %}

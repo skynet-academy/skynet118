@@ -22,7 +22,7 @@ def checkout(request, pk, name):
     customer = request.user 
     course = Course.objects.get(id=pk)
     package = Package.objects.filter(course_package=pk, package_name=name)[0]
-    #package = Package.objects.filter(course_package=pk).filter(package_name=name).only()
+
     if(request.method == "POST"):
         package = Package.objects.filter(course_package=pk, package_name=name)[0]
         data = json.loads(request.body)
@@ -35,7 +35,8 @@ def checkout(request, pk, name):
                     purchase_id = trans.result.id,
                     state = trans.result.status,
                     cod_state = trans.status_code,
-                    product = package.package_name,
+                    course = f"{course.course_name}",
+                    package = f"{package.package_name}",
                     total = trans.result.purchase_units[0].payments.captures[0].amount.value,
                     name = trans.result.payer.name.given_name,
                     surname = trans.result.payer.name.surname,
@@ -45,9 +46,9 @@ def checkout(request, pk, name):
             purchase.save()
             data = {
                 "id": f"{trans.result.id}",
-                "name": f"{trans.result.payer.name.given_name}",
-                "message": "Purchase done successfully"
+                "name": f"{trans.result.payer.name.given_name}"
             }
+            #return HttpResponseRedirect(reverse('payments:success'))
             return JsonResponse(data)
         else:
             data = {
@@ -55,7 +56,6 @@ def checkout(request, pk, name):
                 "message": "We could not finish your purchase"
                     }
             return JsonResponse(data)
-
 
     context = {'package': package, 'course': course, 'customer': customer}
     return render(request, 'payments/checkout.html', context)
@@ -70,14 +70,13 @@ def cart(request):
     context = {'items': items}
     return render(request, 'payments/cart.html', context)
 
-def payment_complete(request):
-    body = json.loads(request.body)
+def payment_complete(request, name, idpay):
+    purchase = Purchase.objects.get(purchase_id=idpay)
     context = {
-        "body": body
-            }
-    #course = Course.objects.get(id=body['course_id'])
-    #Order.objects.create(course=course)
-    return HttpResponseRedirect("/")
+            "purchase": purchase
+                }
+    return render(request, 'payments/payment_complete.html', context)
+
 
 class PayPalClient:
 
@@ -138,15 +137,6 @@ class GetOrder(PayPalClient):
     response = self.client.execute(request)
     return response
     #4. Save the transaction in your database. Implement logic to save transaction to your database for future reference.
-    #print('Status Code: ', response.status_code)
-    #print('Status: ', response.result.status)
-    #print('Order ID: ', response.result.id)
-    #print('Intent: ', response.result.intent)
-    #print('Links:')
-
-    #for link in response.result.links:
-    #    print('\t{}: {}\tCall Type: {}'.format(link.rel, link.href, link.method))
-    #    print('Gross Amount: {} {}'.format(response.result.purchase_units[0].amount.currency_code, response.result.purchase_units[0].amount.value))
 
 
 class CaptureOrder(PayPalClient):
@@ -172,9 +162,5 @@ class CaptureOrder(PayPalClient):
       for purchase_unit in response.result.purchase_units:
           for capture in purchase_unit.payments.captures:
               print('\t', capture.id)
-      #print("Buyer:")
-      #print("\tEmail Address: {}\n\tName: {}\n\tPhone Number: {}".format(response.result.payer.email_address,
-      #  response.result.payer.name.given_name + " " + response.result.payer.name.surname,
-      #  response.result.payer.phone.phone_number.national_number))
     return response
 

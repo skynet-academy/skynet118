@@ -8,7 +8,7 @@
             <fieldset>
                 <legend>Personal Data - {{portfolio.user}}</legend>
                 <p>{{ portfolio.image|safe }}</p>
-                <label for="">User:</label>
+                <label for="">Teacher:</label>
                 <p>{{ portfolio.user }}</p>
                 <label for="">Name:</label>
                 <p>{{ portfolio.name }}</p>
@@ -21,10 +21,7 @@
                     {% endfor %}
                 </ul>
                 <label for="">Link portfolio</label>
-                <p>{{ portfolio.slug }}</p>
-                <label for="">Is active?</label>
-                <p>{{ portfolio.is_active }}</p>
-
+                <a href="">{{ portfolio.slug }}</a>
             </fieldset>
         {% endfor %}
     </section>
