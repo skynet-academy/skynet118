@@ -1,0 +1,17 @@
+{% extends 'courses/base.html' %}
+{%  block content %}
+<section>
+    <fieldset>
+        <p>{{course.course_name}}</p>
+        <p>{{course.nro_lessons}}</p>
+        <p>{{course.price}}</p>
+        <p>{{course.nro_tests}}</p>
+        <p>{{course.details}}</p>
+        <p>{{course.description}}</p>
+        <p>{{course.topics}}</p>
+        <img src="{{course.imageURL}}" alt="">
+        <a href="{% url 'courses:update_course' pk=course.pk  %}">Update Course</a>
+    </fieldset>
+</section>
+
+{% endblock content %}

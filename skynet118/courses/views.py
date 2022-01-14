@@ -28,6 +28,12 @@ def create_course(request):
     context = {'course': course}
     return render(request, 'courses/create_course.html', context)
 
+def course_view(request, id):
+    course = Course.objects.get(id=id)
+    context = {
+        "course": course
+            }
+    return render(request, 'courses/course_view.html', context) 
 
 def update_course(request, pk):
     course = Course.objects.get(id=pk)

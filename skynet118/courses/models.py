@@ -10,6 +10,7 @@ class Course(models.Model):
     details = models.JSONField(default=dict)
     description = models.CharField(max_length=500, default="Description")
     image = models.ImageField(null=True, blank=True)
+    topics = models.JSONField(default=dict)
 
     def __str__(self):
         return self.course_name
@@ -23,7 +24,7 @@ class Course(models.Model):
         return url
 
 class Package(models.Model):
-    course_package = models.ForeignKey(Course, on_delete=models.CASCADE, related_name= 'course_package', null=True)
+    course_package = models.ForeignKey(Course,on_delete=models.CASCADE,related_name='course_package', null=True)
     package_name = models.CharField(max_length=200)
     price = models.FloatField(default=0)
     nro_lessons = models.IntegerField()

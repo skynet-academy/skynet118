@@ -11,34 +11,29 @@
             <p>Hello, {{purchase.name}}, the details of your purchase:</p>
         </section>
         <section>
-            <label for="">Purchase id:</label>
-            <p>{{purchase.purchase_id}}</p>
+            <p><strong>Purchase id: </strong>{{purchase.purchase_id}}</p>
         </section>
         <section>
-            <label for="">Code state:</label>
-            <p>{{purchase.cod_state}}</p>
+            <p><strong>Code state: </strong>{{purchase.cod_state}}</p>
         </section>   
         <section>
-            <label for="">Course:</label>
-            <p>{{purchase.course}}</p>
+            <p><strong>Course: </strong>{{purchase.course}}</p>
         </section>    
         <section>
-            <label for="">Package:</label>
-            <p>{{purchase.package}}</p>
+            <p><strong>Package: </strong>{{purchase.package}}</p>
         </section>    
         <section>
-            <label for="">Total:</label>
-            <p>${{purchase.total}}</p>
+            <label for=""></label>
+            <p><strong>Total: </strong>${{purchase.total}}</p>
         </section>    
         <section>
-            <label for="">State:</label>
-            <p>{{purchase.state}}</p>
+            <p><strong>State: </strong>{{purchase.state}}</p>
         </section>   
         <section>
             <p>Login to start learning 
-                <a href="{% url 'blog:login-page' %}">here</a> 
+                <a href="{% url 'blog:login-page' %}"><strong>here</strong></a> 
                 or if you don't have an account, create one 
-                <a href="{% url 'blog:register' %}">here</a></p>
+                <a href="{% url 'blog:register' %}"><strong>here</strong></a></p>
         </section>
     </fieldset>
 </section>

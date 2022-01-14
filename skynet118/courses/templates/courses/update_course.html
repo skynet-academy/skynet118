@@ -1,0 +1,46 @@
+{% extends 'courses/base.html' %}
+{% load static %}
+{% block content %}
+<section class="course_update_form">
+    <form method="POST">{% csrf_token %}
+        <section>
+            {{form.course_name}}
+        </section>
+        <section>
+            {{form.date_pub}}
+        </section>
+        <section>
+            {{form.price}}
+        </section>
+        <section>
+            {{form.nro_lessons}}
+        </section>
+        <section>
+            {{form.nro_tests}}
+        </section>
+        <section>
+            <div id="details_updated">
+                <ul id="detailsAdded"></ul>
+                <span class="detailButtons"></span>
+                <button id="modifyButton" type="button" onclick="modifyDetails()">Modify details</button>
+            </div>
+            {% for detail in form.details.items %}
+                {{detail}}
+            {% endfor %}
+            {{form.details}}
+
+        </section>
+        <section>
+            {{form.description}}
+        </section>
+        <section>
+            {{form.image}}
+        </section>
+        <section>
+            {{form.topics}}
+        </section>
+        <input type="submit" value="Update">
+    </form>
+</section>
+<script src="{% static '/courses/js/update_course.js' %}"></script>
+{% endblock content %}

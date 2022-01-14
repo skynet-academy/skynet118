@@ -10,14 +10,10 @@
         <p>{{ course.description }}</p>
         <p>and Why {{course.course_name }}?...</p>
         <ul>
-            <li>We show the basics of python, the use of mathematics modules</li>
-            <li>Programming object oriented</li>
-            <li>Use of the arcade module for creating videogames in 2D</li>
-            <li>Algorithms that usually ask on interviews</li>
+            <li>details</li>
         </ul>
         <aside>
-            <h3>More about {{ course.course_name }}:</h3>
-            Here we're gonna write some extra info about the language
+            <p>More about <a href="{% url 'courses:course_view' course.id %}"><strong>{{course.course_name}}</strong></a></p>
         </aside>
         <a class="pricing" href="{% url 'courses:course_packages' fk=course.id %}">Pricing</a>
     </fieldset>

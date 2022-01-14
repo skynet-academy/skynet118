@@ -1,11 +1,22 @@
-let button = document.getElementById('add_skills')
-let skills = document.getElementById('skillAdded')
-let allSkills = document.getElementById('id_skills') 
+let course_name = document.getElementById("id_course_name")
+let date_pub = document.getElementById("id_date_pub")
+let id_price = document.getElementById("id_price")
+let id_nro_lessons = document.getElementById("id_nro_lessons")
+let details = document.getElementById("id_details")
+let description = document.getElementById("id_description")
+let image = document.getElementById("id_image")
+let topics = document.getElementById("id_topics")
 
-let options = ["Basic", "Intermediate", "Advanced"]
+let details_updated = document.getElementById("details_updated") 
+let detailsAdded = document.getElementById("detailsAdded")
+let detailsButtons = document.getElementById("detailsButtons")
+let modifyButton = document.getElementById("modifyButton")
 
-let addSkills = () => {
-    button.disabled = true
+details.style.display = "none"
+topics.style.display = "none"
+
+let modifyDetails = () => {
+    modifyButton.disabled = true
     let myDiv = document.createElement("div")
     let myInp = document.createElement("input")
     let mySelect = document.createElement("select")

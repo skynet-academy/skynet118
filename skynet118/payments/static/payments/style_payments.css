@@ -107,8 +107,8 @@
 
 .payment_details fieldset{
     width: 100%;
-    padding: 0;
     border: 2px solid var(--turquoise);
+    text-align: left;
 }
 
 .payment_details img{
@@ -117,4 +117,3 @@
     margin: 0 auto;
     display: block;
 }
-
