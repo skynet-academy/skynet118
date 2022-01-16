@@ -1,4 +1,5 @@
-@media (max-width: 1440px){
+@media (max-width: 1440px)
+{
     .links a{
         padding: 0 15px;
     }
@@ -8,7 +9,8 @@
 }
 
 
-@media (max-width: 1198px){
+@media (max-width: 1198px)
+{
     .logo{
         display: none;
     }
@@ -33,7 +35,8 @@
     .portfolios, 
     .course-description,
     .course-view,
-    .profile-create form 
+    .profile-create form,
+    .course_update_form
     {
 		width: 70%;
 	}
@@ -49,7 +52,8 @@
 }
 
 
-@media (max-width: 898px){
+@media (max-width: 898px)
+{
     .links{
         padding: 0 0 0 4rem;
     } 
@@ -70,6 +74,7 @@
     .portfolios, 
     .course-description,
     .course-view,
+    .course_update_form,
     .profile-create form
     {
 		width: 80%;
@@ -79,7 +84,8 @@
 	}
 }
 
-@media (max-width: 740px){
+@media (max-width: 740px)
+{
     .menu{
         visibility: hidden;
     } 
@@ -111,7 +117,8 @@
     .portfolios, 
     .course-view,
     .course-description,
-    .profile-create form
+    .profile-create form,
+    .course_update_form
     {
 		width: 90%;
 	}
@@ -123,7 +130,8 @@
 	}
 }
 
-@media(max-width: 680px){
+@media(max-width: 680px)
+{
     .footer-distributed{
         display: block;
     }
@@ -151,7 +159,13 @@
 		display: flex;
 		flex-wrap: wrap;
 	}
-	.course-name, .age, .about-us p, .right-header p, .left-header p, .courses-paragraph, .course-description{
+	.course-name, 
+    .age, 
+    .about-us p, 
+    .right-header p, 
+    .left-header p, 
+    .courses-paragraph, 
+    .course-description{
 		font-size: var(--text-size);
 	}
 	.logo-header{
@@ -162,7 +176,8 @@
 	}
 }
 
-@media(max-width: 414px){
+@media(max-width: 414px)
+{
     .course{
         padding: 0;
     }
@@ -176,7 +191,8 @@
     .portfolios, 
     .course-description,
     .course-view,
-    .profile-create form
+    .profile-create form,
+    .course_update_form
     {
 		width: 95%;
 	}

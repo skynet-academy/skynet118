@@ -2,55 +2,74 @@
 {% load static %}
 {% block content %}
 <section class="course_update_form">
-    <form method="POST">{% csrf_token %}
-        <section>
-            {{form.course_name}}
-        </section>
-        <section>
-            {{form.date_pub}}
-        </section>
-        <section>
-            {{form.price}}
-        </section>
-        <section>
-            {{form.nro_lessons}}
-        </section>
-        <section>
-            {{form.nro_tests}}
-        </section>
-        <section>
-            <div id="details_updated">
-                <p>previous details</p>
-                <ul id="previousDetails"></ul>
-                <ul id="detailsAdded"></ul>
-                <span id="detailButtons"></span>
-                <button id="modifyButton" type="button" onclick="modifyDetails()">Modify details</button>
-            </div>
-            {{form.details}}
-        </section>
-        <section>
-            {{form.description}}
-        </section>
-        <section>
-            <div id="previous_img">
-                {{form.image}}
-                <img width="120" height="120">
-            </div>
-        </section>
-        <section>
-            <div class="topics_updated">
-                <label for="">Previous topics:</label>
-                <ul id="previousTopics"></ul>
-                <label for="">Topics updated:</label>
-                <ul id="topicsAdded"></ul>
-                <span id="topicsButtons">
-                </span>
-                <button id="modifyButton2" type'button' onclick="modifyTopics()">Modify topics</button>
-            </div>
-            {{form.topics}}
-        </section>
-        <input type="submit" value="Update">
-    </form>
+    <fieldset>
+        <legend>Updating {{form.course_name.value}} Course</legend>
+        <form method="POST">{% csrf_token %}
+            <section>
+                {{form.course_name}}
+            </section>
+            <section>
+                {{form.date_pub}}
+            </section>
+            <section>
+                {{form.price}}
+            </section>
+            <section>
+                {{form.nro_lessons}}
+            </section>
+            <section>
+                {{form.nro_tests}}
+            </section>
+            <section>
+                <div id="details_updated">
+                    <p>previous details</p>
+                    <ul id="previousDetails"></ul>
+                    <ul id="detailsAdded"></ul>
+                    <span id="detailButtons"></span>
+                    <button 
+                        id="modifyButton" 
+                        type="button" 
+                        onclick="modifyDetails()">
+                        Modify details
+                    </button>
+                </div>
+                {{form.details}}
+            </section>
+            <section>
+                {{form.description}}
+            </section>
+            <section>
+
+                <div id="previous_img">
+                    {{form.image}}
+                    <p>Previous image:</p>
+                    <img width="120" height="120">
+                </div>
+                <div id="new_img">
+                    <p>New image:</p>
+                    <img src="" alt="">
+                </div>
+            </section>
+            <section>
+                <div class="topics_updated">
+                    <label for="">Previous topics:</label>
+                    <ul id="previousTopics"></ul>
+                    <label for="">Topics updated:</label>
+                    <ul id="topicsAdded"></ul>
+                    <span id="topicsButtons">
+                    </span>
+                    <button 
+                        id="modifyButton2" 
+                        type'button' 
+                        onclick="modifyTopics()">
+                        Modify topics
+                    </button>
+                </div>
+                {{form.topics}}
+            </section>
+            <input id="updateButton" type="submit" value="Update">
+        </form>
+    </fieldset>
 </section>
 <script src="{% static '/courses/js/update_course.js' %}"></script>
 {% endblock content %}

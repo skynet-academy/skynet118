@@ -25,11 +25,11 @@ Object.values(detailsPrevious).forEach(value => insertDetails(value))
 
 
 let description = document.getElementById("id_description")
-description.placeholder = " Add a course description"
+description.placeholder = " Add a description"
 
 let image = document.getElementById("previous_img")
 let image_url = image.childNodes[1].href
-image.childNodes[10].src = image_url
+image.childNodes[12].src = image_url
 
 let topics = document.getElementById("id_topics")
 let topicsPrevious = JSON.parse(topics.innerHTML)
