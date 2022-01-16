@@ -201,7 +201,7 @@
 }
 
 .create-account form, .login-account form, .about-me, .portfolios, .profile-create form{
-	width: 40%;
+	width: 60%;
 	margin: 0 auto;
 }
 
@@ -252,4 +252,5 @@
 .about-me fieldset, .portfolios fieldset{
 	border: 2px solid var(--turquoise);
 	margin: 2rem auto;
+    border-radius: 10px;
 }

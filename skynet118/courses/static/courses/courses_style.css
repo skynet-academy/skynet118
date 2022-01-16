@@ -7,10 +7,13 @@
     list-style-type: none;    
 }
 
-.course-description{
+.course-description, .course-view{
     margin: 0 auto;
-    width: 40%;
+    width: 60%;
 }
+
+
+
 
 .list-price-available{
     display: flex;    
@@ -72,8 +75,9 @@
     color: white; 
 }
 
-.course-description fieldset{
+.course-description fieldset, .course-view fieldset{
     border: 2px solid var(--turquoise);
+    border-radius: 10px;
     margin: 2rem auto;
 }
 
@@ -97,4 +101,12 @@
 
 .pricing:hover{
     background-color: var(--turquoise);
+}
+
+.course-image{
+    width: 200px;
+    height: 200px;
+}
+.course-image img{
+    width: 100%;
 }

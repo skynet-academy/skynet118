@@ -20,23 +20,33 @@
         </section>
         <section>
             <div id="details_updated">
+                <p>previous details</p>
+                <ul id="previousDetails"></ul>
                 <ul id="detailsAdded"></ul>
-                <span class="detailButtons"></span>
+                <span id="detailButtons"></span>
                 <button id="modifyButton" type="button" onclick="modifyDetails()">Modify details</button>
             </div>
-            {% for detail in form.details.items %}
-                {{detail}}
-            {% endfor %}
             {{form.details}}
-
         </section>
         <section>
             {{form.description}}
         </section>
         <section>
-            {{form.image}}
+            <div id="previous_img">
+                {{form.image}}
+                <img width="120" height="120">
+            </div>
         </section>
         <section>
+            <div class="topics_updated">
+                <label for="">Previous topics:</label>
+                <ul id="previousTopics"></ul>
+                <label for="">Topics updated:</label>
+                <ul id="topicsAdded"></ul>
+                <span id="topicsButtons">
+                </span>
+                <button id="modifyButton2" type'button' onclick="modifyTopics()">Modify topics</button>
+            </div>
             {{form.topics}}
         </section>
         <input type="submit" value="Update">

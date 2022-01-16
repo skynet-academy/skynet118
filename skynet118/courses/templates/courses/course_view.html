@@ -1,17 +1,31 @@
 {% extends 'courses/base.html' %}
 {%  block content %}
-<section>
+<section class="course-view">
     <fieldset>
-        <p>{{course.course_name}}</p>
-        <p>{{course.nro_lessons}}</p>
-        <p>{{course.price}}</p>
-        <p>{{course.nro_tests}}</p>
-        <p>{{course.details}}</p>
-        <p>{{course.description}}</p>
-        <p>{{course.topics}}</p>
-        <img src="{{course.imageURL}}" alt="">
+        <legend>{{course.course_name}}</legend>
+        <div class="course-image">
+            <img src="{{course.imageURL}}" alt="">
+        </div>
+        <p>Course name: {{course.course_name}}</p>
+        <p>Number of lesson: {{course.nro_lessons}}</p>
+        <p>Price per lesson: {{course.price}}</p>
+        <p>Number of tests: {{course.nro_tests}}</p>
+        <label for="">Why we should choose {{course.course_name}}?</label>
+        <ul>
+            {% for key, detail in course.details.items %}
+            <li>{{detail}}</li>
+            {% endfor %}
+        </ul>
+        <p>Description: {{course.description}}</p>
+        <label for="">Topics in this course: </label> 
+        <ul>
+            {% for key, topic in course.topics.items %}
+                <li>{{topic}}</li>
+            {% endfor %}
+        </ul>
+
         <a href="{% url 'courses:update_course' pk=course.pk  %}">Update Course</a>
+        <a class="pricing" href="{% url 'courses:course_packages' fk=course.id %}">Pricing</a>
     </fieldset>
 </section>
-
 {% endblock content %}

@@ -10,7 +10,9 @@
         <p>{{ course.description }}</p>
         <p>and Why {{course.course_name }}?...</p>
         <ul>
-            <li>details</li>
+            {% for key, details in course.details.items %}
+            <li>{{details}}</li>
+            {% endfor %}
         </ul>
         <aside>
             <p>More about <a href="{% url 'courses:course_view' course.id %}"><strong>{{course.course_name}}</strong></a></p>

@@ -4,8 +4,7 @@ let allSkills = document.getElementById('id_skills')
 
 let options = ["Basic", "Intermediate", "Advanced"]
 
-
-let addSkills = ()=> {
+let addSkills = () => {
     button.disabled = true
     let myDiv = document.createElement("div")
     let myInp = document.createElement("input")

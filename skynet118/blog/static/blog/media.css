@@ -32,9 +32,10 @@
     .courses, .about-me, 
     .portfolios, 
     .course-description,
+    .course-view,
     .profile-create form 
     {
-		width: 50%;
+		width: 70%;
 	}
 	.courses{
 		height: 400px;
@@ -68,9 +69,10 @@
     .about-me, 
     .portfolios, 
     .course-description,
+    .course-view,
     .profile-create form
     {
-		width: 60%;
+		width: 80%;
 	}
 	.right-header p, .left-header p, .about-us p{
 		width: 80%;
@@ -107,10 +109,11 @@
     .courses,
     .about-me, 
     .portfolios, 
+    .course-view,
     .course-description,
     .profile-create form
     {
-		width: 70%;
+		width: 90%;
 	}
 	.courses{
 		height: 350px;
@@ -140,14 +143,7 @@
 	.particles-section{
 		height: 250px;
 	}
-	.create-account form, 
-    .login-account form, 
-    .courses, 
-    .about-me, 
-    .portfolios,
-    .profile-create form{
-		width: 80%;
-	}
+
 	.courses{
 		height: 300px;
 	}
@@ -179,9 +175,10 @@
     .about-me, 
     .portfolios, 
     .course-description,
+    .course-view,
     .profile-create form
     {
-		width: 100%;
+		width: 95%;
 	}
 	.courses{
 		height: 250px;
