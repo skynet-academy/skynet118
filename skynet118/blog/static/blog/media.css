@@ -36,7 +36,8 @@
     .course-description,
     .course-view,
     .profile-create form,
-    .course_update_form
+    .course_update_form,
+    .portfolio-update
     {
 		width: 70%;
 	}
@@ -75,7 +76,8 @@
     .course-description,
     .course-view,
     .course_update_form,
-    .profile-create form
+    .profile-create form,
+    .portfolio-update
     {
 		width: 80%;
 	}
@@ -118,7 +120,8 @@
     .course-view,
     .course-description,
     .profile-create form,
-    .course_update_form
+    .course_update_form,
+    .portfolio-update
     {
 		width: 90%;
 	}
@@ -192,7 +195,8 @@
     .course-description,
     .course-view,
     .profile-create form,
-    .course_update_form
+    .course_update_form,
+    .portfolio-update
     {
 		width: 95%;
 	}

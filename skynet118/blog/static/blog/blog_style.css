@@ -200,9 +200,15 @@
 	text-align: center;
 }
 
-.create-account form, .login-account form, .about-me, .portfolios, .profile-create form{
+.create-account form, 
+.login-account form, 
+.about-me, 
+.portfolios, 
+.profile-create form,
+.portfolio-update
+{
 	width: 60%;
-	margin: 0 auto;
+	margin: 4rem auto;
 }
 
 .create-account section, .login-account section, .profile-create section{
@@ -234,7 +240,9 @@
     padding: 0;
 }
 
-#register-button, #login, #profile-button{
+#register-button, 
+#login, 
+#profile-button{
 	border: 1px solid var(--turquoise);
 	border-radius: 5px;
 	color: white;
@@ -244,13 +252,22 @@
     cursor: pointer;
 }
 
-#register-button:hover, #login:hover, #profile-button:hover{
+#register-button:hover, 
+#login:hover, 
+#profile-button:hover{
 	color: var(--bluedark2);
 	background-color: white;
 }
 
-.about-me fieldset, .portfolios fieldset{
+.about-me fieldset, 
+.portfolios fieldset,
+.portfolio-update fieldset
+{
 	border: 2px solid var(--turquoise);
 	margin: 2rem auto;
     border-radius: 10px;
+}
+
+#cke_id_body{
+    width:100% !important;
 }

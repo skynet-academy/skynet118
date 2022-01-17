@@ -2,49 +2,51 @@
 {% load static %}
 {% block content %}
 {% if user.is_authenticated %}
-    <section class="my-portfolio">
-        <form method="POST">{% csrf_token %}
-                {{ form.media }}
-            <section>
-                <h1>Hello, {{request.user}}, update your portfolio</h1>
-                {{ form.user }}
-            </section>
-            <section>
-                {{ form.name}}
-            </section>
-            <section>
-                {{ form.description}}
-            </section>
-                <p>Add a body for your portfolio:</p>
-                {{ form.body|safe}}
-            <section>
-                <p>Add an image:</p>
-                {{ form.image}}
-            </section>
-            <section>
-                {{ form.slug }}
-            </section>
-            <section>
-                <p>Add your skills:</p>
-                <ul id="skillAdded"></ul>
-                <span id="skillButtons"></span>
-                <button type="button" id="add_skills" onclick="addSkills()">Add skills</button>
-                {{ form.skills|safe }}
-            </section>
-            <section>
-                <p>Is active?</p>
-                {{ form.is_active }}
-            </section>
-            {% if form.errors %}
-                {% for field in form %}
-                    {% for error in field.errors %}
-                        <p>{{ error|safe|escape}}</p><br>
-                    {% endfor %}
-                {% endfor %} 
-            {% endif %}
-            <input id="portfolio-button" type="submit" value="Update"/>
-            <script src="{% static "blog/js/skills.js"  %}"></script>
-        </form>
+    <section class="portfolio-update">
+        <fieldset>
+            <legend>Hello, {{request.user}}, update your portfolio</legend>
+            <form method="POST">{% csrf_token %}
+                    {{ form.media }}
+                <section>
+                    {{ form.user }}
+                </section>
+                <section>
+                    {{ form.name}}
+                </section>
+                <section>
+                    {{ form.description}}
+                </section>
+                    <p>Add a body for your portfolio:</p>
+                    {{ form.body|safe}}
+                <section>
+                    <p>Add an image:</p>
+                    {{ form.image}}
+                </section>
+                <section>
+                    {{ form.slug }}
+                </section>
+                <section>
+                    <p>Add your skills:</p>
+                    <ul id="skillAdded"></ul>
+                    <span id="skillButtons"></span>
+                    <button type="button" id="add_skills" onclick="addSkills()">Add skills</button>
+                    {{ form.skills|safe }}
+                </section>
+                <section>
+                    <p>Is active?</p>
+                    {{ form.is_active }}
+                </section>
+                {% if form.errors %}
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <p>{{ error|safe|escape}}</p><br>
+                        {% endfor %}
+                    {% endfor %} 
+                {% endif %}
+                <input id="portfolio-button" type="submit" value="Update"/>
+                <script src="{% static "blog/js/skills.js"  %}"></script>
+            </form>
+        </fieldset>
     </section>
     <script>
         document.getElementById("id_name").placeholder = " Name"
