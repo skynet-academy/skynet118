@@ -24,7 +24,9 @@
             {% endfor %}
         </ul>
 
-        <a href="{% url 'courses:update_course' pk=course.pk  %}">Update Course</a>
+        {% if user.is_active and user.is_staff %}
+            <a href="{% url 'courses:update_course' pk=course.pk  %}">Update Course</a>
+        {% endif %}
         <a class="pricing" href="{% url 'courses:course_packages' fk=course.id %}">Pricing</a>
     </fieldset>
 </section>

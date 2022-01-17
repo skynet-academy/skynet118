@@ -2,7 +2,6 @@
 {% block payment_content %}
 {% load static %}
 <section class="payment_details">
-
     <img src="{% static 'payments/images/payment_successful.png' %}" alt="">
     <h1>Your payment was successful</h1>
     <fieldset>
@@ -30,10 +29,14 @@
             <p><strong>State: </strong>{{purchase.state}}</p>
         </section>   
         <section>
-            <p>Login to start learning 
+            {% if not user.is_authenticated %}
+                <p>Login to start learning 
                 <a href="{% url 'blog:login-page' %}"><strong>here</strong></a> 
                 or if you don't have an account, create one 
                 <a href="{% url 'blog:register' %}"><strong>here</strong></a></p>
+            {% else %}
+                <a href="{% url 'blog:index' %}">Go Home</a>
+            {% endif %}
         </section>
     </fieldset>
 </section>

@@ -4,6 +4,9 @@ from django.http import HttpResponse
 from .models import Course, Package
 from django.shortcuts import render, get_object_or_404
 
+
+from blog.decorators import allowed_users
+
 # Create your views here.
 
 def index(request):
@@ -18,6 +21,8 @@ def course_package_view(request, fk):
     context = {'package': package, 'course': course }
     return render(request, 'courses/course_package.html', context)
 
+
+@allowed_users(allowed_roles=['admin', 'teachers'])
 def create_course(request):
     course = CourseForm()
     if(request.method == "POST"):
@@ -35,6 +40,7 @@ def course_view(request, id):
             }
     return render(request, 'courses/course_view.html', context) 
 
+@allowed_users(allowed_roles=['admin', 'teachers'])
 def update_course(request, pk):
     course = Course.objects.get(id=pk)
     form = CourseForm(instance=course)
@@ -47,6 +53,7 @@ def update_course(request, pk):
     return render(request, 'courses/update_course.html', context)
 
 
+@allowed_users(allowed_roles=['admin', 'teachers'])
 def delete_course(request, pk):
     course = Course.objects.get(id=pk)
     if(request.method == "POST"):
@@ -82,6 +89,7 @@ def post_detail(request, slug):
     return render(request, template_name, context)
 
 
+@allowed_users(allowed_roles=['admin', 'teachers'])
 def create_package(request):
     form = PackageForm()
     if(request.method == "POST"):
@@ -94,6 +102,7 @@ def create_package(request):
     return render(request, 'courses/create_package.html', context)
 
 
+@allowed_users(allowed_roles=['admin', 'teachers'])
 def update_package(request, pk):
     package = Package.objects.get(id=pk)
     form = PackageForm(instance=package)
@@ -105,6 +114,8 @@ def update_package(request, pk):
     context = {'form': form}
     return render(request, 'courses/update_package.html', context)
 
+
+@allowed_users(allowed_roles=['admin', 'teachers'])
 def delete_package(request, pk):
     package = Package.objects.get(id=pk)
     if(request.method == "POST"):

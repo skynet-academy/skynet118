@@ -111,7 +111,7 @@ def portfolio_view(request, id):
         return super().get_queryset().filter(is_active=True)
 
 @portfolio_created
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin', 'teachers'])
 def portfolio_create(request):
     portfolio = PortfolioForm()
     if(request.method == 'POST'):
@@ -126,6 +126,17 @@ def portfolio_create(request):
     context = {'portfolio': portfolio }
     return render(request, 'blog/portfolio_create.html', context)
 
+@allowed_users(allowed_roles=['admin', 'teachers'])
+def portfolio_update(request, pk):
+    portfolio = Portfolio.objects.get(id=pk)
+    form = PortfolioForm(instance=portfolio)
+    if(request.method == "POST"):
+        form = PortfolioForm(request.POST, instance=portfolio)
+        if(form.is_valid()):
+            form.save()
+            return redirect(f"/blog/portfolio/{request.user.id}")
+    context = {'form': form}
+    return render(request, 'blog/portfolio_update.html', context)
 
 ##################################################
 
@@ -154,7 +165,6 @@ def registerPage(request):
             username = form.cleaned_data.get('username')
             group = Group.objects.get(name='customer')
             user.groups.add(group)
-
             messages.success(request, "The account was successful created for " + username)
             messages.error(request, "Here is an error")
             return redirect("/blog/login/")
@@ -163,6 +173,8 @@ def registerPage(request):
     return render(request, 'blog/register.html', context)
 
 ##################################################
+
+@allowed_users(allowed_roles=['admin', 'teachers'])
 def profile_create(request):
     profile = UserProfileForm()
     if(request.method == "POST"):
@@ -203,3 +215,9 @@ def logoutUser(request):
     logout(request)
     return redirect('/blog/')
 
+def restricted_view(request):
+    user = request.user 
+    context = {
+            'user': user
+            }
+    return render(request, 'blog/restricted_page.html', context)

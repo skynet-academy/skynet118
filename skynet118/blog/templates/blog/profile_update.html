@@ -1,0 +1,46 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<section class="profile-create">
+    <form method="POST">{% csrf_token %}
+        <section>
+            <h1>Hello, {{ request.user }}, create your profile</h1>
+            {{ profile.user }}
+        </section>
+        <section>
+            <p>Upload an avatar for your profile:</p>
+            {{ profile.avatar }}
+        </section>
+        <section>
+            {{ profile.title }}
+        </section>
+        <section>
+            {{ profile.bio }}
+        </section>
+        <section>
+            <p>Upload your cv:</p>
+            {{ profile.cv }}
+        </section>
+        {% if profile.errors %}
+            {% for field in profile %}
+                {% for error in field.errors %}
+                    <p>{{ error|safe|escape}}</p><br>
+                {% endfor %}
+            {% endfor %} 
+        {% endif %}
+        <input id="profile-button" type="submit" value="Create">
+    </form>
+</section>
+
+<script>
+    document.getElementById("id_title").placeholder = " Add your title"
+    document.getElementById("id_bio").placeholder = " Add a description to your bio"
+    document.getElementById('id_user').hidden = true;
+    user = document.getElementById('id_user')
+    user[0].value = "{{ request.user.id }}"
+    user[0].innerHTML = "{{ request.user }}"
+    user[0].selected = true
+</script>
+{% endblock %}

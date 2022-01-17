@@ -4,6 +4,7 @@
 {% load i18n %} 
 <section class="about-me">
     <h1>My Portfolio</h1>
+    <a href="{% url 'blog:portfolio-update' pk=portfolio.id %}">Edit portfolio</a>
     <fieldset>
         <legend>Personal Data</legend>
         <label for="">Profile:</label>
@@ -14,7 +15,7 @@
         <p>{{ portfolio.name }}</p>
         <label for="">Creation:</label>
         <p>{{ portfolio.date }}</p>
-        <label for="">Creation:</label>
+        <label for="">Description:</label>
         <p>{{ portfolio.description }}</p>
     </fieldset>
     <fieldset>

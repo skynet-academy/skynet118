@@ -47,7 +47,7 @@ def allowed_users(allowed_roles=[]):
             if(group in allowed_roles):
                 return view_func(request, *args, **kwargs)
             else:
-                return HttpResponse("You are not authorized to view this page")
+                return HttpResponse("<h1>You are not allowed to visit this page. Go <a href='/blog'>Home</a></h1>")
             return view_func(request, *args, **kwargs)
         return wrapper_func
     return decorator
