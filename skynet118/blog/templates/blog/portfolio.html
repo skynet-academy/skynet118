@@ -4,7 +4,9 @@
 {% load i18n %} 
 <section class="about-me">
     <h1>My Portfolio</h1>
-    <a href="{% url 'blog:portfolio-update' pk=portfolio.id %}">Edit portfolio</a>
+    {% if request.user.id == portfolio.user.id %}
+        <a href="{% url 'blog:portfolio-update' pk=portfolio.id %}">Edit portfolio</a>
+    {% endif %}
     <fieldset>
         <legend>Personal Data</legend>
         <label for="">Profile:</label>

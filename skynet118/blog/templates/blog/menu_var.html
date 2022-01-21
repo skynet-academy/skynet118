@@ -36,7 +36,7 @@
                         <a href="{% url 'blog:profile' request.user.id %}">My profile</a>
                         <a href="{% url 'blog:portfolio' request.user.id %}">My portfolio</a>
                     {% else %}
-                        <a href="">Profile</a>
+                        <a href="">My profile</a>
                     {% endif %}
                     <a href="{% url 'blog:logout' %}">Logout</a>
                 </div>
@@ -80,7 +80,7 @@
                 <a href="{% url 'blog:profile' request.user.id %}">My profile</a>
                 <a href="{% url 'blog:portfolio' request.user.id %}">My portfolio</a>
              {% else %}
-                <a href="">Profile</a>
+                <a href="">My profile</a>
              {% endif %}
                 <a href="{% url 'blog:logout' %}">Logout</a>
            </div>

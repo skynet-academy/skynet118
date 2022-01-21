@@ -32,12 +32,18 @@
                     <strong>  
                         {{ error|escape }} <br>
                     </strong>
-    
                 {% endfor %}
             {% endfor %}
         {% endif %}
         <p style="font-size:18px; color: grey;">Are you already registered? <a href="{% url 'blog:login-page' %}"><strong>Login</strong></a> </p>
     </form>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 </section>
 <script>
     document.getElementsByName('username')[0].placeholder= "  User Name";

@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
+from django import forms
 #importing for user
 from django.contrib.auth.models import User, Group
 
@@ -100,7 +101,8 @@ def portfolios_view(request):
 def portfolio_view(request, id):
     portfolio_exists = Portfolio.objects.filter(user=id).exists()
     if(portfolio_exists):
-        portfolio = Portfolio.objects.get(user=request.user)
+        #portfolio = Portfolio.objects.get(user=request.user)
+        portfolio = Portfolio.objects.get(user=id)
         context = {'portfolio': portfolio}
         return render(request, 'blog/portfolio.html', context)
     else:
@@ -161,12 +163,17 @@ def registerPage(request):
     if(request.method == "POST"):
         form = RegisterUserForm(request.POST)
         if(form.is_valid()):
-            user = form.save()
             username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
+            email_exists = User.objects.filter(email=email).exists()
+            if(email_exists):
+                messages.error(request, f"The email: {email} is already in use")
+                return redirect("/blog/register/")
+            user = form.save()
             group = Group.objects.get(name='customer')
             user.groups.add(group)
             messages.success(request, "The account was successful created for " + username)
-            messages.error(request, "Here is an error")
+
             return redirect("/blog/login/")
 
     context = {'form': form}
@@ -174,7 +181,7 @@ def registerPage(request):
 
 ##################################################
 
-@allowed_users(allowed_roles=['admin', 'teachers'])
+#@allowed_users(allowed_roles=['admin', 'teachers'])
 def profile_create(request):
     profile = UserProfileForm()
     if(request.method == "POST"):
