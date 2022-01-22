@@ -3,15 +3,14 @@
 {% load static %}
 
 <div class="container">
+    <div id="monthDisplay">
+    </div>
     <div class="header">
-        <div id="monthDisplay">
-        </div>
-        <div>
-            <button id="backButton">Back</button>
-            <button id="nextButton">Next</button>
+        <div class="buttonMonths">
+            <button id="backButton"><strong>Back</strong></button>
+            <button id="nextButton"><strong>Next</strong></button>
         </div>
     </div>
-
     <div class="weekdays">
         <div>Sunday</div>
         <div>Monday</div>
@@ -21,7 +20,24 @@
         <div>Friday</div>
         <div>Saturday</div>
     </div>
-
+    <div class="weekdays-ipad">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+    </div>
+    <div class="weekdays-mobile">
+        <div>S</div>
+        <div>M</div>
+        <div>T</div>
+        <div>W</div>
+        <div>T</div>
+        <div>F</div>
+        <div>S</div>
+    </div>
     <div id="calendar">
     </div>
     <div id="newEventModal">
@@ -38,8 +54,5 @@
     </div>
     <div id="modalBackDrop"></div>
 </div>
-
-
-
 <script src="{% static "student/js/calendar.js" %}"></script>
 {% endblock %}

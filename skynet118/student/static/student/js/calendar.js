@@ -49,7 +49,7 @@ let load = () =>{
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
         const dayString = `${month + 1}/${i - paddingDays}/${year}`;
-        if( i > paddingDays){
+        if(i > paddingDays){
             daySquare.innerText = i - paddingDays; 
             const eventForDay = events.find(e => e.date === dayString);
             if(i - paddingDays === day && nav === 0){
@@ -69,7 +69,6 @@ let load = () =>{
         calendar.appendChild(daySquare);
     }
 };
-
 
 let closeModal = () =>{
     eventTitleInput.classList.remove('error');

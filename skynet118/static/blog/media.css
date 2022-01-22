@@ -1,4 +1,5 @@
-@media (max-width: 1440px){
+@media (max-width: 1440px)
+{
     .links a{
         padding: 0 15px;
     }
@@ -8,7 +9,8 @@
 }
 
 
-@media (max-width: 1198px){
+@media (max-width: 1198px)
+{
     .logo{
         display: none;
     }
@@ -32,9 +34,12 @@
     .courses, .about-me, 
     .portfolios, 
     .course-description,
-    .profile-create form 
+    .course-view,
+    .profile-create form,
+    .course_update_form,
+    .portfolio-update
     {
-		width: 50%;
+		width: 70%;
 	}
 	.courses{
 		height: 400px;
@@ -48,7 +53,8 @@
 }
 
 
-@media (max-width: 898px){
+@media (max-width: 898px)
+{
     .links{
         padding: 0 0 0 4rem;
     } 
@@ -68,16 +74,20 @@
     .about-me, 
     .portfolios, 
     .course-description,
-    .profile-create form
+    .course-view,
+    .course_update_form,
+    .profile-create form,
+    .portfolio-update
     {
-		width: 60%;
+		width: 80%;
 	}
 	.right-header p, .left-header p, .about-us p{
 		width: 80%;
 	}
 }
 
-@media (max-width: 740px){
+@media (max-width: 740px)
+{
     .menu{
         visibility: hidden;
     } 
@@ -107,10 +117,13 @@
     .courses,
     .about-me, 
     .portfolios, 
+    .course-view,
     .course-description,
-    .profile-create form
+    .profile-create form,
+    .course_update_form,
+    .portfolio-update
     {
-		width: 70%;
+		width: 90%;
 	}
 	.courses{
 		height: 350px;
@@ -120,7 +133,8 @@
 	}
 }
 
-@media(max-width: 680px){
+@media(max-width: 680px)
+{
     .footer-distributed{
         display: block;
     }
@@ -140,14 +154,7 @@
 	.particles-section{
 		height: 250px;
 	}
-	.create-account form, 
-    .login-account form, 
-    .courses, 
-    .about-me, 
-    .portfolios,
-    .profile-create form{
-		width: 80%;
-	}
+
 	.courses{
 		height: 300px;
 	}
@@ -155,7 +162,13 @@
 		display: flex;
 		flex-wrap: wrap;
 	}
-	.course-name, .age, .about-us p, .right-header p, .left-header p, .courses-paragraph, .course-description{
+	.course-name, 
+    .age, 
+    .about-us p, 
+    .right-header p, 
+    .left-header p, 
+    .courses-paragraph, 
+    .course-description{
 		font-size: var(--text-size);
 	}
 	.logo-header{
@@ -166,7 +179,8 @@
 	}
 }
 
-@media(max-width: 414px){
+@media(max-width: 414px)
+{
     .course{
         padding: 0;
     }
@@ -179,9 +193,12 @@
     .about-me, 
     .portfolios, 
     .course-description,
-    .profile-create form
+    .course-view,
+    .profile-create form,
+    .course_update_form,
+    .portfolio-update
     {
-		width: 100%;
+		width: 95%;
 	}
 	.courses{
 		height: 250px;

@@ -1,15 +1,14 @@
-.list-courses{
-    margin: 4rem auto;
-    width: 90%;
-}
-
 .list-courses ul{
     list-style-type: none;    
 }
 
-.course-description{
-    margin: 0 auto;
-    width: 40%;
+.course-description, .course-view, .course_update_form{
+    margin: 4rem auto;
+    width: 60%;
+}
+
+.course_update_form section{
+    margin: 2rem auto;
 }
 
 .list-price-available{
@@ -19,7 +18,7 @@
     justify-content: center;
     text-align: center;
     flex-wrap: wrap;
-} 
+}
 
 .price{
     padding: 1rem;
@@ -55,7 +54,6 @@
     word-wrap: break-word;
 }
 
-
 .link-buy{
     background-color: white;
     padding: 0.5rem 2rem;
@@ -72,8 +70,12 @@
     color: white; 
 }
 
-.course-description fieldset{
+.course-description fieldset, 
+.course-view fieldset, 
+.course_update_form fieldset,
+{
     border: 2px solid var(--turquoise);
+    border-radius: 10px;
     margin: 2rem auto;
 }
 
@@ -81,7 +83,7 @@
     text-align: center;
 }
 
-.pricing{
+.pricing, #updateButton{
     display: block;
     text-align: center;
     margin: 0 auto;
@@ -93,8 +95,34 @@
     border: 1px solid var(--turquoise);
     border-radius: 5px;
     padding: 5px;
+    cursor: pointer; 
 }
 
-.pricing:hover{
+.pricing:hover, #updateButton:hover{
     background-color: var(--turquoise);
+}
+
+.course-image{
+    width: 200px;
+    height: 200px;
+}
+.course-image img{
+    width: 100%;
+}
+
+#previous_img img{
+    text-align: left;
+    display: block;
+}
+
+
+#id_course_name, 
+#id_date_pub, 
+#id_price, 
+#id_nro_lessons, 
+#id_nro_tests,
+#id_description
+{
+    border: 2px solid var(--turquoise);
+    border-radius: 5px;
 }

@@ -51,7 +51,9 @@ INSTALLED_APPS = [
     'ckeditor',
     'paypalcheckoutsdk',
     'paypalpayoutssdk',
+
     # my apps
+
     'frontend.apps.FrontendConfig',
     'blog.apps.BlogConfig',
     'payments.apps.PaymentsConfig',
@@ -158,6 +160,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 MEDIA_URL = '/images/'
 
+GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

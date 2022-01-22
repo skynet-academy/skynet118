@@ -16,8 +16,12 @@
 </div>
 <hr>
 <div class="about-us">
+  <div class="world-map">
+    <h2>Our students around the world</h2>
+    <img class="world-map-img" src="{% static 'blog/images/world.svg' %}" alt="">
+  </div>
   <h2>{% trans 'About us' %}</h2>
-  <p>{% trans "We're a team of young developers and designers with years of expertise, we really want to share our experience and knowledge  . . .  continue " %}<a href="{% url 'blog:portfolios' %}">{% trans 'here.' %}</a></p>
+  <p>{% trans "We're a team of young developers and designers with years of expertise, we really want to share our experience and knowledge  . . . " %}<a href="{% url 'blog:portfolios' %}">{% trans 'continue.' %}</a></p>
 </div>
 
 {% include "blog/slides.html" %} 

@@ -1,88 +1,34 @@
 @media (max-width: 1440px){
-    .links a{
-        padding: 0 15px;
-    }
     
-    .search-box:hover > .search-txt {
-        width: 150px;
-    }
 }
 
 
 @media (max-width: 1198px){
-    .logo{
-        display: none;
-    }
-    .search-field{
-        left: 240px;
-    }
-    .links{
-        padding: 0 0 0 12rem;
+    .payment_details{
+        width: 70%; 
     }
 }
 
 
 @media (max-width: 898px){
-    .links{
-        padding: 0 0 0 4rem;
-    } 
-    .search-field{
-        display: none;
+    .payment_details{
+        width: 80%; 
     }
-    
-    .languages p{
-        display: none;
-    }
-
 }
 
 @media (max-width: 740px){
-    .menu{
-        visibility: hidden;
-    } 
-
-    .languages{
-        display: none;
-    }
-
-    .links {
-        display: none;
-    }
-
-    .links-burguer{
-       display: block; 
-       height: 0;
-    }
-
-    .course{
-        padding: 0;
-    }
-    
-    .particles-section{
-        margin-top: 0;
+    .payment_details{
+        width: 90%; 
     }
 }
 
 @media(max-width: 680px){
-    .footer-distributed{
-        display: block;
-    }
-    .footer-left{
-        width: unset;
-    }
-    .footer-center{
-        width: unset;
-        margin: 2rem 0;
-    }
-    .footer-right{
-        width: unset;
-    }
+
 }
 
 @media(max-width: 414px){
-    .course{
-        padding: 0;
-        margin: 2rem 0; 
+    .payment_details{
+        width: 95%; 
     }
 }
 

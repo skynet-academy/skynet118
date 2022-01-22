@@ -100,15 +100,15 @@
 }
 
 .payment_details{
-    width: 80%;
+    width: 60%;
     margin: 4rem auto;
     text-align: center;
 }
 
 .payment_details fieldset{
-    width: 100%;
     border: 2px solid var(--turquoise);
     text-align: left;
+    border-radius: 10px;
 }
 
 .payment_details img{

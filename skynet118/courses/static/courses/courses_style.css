@@ -72,7 +72,7 @@
 
 .course-description fieldset, 
 .course-view fieldset, 
-.course_update_form fieldset,
+.course_update_form fieldset
 {
     border: 2px solid var(--turquoise);
     border-radius: 10px;

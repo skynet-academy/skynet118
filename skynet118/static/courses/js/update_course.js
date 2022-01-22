@@ -14,12 +14,32 @@ let id_nro_tests = document.getElementById("id_nro_tests")
 id_nro_tests.placeholder = " Number of tests"
 
 let details = document.getElementById("id_details")
-let description = document.getElementById("id_description")
-description.placeholder = " Add a course description"
+let detailsPrevious = JSON.parse(details.innerHTML)
+let insertDetails = (value) =>{
+    let previousDetails = document.getElementById('previousDetails')
+    let li = document.createElement('li')
+    li.innerHTML = value
+    previousDetails.appendChild(li)
+}
+Object.values(detailsPrevious).forEach(value => insertDetails(value))
 
-let image = document.getElementById("id_image")
+
+let description = document.getElementById("id_description")
+description.placeholder = " Add a description"
+
+let image = document.getElementById("previous_img")
+let image_url = image.childNodes[1].href
+image.childNodes[12].src = image_url
 
 let topics = document.getElementById("id_topics")
+let topicsPrevious = JSON.parse(topics.innerHTML)
+let insertTopics = (value) =>{
+    let previousTopics = document.getElementById('previousTopics')
+    let li = document.createElement('li')
+    li.innerHTML = value
+    previousTopics.appendChild(li)
+}
+Object.values(topicsPrevious).forEach(value => insertTopics(value))
 
 let details_updated = document.getElementById("details_updated") 
 
@@ -40,7 +60,7 @@ let modifyDetails = () => {
     let myInp = document.createElement("input")
     let myButton = document.createElement("button")
     myButton.type = "button"
-    myButton.innerHTML = "create a detail"
+    myButton.innerHTML = "Create a detail"
     myInp.placeholder = " Add your detail"
     myDiv.appendChild(myInp)
     myDiv.appendChild(myButton)
@@ -84,7 +104,6 @@ let modifyTopics = () =>{
             data[i] = topicsAdded.childNodes[i].textContent
         }
         topics.value = JSON.stringify(data)
-        detailsButtons2.innerHTML = ""
+        topicsButtons.innerHTML = ""
     }
-    
 }

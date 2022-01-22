@@ -404,6 +404,7 @@ hr{
 	background-color: var(--bluedark);
 	color: var(--turquoise);
 	border: none;
+    font-size: var(--text-size);
 }
 
 .dropdown{
