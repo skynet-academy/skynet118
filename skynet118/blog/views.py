@@ -77,7 +77,7 @@ def contact_create(request):
         print(request.body)
         if(contact.is_valid()):
             contact.save()
-            return redirect('/blog/')
+            return redirect('/')
         context = {'contact': contact}
         return render(request, 'blog/contact_create.html', context)
 
@@ -106,7 +106,7 @@ def portfolio_view(request, id):
         context = {'portfolio': portfolio}
         return render(request, 'blog/portfolio.html', context)
     else:
-        return redirect('/blog/portfolio_create/')
+        return redirect('/portfolio_create/')
     
 
     def get_queryset(self):
@@ -123,7 +123,7 @@ def portfolio_create(request):
             portfolio_name = portfolio.cleaned_data.get('name')
             messages.success(request, "The portfolio was successful created for " + portfolio_name)
             messages.error(request, "Here is an error")
-            return redirect('/blog/')
+            return redirect('/')
 
     context = {'portfolio': portfolio }
     return render(request, 'blog/portfolio_create.html', context)
@@ -136,7 +136,7 @@ def portfolio_update(request, pk):
         form = PortfolioForm(request.POST, instance=portfolio)
         if(form.is_valid()):
             form.save()
-            return redirect(f"/blog/portfolio/{request.user.id}")
+            return redirect(f"/portfolio/{request.user.id}")
     context = {'form': form}
     return render(request, 'blog/portfolio_update.html', context)
 
@@ -174,7 +174,7 @@ def registerPage(request):
             user.groups.add(group)
             messages.success(request, "The account was successful created for " + username)
 
-            return redirect("/blog/login/")
+            return redirect("/login/")
 
     context = {'form': form}
     return render(request, 'blog/register.html', context)
@@ -188,7 +188,7 @@ def profile_create(request):
         profile = UserProfileForm(request.POST)
         if(profile.is_valid()):
             profile.save()
-            return redirect("/blog/") 
+            return redirect("/") 
     context = {"profile": profile}
     return render(request, 'blog/profile_create.html', context)
 
@@ -200,7 +200,7 @@ def profile_view(request, id):
         context = {'profile': profile}
         return render(request, 'blog/profile.html', context)
     else:
-        return redirect('/blog/profile_create/')
+        return redirect('/profile_create/')
 
 ##################################################
 
@@ -212,7 +212,7 @@ def loginPage(request):
         user = authenticate(request, username=username, password=password)
         if(user is not None):
             login(request, user)
-            return redirect("/blog/")
+            return redirect("/")
         else:
             messages.info(request, "The username or password is incorrect")
     context = {}
@@ -220,7 +220,7 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('/blog/')
+    return redirect('/')
 
 def restricted_view(request):
     user = request.user 
