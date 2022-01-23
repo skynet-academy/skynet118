@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% block title-header %}Portfolios{% endblock title-header %}
 {% block content %}
 {% load static %}
 {% load i18n %} 
@@ -7,21 +8,18 @@
         {% for portfolio in portfolios %}
             <fieldset>
                 <legend>Personal Data - {{portfolio.user}}</legend>
-                <p>{{ portfolio.image|safe }}</p>
-                <label for="">Teacher:</label>
-                <p>{{ portfolio.user }}</p>
-                <label for="">Name:</label>
-                <p>{{ portfolio.name }}</p>
-                <label for="">Description:</label>
-                <p>{{ portfolio.description }}</p>
+                <img src="/images/{{ portfolio.image }}" alt="">
+                
+                <p>Teacher Name: {{ portfolio.name }}</p>
+                <p>user: {{ portfolio.user }}</p>
+                <p>Description: {{ portfolio.description }}</p>
                 <label for="">Skills</label>
                 <ul>
                     {% for skill, value in portfolio.skills.items %}
                     <li> {{value}} </li>
                     {% endfor %}
                 </ul>
-                <label for="">Link portfolio</label>
-                <a href="">{{ portfolio.slug }}</a>
+                <label for="">Link portfolio <a href="">{{portfolio.slug}}</a></label>
             </fieldset>
         {% endfor %}
     </section>

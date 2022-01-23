@@ -6,21 +6,16 @@
     <h1>My Profile</h1>
     <fieldset>
         <legend>Personal data</legend>
-        <p for="">My avatar:</p>
+        <p>My avatar:</p>
         <img src="/images/{{profile.avatar}}" alt="">
-        <p for="">User name:</p>
-        <p>{{ profile.user }}</p>
+        <p>User name: {{ profile.user }}</p>
     </fieldset>
 
     <fieldset>
         <legend>About me</legend>
-        <label for="">Title:</label>
-        <p>{{ profile.title }}</p>
-        <label for="">Mi bio:</label>
-        <p>{{ profile.bio }}</p>
-        <label for="">My cv:</label>
-        <a href="/images/{{ profile.cv }}" download="{{ profile.cv }}">Download</a>
-        <p></p>
+        <p>Title: {{ profile.title }}</p>
+        <p>Mi bio: {{ profile.bio }}</p>
+        <p>My cv: <a href="/images/{{profile.cv}}" download="{{profile.cv}}">Download</a></p>
     </fieldset>
 </section>
 {% endblock content %}

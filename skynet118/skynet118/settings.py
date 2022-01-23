@@ -164,3 +164,10 @@ GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'nicolassulca118@gmail.com'
+EMAIL_HOST_PASSWORD = '123321456britanicO!@'
+ACCOUNT_EMAIL_VERIFICATION='none'

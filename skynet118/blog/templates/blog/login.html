@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-
+{% block title-header %}Login{% endblock title-header %}
 {% block content %}
 <section class="login-account">
     <h1>Start Learning!</h1>
@@ -17,6 +17,7 @@
             <p>{{message}}</p>
         {% endfor %}
         <p style="font-size: 18px; color: grey;" >Don't have an account? <a href="{% url 'blog:register' %}"><strong>Sign up</strong></a></p>
+        <a style="font-size: 14px; color: grey;" href="{% url 'blog:password_reset' %}"><strong>You forgot your password?</strong></a></p>
     </form>
 </section>
 {% endblock %}
