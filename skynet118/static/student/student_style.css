@@ -1,13 +1,16 @@
 .container{
     width: 80%;
-    margin: 0 auto;
+    margin: 2rem auto;
+}
+#calendar{
+    background-color: var(--bluedark);
 }
 
-.weekdays, #calendar{
+.weekdays, #calendar, .weekdays-mobile, .weekdays-ipad{
     text-align: center;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto;
-    grid-gap: 10px;
+    grid-gap: 5px;
     padding: 10px;
     border: 2px solid black;
 }
@@ -20,10 +23,44 @@
     border-radius: 5px;
     border: 2px solid black;
     cursor: pointer;
-    background-color: #e6f2ff;
+    background-color: var(--turquoise);
+}
+
+.padding{
+    background-color: #B9E9FF;
 }
 
 
 #currentDay{
     background-color: grey; 
 }
+
+.weekdays-ipad{
+    display: none;
+}
+
+.weekdays-mobile{
+    display: none;
+}
+
+.buttonMonths{
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#backButton, #nextButton{
+    background-color: var(--bluedark);
+    border: 2px solid var(--turquoise);
+    border-radius: 5px;
+    color: var(--turquoise);
+    cursor: pointer;
+}
+
+#backButton:hover, #nextButton:hover{
+    background-color: var(--turquoise);
+    color: var(--bluedark);
+    border: 2px solid var(--bluedark);
+}
+
+

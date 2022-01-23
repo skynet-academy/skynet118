@@ -1,0 +1,55 @@
+@media (max-width: 1440px)
+{
+
+}
+
+
+@media (max-width: 1198px)
+{
+
+}
+
+
+@media (max-width: 898px)
+{
+    
+}
+
+@media (max-width: 740px)
+{
+    .weekdays{
+        display: none;
+    }
+    .weekdays-ipad{
+        display: grid;
+    }
+}
+
+@media(max-width: 680px)
+{
+    .weekdays-ipad{
+        display: none;
+    }
+    .weekdays-mobile{
+        display: grid;
+    }
+    .container{
+        width: 90%;
+    }
+    .day, .padding{
+        height: 30px;
+        padding: 10px;
+    }
+}
+
+@media(max-width: 414px)
+{
+    .container{
+        width: 98%;
+        font-size: 12px;
+    }
+    .day, .padding{
+        height: 25px;
+        padding: 5px;
+    }
+}
