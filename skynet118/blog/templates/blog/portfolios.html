@@ -8,7 +8,7 @@
         {% for portfolio in portfolios %}
             <fieldset>
                 <legend>Personal Data - {{portfolio.user}}</legend>
-                <img src="/images/{{ portfolio.image }}" alt="">
+                <img class="img-portfolio" src="/images/{{ portfolio.image }}" alt="{{portfolio.user}} img">
                 
                 <p>Teacher Name: {{ portfolio.name }}</p>
                 <p>user: {{ portfolio.user }}</p>

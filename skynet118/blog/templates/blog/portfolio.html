@@ -9,21 +9,16 @@
     {% endif %}
     <fieldset>
         <legend>Personal Data</legend>
-        <label for="">Profile:</label>
-        <p>{{ portfolio.image|safe }}</p>
-        <label for="">User: </label>
-        <p>{{ portfolio.user }}</p>
-        <label for="">Name:</label>
-        <p>{{ portfolio.name }}</p>
-        <label for="">Creation:</label>
-        <p>{{ portfolio.date }}</p>
-        <label for="">Description:</label>
-        <p>{{ portfolio.description }}</p>
+        <img class="img-portfolio" src="/images/{{portfolio.image}}" alt="">
+        <p>Profile: </p>
+        <p>User: {{ portfolio.user }}</p>
+        <p>Name: {{ portfolio.name }}</p>
+
+        <p>Description: {{ portfolio.description }}</p>
     </fieldset>
     <fieldset>
         <legend>Description</legend>
-        <label for="">Body:</label>
-        <p>{{ portfolio.body|safe }}</p>
+        <p>Body: {{ portfolio.body|safe }}</p>
         <label for="">Skills:</label>
         <ul>
             {% for key, value in portfolio.skills.items %}

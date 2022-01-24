@@ -21,7 +21,6 @@ from .decorators import (
         profile_created
         )
 
-
 from .forms import (
         UserProfileForm,
         PortfolioForm,

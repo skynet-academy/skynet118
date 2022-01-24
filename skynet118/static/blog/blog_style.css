@@ -215,13 +215,26 @@
 .about-me, 
 .portfolios, 
 .profile-create form,
-.portfolio-update
+.portfolio-update,
+.reset-password,
+.reset-password-done
 {
 	width: 60%;
 	margin: 4rem auto;
 }
 
-.create-account section, .login-account section, .profile-create section{
+.img-portfolio{
+    width: 140px;
+    height: 170px;
+    border-radius: 50%;
+    display: flex;
+    margin: 4rem auto;
+}
+
+.create-account section, 
+.login-account section, 
+.profile-create section
+{
 	margin: 20px 0;
 }
 
@@ -252,7 +265,9 @@
 
 #register-button, 
 #login, 
-#profile-button{
+#profile-button,
+#buttonReset
+{
 	border: 1px solid var(--turquoise);
 	border-radius: 5px;
 	color: white;
@@ -264,14 +279,17 @@
 
 #register-button:hover, 
 #login:hover, 
-#profile-button:hover{
+#profile-button:hover,
+#buttonReset:hover
+{
 	color: var(--bluedark2);
 	background-color: white;
 }
 
 .about-me fieldset, 
 .portfolios fieldset,
-.portfolio-update fieldset
+.portfolio-update fieldset,
+.reset-password fieldset 
 {
 	border: 2px solid var(--turquoise);
 	margin: 2rem auto;
@@ -281,6 +299,4 @@
 #cke_id_body{
     width:100% !important;
 }
-
-
 
