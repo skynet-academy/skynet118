@@ -5,7 +5,7 @@ from .models import Portfolio
 def unauthenticated_user(view_func):
     def wrapper_function(request, *args, **kwargs):
         if(request.user.is_authenticated):
-            return redirect("/blog/")
+            return redirect("/")
         else:
             return view_func(request, *args, **kwargs)
 
@@ -18,7 +18,7 @@ def portfolio_created(portfolio_create):
         if(portfolio_exists):
             portfolio = Portfolio.objects.get(user=request.user)
             if(str(portfolio.user) == request.user.username):
-                return redirect('/blog/')
+                return redirect('/')
             else:
                 return portfolio_create(request, *args, **kwargs)
         else:
@@ -31,7 +31,7 @@ def profile_created(profile_create):
         if(profile_exists):
             profile = UserProfile.objects.get(user=request.user)
             if(str(profile.user) == request.user.username):
-                return redirect('/blog/')
+                return redirect('/')
             else:
                 return profile_create(request, *args, **kwargs)
         else:
