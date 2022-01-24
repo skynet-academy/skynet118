@@ -167,7 +167,7 @@ def registerPage(request):
             email_exists = User.objects.filter(email=email).exists()
             if(email_exists):
                 messages.error(request, f"The email: {email} is already in use")
-                return redirect("/blog/register/")
+                return redirect("/register/")
             user = form.save()
             group = Group.objects.get(name='customer')
             user.groups.add(group)

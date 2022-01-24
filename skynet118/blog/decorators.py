@@ -8,7 +8,6 @@ def unauthenticated_user(view_func):
             return redirect("/")
         else:
             return view_func(request, *args, **kwargs)
-
     return wrapper_function
 
 
@@ -47,7 +46,7 @@ def allowed_users(allowed_roles=[]):
             if(group in allowed_roles):
                 return view_func(request, *args, **kwargs)
             else:
-                return HttpResponse("<h1>You are not allowed to visit this page. Go <a href='/blog'>Home</a></h1>")
+                return HttpResponse("<h1>You are not allowed to visit this page. Go <a href='/'>Home</a></h1>")
             return view_func(request, *args, **kwargs)
         return wrapper_func
     return decorator
@@ -57,7 +56,6 @@ def admin_only(view_func):
         group = None
         if(request.user.groups.exists()):
             group = request.user.groups.all()[0].name
-
         if(group == "customer"):
             return redirect('contact')
         if(group == "admin"):
