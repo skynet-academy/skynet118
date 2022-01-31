@@ -1,9 +1,53 @@
 {% extends "courses/base.html" %}
+{% load static %}
 {% block content %}
-
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Send</button>
-</form>
+<section>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Create a course</legend>
+            <section>
+                {{ course.course_name }}
+            </section>
+            <section>
+                {{ course.date_pub }}
+            </section>
+            <section>
+                {{ course.price }}
+            </section>
+            <section>
+                {{ course.nro_lessons }}
+            </section>
+            <section>
+                {{ course.nro_tests }}
+            </section>
+                <div class="details-course">
+                    <p>Course Details:</p>
+                    <ul>
+                    </ul>
+                </div>
+                {{ course.details }}
+                <div class="buttons-course">
+                </div>
+            <section>
+                {{ course.description }}
+            </section>
+            <section>
+                {{ course.image }}
+            </section>
+            <section>
+                {{ course.topics }}
+            </section>
+        </fieldset>
+        <div class="btns-create-course">
+            <button type="submit">Create</button>
+            <button type="button">Cancel</button>
+        </div>
+        {% for error in course.errors %}
+            <p>{{error}} is required</p>
+        {% endfor %}
+    </form>
+</section>
+<script src="{% static 'courses/js/create_course.js' %}"></script>
 {% endblock content %}
+

@@ -1,20 +1,53 @@
 {% extends "courses/base.html" %}
 {% block content %}
 
-<form action="" method="POST">
-    {% csrf_token  %}
-    <h1>Create a new package:</h1>
-    <fieldset>
-        <legend>Fill the form</legend>
-        <label for="">Select a course: {{ form.course_package}}</label><br/>
-        <label for="">Package name: {{form.package_name }}</label> <br/>
-        <label for="">Price: {{ form.price }}</label> <br/>
-        <label for="">Number of lessons: {{ form.nro_lessons }}</label> <br/>
-        <label for="">Comment: {{ form.comment }}</label> <br/>
-        <label for="">Time per lesson: {{ form.time }}</label>
-    </fieldset>
-    <button type="submit">Send</button>
-</form>
+<section class="create-package-form">
+    <form action="" method="POST">
+        {% csrf_token  %}
+        <h1>Create a new package:</h1>
+        <fieldset>
+            <legend>Fill the form</legend>
+            <section>
+            {{ form.course_package}}
+            </section>
+            <section>
+                {{form.package_name }}
+            </section>
+            <section>
+                {{ form.price }}
+            </section>
+            <section>
+                {{ form.nro_lessons }}
+            </section>
+            <section>
+                {{ form.comment }}
+            </section>
+            <section>
+                {{ form.time }}
+            </section>
+        </fieldset>
+        <section class="btns-packages">
+            <button id="btn-create-package" type="submit">Send</button>
+            <button id="btn-cancel-create" type="button" onclick="backHome()">Cancel</button>
+        </section>
+    </form>
+</section>
+<script>
+    let backHome = () => window.location.replace('/courses/');
 
+    let id_package_name = document.getElementById('id_package_name');
+    id_package_name.placeholder = " Package name"
 
+    let id_price = document.getElementById('id_price');
+    id_price.placeholder = " price"
+
+    let id_nro_lessons = document.getElementById('id_nro_lessons');
+    id_nro_lessons.placeholder = " number of lessons"
+
+    let id_comment = document.getElementById('id_comment');
+    id_comment.placeholder = " Comments"
+
+    let id_time = document.getElementById('id_time');
+    id_time.placeholder = " time per lesson"
+</script>
 {% endblock content %}

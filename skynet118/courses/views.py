@@ -3,7 +3,7 @@ from .forms import CommentForm, CourseForm, PackageForm
 from django.http import HttpResponse
 from .models import Course, Package
 from django.shortcuts import render, get_object_or_404
-
+from django.contrib import messages
 
 from blog.decorators import allowed_users
 
@@ -26,10 +26,9 @@ def course_package_view(request, fk):
 def create_course(request):
     course = CourseForm()
     if(request.method == "POST"):
-        course = CourseForm(request.POST)
+        course = CourseForm(request.POST, request.FILES)
         if(course.is_valid()):
             course.save()
-            return redirect('/courses/')
     context = {'course': course}
     return render(request, 'courses/create_course.html', context)
 
@@ -93,7 +92,7 @@ def post_detail(request, slug):
 def create_package(request):
     form = PackageForm()
     if(request.method == "POST"):
-        form = PackageForm(request.POST)
+        form = PackageForm(request.POST, request.FILES)
         if(form.is_valid()):
             form.save()
             return redirect('/courses/')

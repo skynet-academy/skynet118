@@ -3,6 +3,10 @@
 {% load static %}
 
 <section class="course-description">
+    <h1>All courses available</h1>
+    <div class="create-new-course">
+        <a href="{% url 'courses:create_course' %}">Create a new course</a>
+    </div>
     {% for course in courses %}
     <fieldset>
         <legend>{{course.course_name}}</legend>
