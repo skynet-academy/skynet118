@@ -14,7 +14,7 @@ let carrusel = (stack, len) => {
 
 let resetCarrusel = (len) => {
     for(let i = 1; i <= len; i++){
-        let container = document.querySelector('.course-' + (len - i + 1));
+        let container = document.querySelector('.course-' + `${(len - i + 1)}`);
         container.style.display = "none";
         container.style.zIndex = -i; 
         container.style.left = "100%";
