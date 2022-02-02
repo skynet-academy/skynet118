@@ -23,7 +23,6 @@ let openModal = (date) =>{
     backDrop.style.display = 'block';
 }
 
-
 let load = () =>{
     const dt = new Date();
     if(nav !== 0){

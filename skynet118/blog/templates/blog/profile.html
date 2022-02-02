@@ -3,6 +3,9 @@
 {% load static %}
 {% load i18n %} 
 <section class="about-me">
+    {% if request.user.id == profile.user.id %}
+        <a href="{% url 'blog:profile-update' id=profile.id  %}">Update profile</a>
+    {% endif %}
     <h1>My Profile</h1>
     <fieldset>
         <legend>Personal data</legend>

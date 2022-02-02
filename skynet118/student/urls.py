@@ -6,7 +6,7 @@ app_name = 'student'
 
 
 urlpatterns = [
-        path("calendar/<str:name>", views.calendar, name = "calendar"),
+        path("calendar/<str:student>", views.calendar, name = "calendar"),
         ]
 
 

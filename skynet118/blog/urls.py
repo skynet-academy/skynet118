@@ -52,6 +52,7 @@ urlpatterns = [
 
         path("profile_create/", views.profile_create, name = "profile-create"),
         path("profile/<int:id>", views.profile_view, name = "profile"),
+        path("profile_update/<int:id>", views.profile_update, name = "profile-update"),
 
         path("portfolio_create/", views.portfolio_create, name = "portfolio-create"),
         path("portfolios/", views.portfolios_view, name = "portfolios"),

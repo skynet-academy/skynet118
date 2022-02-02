@@ -63,4 +63,3 @@ def admin_only(view_func):
 
     return wrapper_function
 
-

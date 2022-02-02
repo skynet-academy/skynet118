@@ -5,7 +5,7 @@
     <section class="portfolio-update">
         <fieldset>
             <legend>Hello, {{request.user}}, update your portfolio</legend>
-            <form method="POST">{% csrf_token %}
+            <form method="POST" enctype="multipart/form-data">{% csrf_token %}
                     {{ form.media }}
                 <section>
                     {{ form.user }}

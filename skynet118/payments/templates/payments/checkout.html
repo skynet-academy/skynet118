@@ -2,19 +2,6 @@
 {% load static %}
 {% block payment_content %}
 	<a class="go-pricing" href="{% url 'courses:index_course' %}">Come back to Courses</a>
-	<div class="container-products">
-       <div class="img-product">
-	      <img src="{{ course.image.url }}" alt="{{course.course_name}}">
-       </div>
-       <div class="purchase-info">
-          <h3>{{ course.course_name }} course</h3>
-		  <p>Number of lessons: {{package.nro_lessons}}</p>
-		  <p>You are buying a <strong>{{package.package_name}}</strong> package</p>
-          <h4 class="product-price" >Total: ${{package.price}} </h4>
-          <div id="paypal-button-container">
-          </div>
-       </div>
-    </div>
     <hr>
 	<div class="wise">
 		<h3 class="wise-text">If you want to pay using Wise, please use this link.</h3>
@@ -31,8 +18,21 @@
 			<div id="info-account"></div>
 		</div>
 	</div>
+	<div class="container-products">
+        <h3>Or use Paypal to make your payment</h3>
+       <div class="img-product">
+	      <img src="{{ course.image.url }}" alt="{{course.course_name}}">
+       </div>
+       <div class="purchase-info">
+          <h3>{{ course.course_name }} course</h3>
+		  <p>Number of lessons: {{package.nro_lessons}}</p>
+		  <p>You are buying a <strong>{{package.package_name}}</strong> package</p>
+          <h4 class="product-price" >Total: ${{package.price}} </h4>
+          <div id="paypal-button-container"></div>
+       </div>
+    </div>
 	<script src="{% static 'payments/js/accounts.js' %}"></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=AZtrmMXHZ-sTMmTsk3eIzoItkqZTXFXvUo74qInK8MZbOcCsZDlJ0as3qRRSDHVIpbrEJtywf_JH-Dda&currency=USD"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AWw0wNEoQtKQsAlFgFUjx59Qs7CZSCujq01Ml-cysbffLlvHpFHPcqg1lKNRO5SffFKszQeZVqQ56G77&currency=USD"></script>
     <script>
         function getCookie(name){
             let cookieValue = null;

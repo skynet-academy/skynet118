@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 #from django.template import loader
@@ -106,7 +108,6 @@ def portfolio_view(request, id):
         return render(request, 'blog/portfolio.html', context)
     else:
         return redirect('/portfolio_create/')
-    
 
     def get_queryset(self):
         return super().get_queryset().filter(is_active=True)
@@ -116,7 +117,7 @@ def portfolio_view(request, id):
 def portfolio_create(request):
     portfolio = PortfolioForm()
     if(request.method == 'POST'):
-        portfolio = PortfolioForm(request.POST)
+        portfolio = PortfolioForm(request.POST, request.FILES)
         if(portfolio.is_valid()):
             portfolio.save()
             portfolio_name = portfolio.cleaned_data.get('name')
@@ -132,8 +133,11 @@ def portfolio_update(request, pk):
     portfolio = Portfolio.objects.get(id=pk)
     form = PortfolioForm(instance=portfolio)
     if(request.method == "POST"):
-        form = PortfolioForm(request.POST, instance=portfolio)
+        form = PortfolioForm(request.POST, request.FILES, instance=portfolio)
         if(form.is_valid()):
+            img_path = portfolio.image.path 
+            if(os.path.exists(img_path)):
+                os.remove(img_path)
             form.save()
             return redirect(f"/portfolio/{request.user.id}")
     context = {'form': form}
@@ -184,7 +188,7 @@ def registerPage(request):
 def profile_create(request):
     profile = UserProfileForm()
     if(request.method == "POST"):
-        profile = UserProfileForm(request.POST)
+        profile = UserProfileForm(request.POST, request.FILES)
         if(profile.is_valid()):
             profile.save()
             return redirect("/") 
@@ -200,6 +204,25 @@ def profile_view(request, id):
         return render(request, 'blog/profile.html', context)
     else:
         return redirect('/profile_create/')
+
+
+def profile_update(request, id):
+    profile = UserProfile.objects.get(id=id)
+    form = UserProfileForm(instance=profile)
+    if(request.method == "POST"):
+        form = UserProfileForm(request.POST, request.FILES , instance=profile)
+        if(form.is_valid()):
+            img_path = profile.avatar.path 
+            if(os.path.exists(img_path)):
+                os.remove(img_path)
+            form.save()
+            return redirect(f"/profile/{request.user.id}")
+    context = {'form': form}
+    return render(request, 'blog/profile_update.html', context)
+
+
+
+
 
 ##################################################
 

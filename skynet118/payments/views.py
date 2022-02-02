@@ -82,9 +82,9 @@ class PayPalClient:
 
     def __init__(self):
         #self.client_id =  os.environ["PAYPAL-CLIENT-ID"] if 'PAYPAL-CLIENT-ID' in os.environ else "AWw0wNEoQtKQsAlFgFUjx59Qs7CZSCujq01Ml-cysbffLlvHpFHPcqg1lKNRO5SffFKszQeZVqQ56G77"
-        self.client_id =  os.environ["PAYPAL-CLIENT-ID"] if 'PAYPAL-CLIENT-ID' in os.environ else "AZtrmMXHZ-sTMmTsk3eIzoItkqZTXFXvUo74qInK8MZbOcCsZDlJ0as3qRRSDHVIpbrEJtywf_JH-Dda"
+        self.client_id =  os.environ["PAYPAL-CLIENT-ID"] if 'PAYPAL-CLIENT-ID' in os.environ else "AWw0wNEoQtKQsAlFgFUjx59Qs7CZSCujq01Ml-cysbffLlvHpFHPcqg1lKNRO5SffFKszQeZVqQ56G77"
         #self.client_secret = os.environ["PAYPAL-CLIENT-SECRET"] if 'PAYPAL_CLIENT_SECRET' in os.environ else "EMfOdmE60zetRvaOR5GesXeFnLgMQ5SzVo4A-FSRDOCmzMZ0DWlrOSRsqs601W3sp0hW-1xIAkA6KxBR"
-        self.client_secret = os.environ["PAYPAL-CLIENT-SECRET"] if 'PAYPAL_CLIENT_SECRET' in os.environ else "EOzueLV13bWEyg-zt9D1o3eJKAGK9iY4n-MB8xUkUVJkSL4XKYPdtFasyM_5jh_anQnbx5C5-XKvAXzA"
+        self.client_secret = os.environ["PAYPAL-CLIENT-SECRET"] if 'PAYPAL_CLIENT_SECRET' in os.environ else "EMfOdmE60zetRvaOR5GesXeFnLgMQ5SzVo4A-FSRDOCmzMZ0DWlrOSRsqs601W3sp0hW-1xIAkA6KxBR"
 
         """Set up and return PayPal Python SDK environment with PayPal Access credentials.
            This sample uses SandboxEnvironment. In production, use

@@ -4,33 +4,33 @@
 {% block content %}
 
 <section class="profile-create">
-    <form method="POST">{% csrf_token %}
+    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
         <section>
-            <h1>Hello, {{ request.user }}, create your profile</h1>
-            {{ profile.user }}
+            <h1>Hello, {{ request.user }}, create your form</h1>
+            {{ form.user }}
         </section>
         <section>
-            <p>Upload an avatar for your profile:</p>
-            {{ profile.avatar }}
+            <p>Upload an avatar for your form:</p>
+            {{ form.avatar }}
         </section>
         <section>
-            {{ profile.title }}
+            {{ form.title }}
         </section>
         <section>
-            {{ profile.bio }}
+            {{ form.bio }}
         </section>
         <section>
             <p>Upload your cv:</p>
-            {{ profile.cv }}
+            {{ form.cv }}
         </section>
-        {% if profile.errors %}
-            {% for field in profile %}
+        {% if form.errors %}
+            {% for field in form %}
                 {% for error in field.errors %}
                     <p>{{ error|safe|escape}}</p><br>
                 {% endfor %}
             {% endfor %} 
         {% endif %}
-        <input id="profile-button" type="submit" value="Create">
+        <input id="profile-button" type="submit" value="Update">
     </form>
 </section>
 

@@ -2,12 +2,19 @@
     list-style-type: none;    
 }
 
-.course-description, .course-view, .course_update_form{
+.course-description, 
+.course-view, 
+.course_update_form,
+.create-package-form
+{
     margin: 4rem auto;
     width: 60%;
 }
+.course-description h1{
+    text-align: center;
+}
 
-.course_update_form section{
+.course_update_form section, .create-package-form section{
     margin: 2rem auto;
 }
 
@@ -72,7 +79,8 @@
 
 .course-description fieldset, 
 .course-view fieldset, 
-.course_update_form fieldset
+.course_update_form fieldset,
+.create-package-form fieldset 
 {
     border: 2px solid var(--turquoise);
     border-radius: 10px;
@@ -83,11 +91,14 @@
     text-align: center;
 }
 
-.pricing, #updateButton{
+.pricing, 
+#updateButton,
+#btn-create-package 
+{
     display: block;
     text-align: center;
     margin: 0 auto;
-    width: 50%;
+    width: 40%;
     text-decoration: none;
     background-color: #006FB2;
     color: white;
@@ -98,8 +109,30 @@
     cursor: pointer; 
 }
 
-.pricing:hover, #updateButton:hover{
+#btn-cancel-create{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 40%;
+    text-decoration: none;
+    background-color: #ff0000;
+    color: white;
+    font-size: var(--text-size);
+    border: 1px solid var(--turquoise);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer; 
+}
+#btn-cancel-create:hover{
+    background-color: #ff5050;
+}
+
+.pricing:hover, #updateButton:hover, #btn-create-package:hover{
     background-color: var(--turquoise);
+}
+
+.btns-packages{
+    display: flex;
 }
 
 .course-image{
@@ -121,7 +154,10 @@
 #id_price, 
 #id_nro_lessons, 
 #id_nro_tests,
-#id_description
+#id_description,
+#id_package_name,
+#id_comment,
+#id_time
 {
     border: 2px solid var(--turquoise);
     border-radius: 5px;
