@@ -31,12 +31,13 @@
             <div class="dropdown">
                 <button class="dropbtn">{{request.user}}</button>
                 <div class="dropdown-content">
-                    <a href="{% url 'student:calendar' student=request.user %}">My courses</a>
                     {% if user.is_staff %}
+                        <a href="{% url 'student:my-courses' request.user %}">My courses</a>
                         <a href="{% url 'blog:profile' request.user.id %}">My profile</a>
                         <a href="{% url 'blog:portfolio' request.user.id %}">My portfolio</a>
                     {% else %}
-                        <a href="">My profile</a>
+                        <a href="{% url 'student:my-courses' request.user %}">My courses</a>
+                        <a href="{% url 'blog:profile' request.user.id %}">My profile</a>
                     {% endif %}
                     <a href="{% url 'blog:logout' %}">Logout</a>
                 </div>
@@ -45,7 +46,7 @@
     </div>
     <div>
     </div>
-    <div class="languages">
+    <div class="languages" style="display:none;">
         <form id="set-language" action="{% url 'set_language' %}" method="POST">
             {% csrf_token %}
             <input name="next" type="hidden" value="{{ redirect_to }}">
@@ -75,12 +76,14 @@
          <div class="dropdown">
            <button class="dropbtn">{{request.user}}</button>
            <div class="dropdown-content">
-                <a href="{% url 'student:calendar' student=request.user %}">My courses</a>
+
              {% if user.is_staff %}
+                <a href="{% url 'student:my-courses' request.user %}">My courses</a>
                 <a href="{% url 'blog:profile' request.user.id %}">My profile</a>
                 <a href="{% url 'blog:portfolio' request.user.id %}">My portfolio</a>
              {% else %}
-                <a href="">My profile</a>
+                <a href="{% url 'student:my-courses' request.user %}">My courses</a>
+                <a href="{% url 'blog:profile' request.user.id %}">My profile</a>
              {% endif %}
                 <a href="{% url 'blog:logout' %}">Logout</a>
            </div>

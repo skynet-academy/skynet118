@@ -21,8 +21,7 @@ class UserProfile(models.Model):
     cv = models.FileField(blank=True, null=True, upload_to="cv")
 
     def __str__(self):
-        return f'{self.user.first_name} {self.user.last_name}'
-
+        return self.user.first_name
 
 class Portfolio(models.Model):
     

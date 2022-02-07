@@ -113,7 +113,7 @@ def portfolio_view(request, id):
         return super().get_queryset().filter(is_active=True)
 
 @portfolio_created
-@allowed_users(allowed_roles=['admin', 'teachers'])
+@allowed_users(allowed_roles=['admin', 'teacher'])
 def portfolio_create(request):
     portfolio = PortfolioForm()
     if(request.method == 'POST'):
@@ -128,7 +128,7 @@ def portfolio_create(request):
     context = {'portfolio': portfolio }
     return render(request, 'blog/portfolio_create.html', context)
 
-@allowed_users(allowed_roles=['admin', 'teachers'])
+@allowed_users(allowed_roles=['admin', 'teacher'])
 def portfolio_update(request, pk):
     portfolio = Portfolio.objects.get(id=pk)
     form = PortfolioForm(instance=portfolio)
@@ -184,7 +184,7 @@ def registerPage(request):
 
 ##################################################
 
-#@allowed_users(allowed_roles=['admin', 'teachers'])
+@allowed_users(allowed_roles=['admin', 'teacher', 'student'])
 def profile_create(request):
     profile = UserProfileForm()
     if(request.method == "POST"):
