@@ -1,0 +1,14 @@
+{% extends 'student/base.html' %}
+{% block content %}
+{% if user.is_staff and user.is_authenticated %}
+{% load static %}
+    {% for element in schedule %}
+        <p>Teacher: {{ element.teacher }}</p>
+        <p>Student: {{ element.pupil }}</p>
+        {% for day, hour in element.schedule.items %}
+            <p>{{day}}-{{hour}}</p>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+{% endblock content %}
+

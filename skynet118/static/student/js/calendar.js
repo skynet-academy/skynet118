@@ -46,7 +46,10 @@ let load = () =>{
 
     for(let i = 1; i <= paddingDays + daysInMonth; i++){
         const daySquare = document.createElement('div');
+        const infoDay = document.createElement('div');
         daySquare.classList.add('day');
+        infoDay.classList.add('infoDay');
+
         const dayString = `${month + 1}/${i - paddingDays}/${year}`;
         if(i > paddingDays){
             daySquare.innerText = i - paddingDays; 
@@ -118,7 +121,6 @@ let initButtons = () =>{
     document.getElementById('deleteButton').addEventListener('click', deleteEvent);
     document.getElementById('closeButton').addEventListener('click', closeModal);
 }
-
 
 initButtons()
 load();
