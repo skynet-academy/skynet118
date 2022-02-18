@@ -438,3 +438,113 @@ hr{
 	background-color:var(--turquoise);
 	color: var(--bluedark);
 }
+
+.open-button, .close-button{
+    background-color: rgba(0,0,0,0);
+    opacity: 0.9;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 5px;
+}
+.close-button{
+    display: none;
+}
+
+.open-button img, .close-button img{
+    vertical-align: middle;
+    width:40px;
+    height: 40px;
+}
+
+.chat-popup{
+    display: none;
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    z-index: 10;
+}
+
+.chat-popup-links{
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-popup img{
+    width: 40px;
+    height: 40px;
+}
+
+#openForm{
+    border: none;
+    cursor: pointer; 
+    background-color: rgba(0,0,0,0);
+}
+
+.form-container{
+    max-width: 250px;
+    padding: 10px;
+    display: none;
+}
+
+.form-container textarea{
+    width: 100%;
+    resize: none;
+    border: none;
+    background-color: #f1f1f1;
+    min-height: 100px;
+    padding: 0;
+}
+
+.form-container textarea:focus{
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn-popup{
+    background-color: #04aa6d;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+.form-container .cancel{
+    background-color: #ff3300;
+}
+
+.open-button span{
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    background-color: var(--turquoise);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    border: 2px solid var(--bluedark);
+    animation: animate 1s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        width: 0px;
+        height: 0px;
+        opacity: 0.5;
+    }
+    100%{
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+    }
+}
+
+.buttons-form-container{
+    display: flex;
+}

@@ -438,3 +438,87 @@ hr{
 	background-color:var(--turquoise);
 	color: var(--bluedark);
 }
+
+.open-button{
+    background-color: var(--turquoise);
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.open-button img{
+    vertical-align: middle;
+    width:40px;
+    height: 40px;
+}
+
+.chat-popup{
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    z-index: 10;
+}
+
+.form-container{
+    max-width: 300px;
+    padding: 10px;
+}
+
+.form-container textarea{
+    width: 100%;
+    margin: 5px 0 22px 0;
+    resize: none;
+    border: none;
+    background-color: #f1f1f1;
+    min-height: 100px;
+}
+
+.form-container textarea:focus{
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn-popup{
+    background-color: #04aa6d;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.open-button span{
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    background-color: var(--turquoise);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    border: 2px solid var(--bluedark);
+    animation: animate 1s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        width: 0px;
+        height: 0px;
+        opacity: 0.5;
+    }
+    100%{
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+    }
+}

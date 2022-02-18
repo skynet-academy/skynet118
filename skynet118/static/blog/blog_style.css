@@ -223,6 +223,11 @@
 	margin: 4rem auto;
 }
 
+.img-profile{
+    height: 200px;
+    border-radius: 50%;
+}
+
 .img-portfolio{
     width: 140px;
     height: 140px;
@@ -298,5 +303,9 @@
 
 #cke_id_body{
     width:100% !important;
+}
+
+.portfolio h1{
+    text-align: center;
 }
 
