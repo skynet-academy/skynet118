@@ -1,5 +1,42 @@
 {% load static %}
 {% load i18n %}
+<button class="open-button" onclick="openChat()">
+    <img src="{% static 'blog/images/messages.png' %}" alt="">
+</button>
+<button class="close-button" onclick="closeChat()">
+    <img src="{% static 'blog/images/close.png' %}" alt="">
+</button>
+<div class="chat-popup">
+    <div class="chat-popup-links">
+        <a href="https://wa.me/79213161064">
+            <img src="{% static 'blog/images/whatsapp_chat.png' %}" alt="">
+        </a>
+        <a href="https://vk.me/sulca">
+            <img src="{% static 'blog/images/vkontakte_chat.png' %}" alt="">
+        </a>
+        <a href="https://t.me/skynet118">
+            <img src="{% static 'blog/images/telegram_chat.png' %}" alt="">
+        </a>
+        <!--<a href="">
+            <img src="{% static 'blog/images/instagram_chat.png' %}" alt="">
+        </a>-->
+        <a href="https://m.me/nicolas.sulca.118">
+            <img src="{% static 'blog/images/facebook_chat.png' %}" alt="">
+        </a>
+
+        <button type="button" id= "openForm">
+            <img src="{% static 'blog/images/chat.png' %}" alt="">
+        </button>
+    </div>
+    <form class="form-container" >{% csrf_token %}
+        <textarea id="chat-text" placeholder="do you have any questions?..." required></textarea>
+        <div class="buttons-form-container">
+            <button class="btn-popup" onclick="SendForm()" type="button">Send</button>
+            <button class="btn-popup cancel" onclick="closeForm()" type="button">Close</button>
+        </div>
+    </form>
+</div>
+
 <footer class="footer-distributed">
     <div class="footer-left">
       <div class="footer-img">
@@ -52,5 +89,6 @@
             <i><strong>{% trans 'Email' %}: </strong><a href="#">nico_8830_3@hotmail.com</a></i> 
         </div>
     </div>
+    <script src="{% static 'blog/js/popupChat.js' %}"></script>
 </footer>
 <p class="rights"><strong>@skynet118</strong> - all the rights are reserved</p>
