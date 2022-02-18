@@ -439,12 +439,11 @@ hr{
 	color: var(--bluedark);
 }
 
-.open-button{
-    background-color: var(--turquoise);
-    color: white;
+.open-button, .close-button{
+    background-color: rgba(0,0,0,0);
+    opacity: 0.9;
     border: none;
     cursor: pointer;
-    opacity: 0.9;
     position: fixed;
     bottom: 50px;
     right: 10px;
@@ -453,8 +452,11 @@ hr{
     border-radius: 50%;
     padding: 5px;
 }
+.close-button{
+    display: none;
+}
 
-.open-button img{
+.open-button img, .close-button img{
     vertical-align: middle;
     width:40px;
     height: 40px;
@@ -463,23 +465,40 @@ hr{
 .chat-popup{
     display: none;
     position: fixed;
-    bottom: 50px;
-    right: 10px;
+    bottom: 120px;
+    right: 20px;
     z-index: 10;
 }
 
+.chat-popup-links{
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-popup img{
+    width: 40px;
+    height: 40px;
+}
+
+#openForm{
+    border: none;
+    cursor: pointer; 
+    background-color: rgba(0,0,0,0);
+}
+
 .form-container{
-    max-width: 300px;
+    max-width: 250px;
     padding: 10px;
+    display: none;
 }
 
 .form-container textarea{
     width: 100%;
-    margin: 5px 0 22px 0;
     resize: none;
     border: none;
     background-color: #f1f1f1;
     min-height: 100px;
+    padding: 0;
 }
 
 .form-container textarea:focus{
@@ -496,6 +515,9 @@ hr{
     width: 100%;
     margin-bottom: 10px;
     opacity: 0.8;
+}
+.form-container .cancel{
+    background-color: #ff3300;
 }
 
 .open-button span{
@@ -521,4 +543,8 @@ hr{
         height: 150px;
         opacity: 0;
     }
+}
+
+.buttons-form-container{
+    display: flex;
 }
