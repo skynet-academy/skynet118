@@ -8,7 +8,54 @@ We're a team of young developers and designers with years of expertise, we reall
 {% block content %}
 {% load static %}
 {% load i18n %}
-<h1 class="title-blog">Skynet118</h1>
+<div class="header-description-kids">
+    <div class="description-kids">
+        <section class="description-kids-title">
+            <h2>let's build the future of our kids together!</h2>
+        </section>
+        <section class="description-kids-text">
+            <p>We are a global online coding school for kids aged 8-17 years</p>
+        </section>
+        <section class="benefits">
+            <h3>What are the Benefits of our school?</h3>
+            <ul>
+                <li>We show how to productively spend time at the computer</li>
+                <li>Pick courses based on your child's level and interests</li>
+                <li>we provide individual lessons</li>
+                <li>Teachers with industry experience</li>
+                <li>we explain programming with simple words</li>
+                <li>we are flexible with your schedule</li>
+                <li>We teach your child to program and distract from games and YouTube</li>
+            </ul>
+        </section>
+        <section>
+            <h3>
+                Your child will be fully engaged with our programming lessons from the first lesson
+            </h3>
+            <div>
+                <img src="" alt="">
+                <p>Your child will write his first program or website</p>
+            </div>
+            <div>
+                <img src="" alt="">
+                <p>You will see how your child improve his programming skills</p>
+            </div>
+            <div>
+                <img src="" alt="">
+                <p>Your child will see that programming is much more interesting that playing all day</p>
+            </div>
+        </section>
+    </div>
+    <div class="free-lesson">
+        <a href="">Book a free lesson</a>
+        <p>
+            <small>
+                **In our free lessons, our teachers will help your child to pick the right course based on their interests and help them code their first game.
+            </small>
+        </p>
+    </div>
+{% include "blog/slides.html" %} 
+</div>
 <div class="header-description">
     <div class="left-header">
         <p>{% trans 'Do you need coding help with algorithms or programming itself? or maybe some challenge that you want to overcome, or just you want to become a better developer?' %}</p> 
@@ -35,7 +82,5 @@ We're a team of young developers and designers with years of expertise, we reall
   <h2>{% trans 'About us' %}</h2>
   <p>{% trans "We're a team of young developers and designers with years of expertise, we really want to share our experience and knowledge  . . . " %}<a href="{% url 'blog:portfolios' %}">{% trans 'continue.' %}</a></p>
 </div>
-
-{% include "blog/slides.html" %} 
 
 {% endblock content %}

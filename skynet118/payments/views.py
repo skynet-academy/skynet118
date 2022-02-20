@@ -14,9 +14,44 @@ from paypalpayoutssdk.core import PayPalHttpClient, SandboxEnvironment
 from paypalcheckoutsdk.orders import OrdersGetRequest, OrdersCaptureRequest
 
 # Create your views here.
+def checkout_trial(request, id):
+    customer = request.user
+    course_trial = Course.objects.filter(id=id)[0]
+    print(course_trial)
+    if(request.method == "POST"):
+        data = json.loads(request.body)
+        order_id = data['orderID']
+        details = GetOrder().get_order(order_id)
+        detail_price = float(details.result.pruchase_units[0].amount.value)
+        if(detail_price == float(course_trial.price)):
+            transaction = CaptureOrder().capture_order(order_id, debug=True)
+            purchase = Purchase(
+                    purchase_id = transaction.result.id,
+                    state = transaction.result.status,
+                    cod_state = transaction.status_code,
+                    course = f"course_trial.course_name",
+                    total = transaction.result.purchase_unit[0].payments.captures[0].amount.value,
+                    name = transaction.result.payer.name.given_name,
+                    surname = transaction.result.payer.name.surname,
+                    email = transaction.result.purchase_units[0].shipping.address.address_line_1,
+                    )
+            purchase.save()
+            data = {
+                    "id": f"{transaction.result.id}",
+                    "name": f"{transaction.result.payer.name.given_name}"
+                    }
+            return JsonResponse(data)
+        else:
+            data = {
+                    "name": "error",
+                    "message": "We could not finish your purchase"
+                    }
+            return JsonResponse(data)
 
-def simple_checkout(request):
-    return render(request, 'payments/simple_checkout.html')
+    context = {'course_trial': course_trial, 'customer': customer}
+    return render(request, 'payments/checkout_trial.html', context)
+
+
 
 def checkout(request, pk, name):
     customer = request.user 

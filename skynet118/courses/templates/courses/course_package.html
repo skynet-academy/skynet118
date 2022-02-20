@@ -1,11 +1,26 @@
 {% extends 'courses/base.html' %}
 {% block content %}
 {% load static %}
+
+<section class="trial-lesson">
+    <div class="trial-lesson-details">
+        <h2>Try out a lesson</h2>
+        <p>Course: {{course.course_name}}</p>
+        <p>Price: ${{ course.price }}</p>
+        <a class= "link-buy" href="{% url 'payments:checkout-trial' course.id %}">
+            <strong>Try it out!</strong>
+        </a>
+        <p><small>
+            ** the trial lesson is through Zoom app
+            you can download the app here.
+            </small></p>
+
+    </div>
+</section>
 <section class="title-course">
     <h1>{{ course.course_name }}</h1>
     <p>All packages available</p>
 </section>
-
 <article class="list-price-available">
     {% for elem in package %}
     <div class="price">

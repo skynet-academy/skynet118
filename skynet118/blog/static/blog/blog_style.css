@@ -17,14 +17,44 @@
   height: 100%;
   background-color: #014A8E;
   background-image: url("../../static/blog/images/nico.png");
-  background-size: 5rem;
-  background-repeat: no-repeat;
+  background-size: 5rem; background-repeat: no-repeat;
   background-position: center;
 }
 
 /* =================== */
 
 /* The content section */
+.benefits li{
+    list-style-type: none;
+    margin: 20px 10px 20px 0;
+    text-indent: 10px;
+}
+.benefits li::before{
+    content: '';
+    background-image: url('./images/check-mark.png');
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 15px;
+}
+
+.free-lesson a{
+    display: flex;
+    width: 200px;
+    height: 50px;
+    text-decoration: none;
+    background-color: var(--turquoise);
+    color: white;
+    justify-content: center;
+    line-height: 50px;
+}
+
+.free-lesson a:hover{
+    background-color: #3CC1FF;
+    color: #eee;
+}
 
 .header-description{
   display: grid;
@@ -37,10 +67,6 @@
   padding: 10px;
   width: 80%;
   margin: 0 auto;
-}
-
-.title-blog{
-	text-align: center;
 }
 
 .right-header{
@@ -100,11 +126,11 @@
 
 
 .courses{
-	width: 40%;
-	margin: 100px auto;
-	height: 500px;
-	display: flex;
-	flex-wrap: wrap;
+    width: 40%;
+    margin: 50px auto;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 

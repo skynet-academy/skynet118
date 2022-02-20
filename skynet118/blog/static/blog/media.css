@@ -3,7 +3,7 @@
     .links a{
         padding: 0 15px;
     }
-    .search-box:hover > .search-txt {
+    .search-box:hover > .search-txt{
         width: 150px;
     }
 }

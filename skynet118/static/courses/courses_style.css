@@ -162,3 +162,11 @@
     border: 2px solid var(--turquoise);
     border-radius: 5px;
 }
+
+
+.trial-lesson{
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    margin: 2rem auto;
+}
