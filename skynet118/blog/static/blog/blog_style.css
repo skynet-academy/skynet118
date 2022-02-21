@@ -5,7 +5,7 @@
 	--bluedark2: #014A8E;
 	--turquoise: #00AEFF;
 	--text-size: 16px;
-	--text-title: 24px;
+	--text-title: 20px;
 }
 
 .particles-section{
@@ -26,6 +26,7 @@
 /* The content section */
 .benefits li{
     list-style-type: none;
+    font-size: var(--text-title);
     margin: 20px 10px 20px 0;
     text-indent: 10px;
 }
@@ -37,10 +38,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    left: 15px;
+    left: 10%;
 }
 
-.free-lesson a{
+.trial-lesson a{
     display: flex;
     width: 200px;
     height: 50px;
@@ -51,21 +52,25 @@
     line-height: 50px;
 }
 
-.free-lesson a:hover{
+.trial-lesson a:hover{
     background-color: #3CC1FF;
     color: #eee;
+}
+
+.trial-lesson p{
+    width: 250px;
+    word-break: break-all;
+    text-align: justify;
 }
 
 .header-description{
   display: grid;
   grid-template-areas: 'left-header right-header'
- 					   'header-link header-link';
+                       'header-link header-link';
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   grid-template-rows: 1fr 100px;
   text-align: center;
-  padding: 10px;
-  width: 80%;
   margin: 0 auto;
 }
 
@@ -86,8 +91,8 @@
 	text-align: justify;
 	text-justify: inter-word;
 	text-indent: 50px;
-	width: 60%;
 	margin: 20px auto;
+    width: 80%;
 }
 
 .left-header img{
@@ -109,11 +114,10 @@
 
 /* The about us section */
 .about-us{
-	width: 80%;
 	text-align: center;
 	margin: 0 auto;
 }
-#world-container{
+#world-containe{
     width: 100%;
     height: 100%;
 }
@@ -126,7 +130,7 @@
 
 
 .courses{
-    width: 40%;
+    width: 60%;
     margin: 50px auto;
     height: 500px;
     display: flex;
@@ -173,7 +177,7 @@
 	height: 60%;
 }
 .course-logo img{
-	height: 100%;
+	height: 80%;
 	max-width: 100%;
 }
 
@@ -234,19 +238,6 @@
 	width: 80%;
 	margin: var(--text-title) auto;
 	text-align: center;
-}
-
-.create-account form, 
-.login-account form, 
-.about-me, 
-.portfolios, 
-.profile-create form,
-.portfolio-update,
-.reset-password,
-.reset-password-done
-{
-	width: 60%;
-	margin: 4rem auto;
 }
 
 .img-profile{
@@ -335,3 +326,36 @@
     text-align: center;
 }
 
+.kids-achievements, .benefits{
+    margin: 4rem auto;
+}
+
+.achievement-container{
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.achievement{
+    width: 250px;
+    text-align: center;
+    margin: 1rem auto;
+    border: 2px solid var(--bluedark);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+    height: 180px;
+}
+
+.achievement:hover{
+    box-shadow: 0 5px 10px gray;
+}
+
+.achievement img{
+    display: block;
+    margin: auto;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+}

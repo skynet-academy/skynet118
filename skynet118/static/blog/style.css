@@ -17,10 +17,14 @@
 body {
   margin: 0;
 }
+.container{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
 
 hr{
   background-color: var(--turquoise);
-  width: 80%;
   border: 2px solid var(--turquoise);
   margin: 2rem auto;
 }

@@ -16,15 +16,13 @@
 </head>
 <body>
     {% include "blog/menu_var.html" %}
-
     {% include "blog/particles.html" %}
-    {% block content %}
+    <div class="container">
+        {% block content %}
 
-    {% endblock content %}
-
-
+        {% endblock content %}
+    </div>
     {% include "blog/footer.html" %}
-
 </body>
 </html>
 

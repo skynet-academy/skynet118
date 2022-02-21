@@ -8,7 +8,6 @@
     }
 }
 
-
 @media (max-width: 1198px)
 {
     .logo{
@@ -26,32 +25,16 @@
     .languages p{
         display: none;
     }
-	.particles-section{
-		height: 400px;
-	}
-	.create-account form, 
-    .login-account form, 
-    .courses, .about-me, 
-    .portfolios, 
-    .course-description,
-    .course-view,
-    .profile-create form,
-    .course_update_form,
-    .portfolio-update,
-    .reset-password,
-    .reset-password-done
-    {
-		width: 70%;
-	}
-	.courses{
-		height: 400px;
-	}
-	.course-name, .age{
-		margin: 16px;
-	}
-	.right-header p, .left-header p, .about-us p{
-		width: 70%;
-	}
+    .particles-section{
+        height: 400px;
+    }
+    .courses{
+        height: 400px;
+        width: 80%;
+    }
+    .course-name, .age{
+        margin: 16px;
+    }
 }
 
 
@@ -63,31 +46,12 @@
     .search-field{
         display: none;
     }
-    
     .languages p{
         display: none;
     }
-	.particles-section{
-		height: 350px;
-	}
-	.create-account form, 
-    .login-account form, 
-    .courses, 
-    .about-me, 
-    .portfolios, 
-    .course-description,
-    .course-view,
-    .course_update_form,
-    .profile-create form,
-    .portfolio-update,
-    .reset-password,
-    .reset-password-done
-    {
-		width: 80%;
-	}
-	.right-header p, .left-header p, .about-us p{
-		width: 80%;
-	}
+    .particles-section{
+        height: 350px;
+    }
 }
 
 @media (max-width: 740px)
@@ -98,11 +62,9 @@
     .languages{
         display: none;
     }
-
     .links {
         display: none;
     }
-
     .links-burguer{
        display: block; 
        height: 0;
@@ -111,32 +73,17 @@
         padding: 0;
     }
     .particles-section{
-		height: 300px;
+        height: 300px;
     }
-	.space-menu{
-		display: none;
-	}
-	.create-account form,
-    .login-account form, 
-    .courses,
-    .about-me, 
-    .portfolios, 
-    .course-view,
-    .course-description,
-    .profile-create form,
-    .course_update_form,
-    .portfolio-update,
-    .reset-password,
-    .reset-password-done
-    {
-		width: 90%;
-	}
-	.courses{
-		height: 350px;
-	}
-	.course-name, .age{
-		margin: 10px;
-	}
+    .space-menu{
+        display: none;
+    }
+    .courses{
+        height: 350px;
+    }
+    .course-name, .age{
+        margin: 10px;
+    }
 }
 
 @media(max-width: 680px)
@@ -157,12 +104,13 @@
     .price{
         margin: 0;
     }
-	.particles-section{
-		height: 250px;
-	}
+    .particles-section{
+        height: 250px;
+    }
 
 	.courses{
 		height: 300px;
+        width: 100%;
 	}
 	.header-description{
 		display: flex;
@@ -174,7 +122,9 @@
     .right-header p, 
     .left-header p, 
     .courses-paragraph, 
-    .course-description{
+    .course-description,
+    .benefits li
+    {
 		font-size: var(--text-size);
 	}
 	.logo-header{
@@ -192,22 +142,6 @@
     }
 	.particles-section{
 		height: 200px;
-	}
-	.create-account form, 
-    .login-account form, 
-    .courses, 
-    .about-me, 
-    .portfolios, 
-    .course-description,
-    .course-view,
-    .profile-create form,
-    .course_update_form,
-    .portfolio-update,
-    .reset-password,
-    .reset-password-done
-    {
-		width: 95%;
-	}
 	.courses{
 		height: 250px;
 	}
