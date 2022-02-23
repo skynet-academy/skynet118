@@ -35,6 +35,10 @@
     .course-name, .age{
         margin: 16px;
     }
+    .modal-content{
+        width: 500px;
+        height: 700px;
+    }
 }
 
 
@@ -84,6 +88,13 @@
     .course-name, .age{
         margin: 10px;
     }
+    .modal-content{
+        width: 400px;
+        height: 800px;
+    }
+    .modal{
+        padding-top: 60px;
+    }
 }
 
 @media(max-width: 680px)
@@ -107,7 +118,6 @@
     .particles-section{
         height: 250px;
     }
-
 	.courses{
 		height: 300px;
         width: 100%;
@@ -133,6 +143,18 @@
 	.footer-info{
 		display: block;
 	}
+    .modal-content{
+        width: 300px;
+        height: 900px;
+    }
+    .modal{
+        padding-top: 50px;
+    }
+    .modal span{
+        top: 0;
+        right: 15px;
+    }
+
 }
 
 @media(max-width: 414px)
@@ -142,10 +164,21 @@
     }
 	.particles-section{
 		height: 200px;
+    }
 	.courses{
 		height: 250px;
 	}
 	.course-name, .age{
 		margin: 5px;
 	}
+    .modal-content{
+        width: 80%;
+    }
+    .modal{
+        padding-top: 30px;
+    }
+    .modal span{
+        top: -15px;
+        right: 0px;
+    }
 }

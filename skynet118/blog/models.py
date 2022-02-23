@@ -75,3 +75,16 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         return f"/comment/{self.slug}"
+
+class ClientForm(models.Model):
+    class Meta:
+        verbose_name = 'Client Form'
+        verbose_name_plural = 'Client Forms'
+    
+    name = models.CharField(max_length=200, blank=False)
+    number = models.IntegerField(blank=False)
+    age =  models.IntegerField(blank=False)
+
+
+
+
