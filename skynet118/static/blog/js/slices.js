@@ -69,3 +69,5 @@ setInterval(function(){
     }
     carrusel(stack, len);
 }, 5000);
+
+console.log('working')
