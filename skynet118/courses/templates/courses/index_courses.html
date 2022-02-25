@@ -2,8 +2,8 @@
 {% block content %}
 {% load static %}
 
+<h1>All courses available</h1>
 <section class="course-description">
-    <h1>All courses available</h1>
     {% if user.is_authenticated and user.is_staff %}
     <div class="create-new-course">
         <a href="{% url 'courses:create_course' %}">Create a new course</a>

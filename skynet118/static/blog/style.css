@@ -5,7 +5,7 @@
 	--bluedark2: #014A8E;
 	--turquoise: #00AEFF;
 	--text-size: 16px;
-	--text-title: 24px;
+	--text-title: 20px;
 }
 
 *{
@@ -17,10 +17,14 @@
 body {
   margin: 0;
 }
+.container{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
 
 hr{
   background-color: var(--turquoise);
-  width: 80%;
   border: 2px solid var(--turquoise);
   margin: 2rem auto;
 }
@@ -499,6 +503,7 @@ hr{
     background-color: #f1f1f1;
     min-height: 100px;
     padding: 0;
+    border-radius: 10px;
 }
 
 .form-container textarea:focus{
@@ -513,8 +518,8 @@ hr{
     border: none;
     cursor: pointer;
     width: 100%;
-    margin-bottom: 10px;
     opacity: 0.8;
+    border-radius: 10px;
 }
 .form-container .cancel{
     background-color: #ff3300;

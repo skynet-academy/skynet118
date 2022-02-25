@@ -29,7 +29,8 @@
         </button>
     </div>
     <form class="form-container" >{% csrf_token %}
-        <textarea id="chat-text" placeholder="do you have any questions?..." required></textarea>
+        <textarea id="chat-text" placeholder="   Do you have any questions?..." required>
+        </textarea>
         <div class="buttons-form-container">
             <button class="btn-popup" onclick="SendForm()" type="button">Send</button>
             <button class="btn-popup cancel" onclick="closeForm()" type="button">Close</button>

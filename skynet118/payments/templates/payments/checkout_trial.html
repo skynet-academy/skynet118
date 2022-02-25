@@ -1,0 +1,109 @@
+{% extends 'payments/base_payment.html' %}
+{% load static %}
+{% block payment_content %}
+	<a class="go-pricing" href="{% url 'courses:index_course' %}">Come back to Courses</a>
+    <hr>
+	<div class="wise">
+		<h3 class="wise-text">If you want to pay using Wise, please use this link.</h3>
+		<a href="https://wise.com/invite/u/nicolass337" target="_blank">Go to Wise</a>
+		<div class="bank-accounts">
+			<h3>Also you can do it using the following accounts:</h3>
+			<label for="banks">Select an account</label>
+			<select id="bank-account" name="banks" onchange="changeAccount(this.value)">
+				<option disabled selected value>Select an option</option>
+				<option value="usa">USA</option>
+				<option value="canada">CANADA</option>
+				<option value="europe">EU</option>
+			</select>
+			<div id="info-account"></div>
+		</div>
+	</div>
+	<div class="container-products">
+        <h3>Or use Paypal to make your payment</h3>
+       <div class="img-product">
+	      <img src="{{ course_trial.image.url }}" alt="{{course_trial.course_name}}">
+       </div>
+       <div class="purchase-info">
+          <h3>{{ course_trial.course_name }} course</h3>
+          <p>You are buying a trial lesson of {{course_trial.course_name}}</p>
+          <h4 class="product-price" >Total: ${{course_trial.price}} </h4>
+          <div id="paypal-button-container"></div>
+       </div>
+    </div>
+	<script src="{% static 'payments/js/accounts.js' %}"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AWw0wNEoQtKQsAlFgFUjx59Qs7CZSCujq01Ml-cysbffLlvHpFHPcqg1lKNRO5SffFKszQeZVqQ56G77&currency=USD"></script>
+    <script>
+        function getCookie(name){
+            let cookieValue = null;
+        	if (document.cookie && document.cookie !== '') {
+            	const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+        			}
+            	}
+        	}
+        	return cookieValue;
+        }
+        const csrftoken = getCookie('csrftoken');
+        let total = '{{course_trial.price}}'
+        let course_id = '{{course_trial.id}}'
+
+        paypal.Buttons({
+            style: {
+                shape: 'rect',
+                color: 'blue',
+                layout: 'vertical',
+                label: 'buynow',
+            },
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: total 
+                        }
+                    }]
+                });
+            },
+            // Finalize the transaction
+            onApprove: function(data) {
+                return fetch('/payments/checkout/{{course_trial.course_name}}/', 
+                {
+                method: 'POST',
+                headers: {'content-type': 'application/json', 'X-CSRFToken':csrftoken},
+                body: JSON.stringify({orderID: data.orderID })
+                }).then(response =>{
+
+                    if(!response.ok){
+                        throw new Error('There was an error');
+                    }
+                    return response.json();
+                }).then(details =>{
+                    window.location.replace(`/payments/success/${details.name}/${details.id}`)
+
+                }).catch((error) => {
+                    window.location.replace(`/payments/error/`)
+                    console.log("Error:", error)
+                })
+             }
+            //onApprove: function(data, actions) {
+            //    return actions.order.capture().then(function(orderData) {
+            //        // Successful capture! For demo purposes:
+            //        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+            //        var transaction = orderData.purchase_units[0].payments.captures[0];
+            //        complete_order()
+            //        alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+            //        // Replace the above to show a success message within this page, e.g.
+            //        // const element = document.getElementById('paypal-button-container');
+            //        // element.innerHTML = '';
+            //        // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+            //        // Or go to another URL:  actions.redirect('thank_you.html');
+            //    });
+            //}
+        }).render('#paypal-button-container');
+    </script>
+{% endblock payment_content %}

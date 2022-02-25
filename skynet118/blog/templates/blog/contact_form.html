@@ -1,0 +1,38 @@
+{% load static %}
+{% load i18n %}
+<button id="open-form-contact" type="button">
+    Book a trial lesson
+</button>
+<p>
+    <small>
+        **In our trial lessons, our teachers will help your child to pick the right course based on their interests and help them code their first game or website.
+    </small>
+</p>
+<div id="id01" class="modal">
+    <span id="close-modal" onclick="document.getElementById('id01').style.display='none'" >
+        &times;
+    </span>
+    <form class="modal-content">
+        <h2>Sign up for the first online programming lesson</h2>
+        <img src="{% static 'blog/images/nico.png' %}" width="100" height="120" alt="skynet118">
+        <div class="form-contact">
+            <ul>
+                <li>Your child will write his first program or website</li>
+                <li>You will see how your child improve his programming skills</li>
+                <li>Your child will see that programming is much more interesting that playing videogames all day</li>
+            </ul>
+        </div>
+        <div id="errors-form">
+        </div>
+        <div id="contact-fields">
+            <input id='name-contact-parent' type="text" placeholder="  Your name">
+            <input id='phone-contact-student' type="text" placeholder="  Telephone number">
+            <input id='age-name-student' type="text" placeholder="  Age and name of the future student">
+        </div>
+        <button id="contact-us" type="submit" >
+            Contact Us
+        </button>
+    </form>
+</div>
+<script src="{% static 'blog/js/contact_form.js' %}"></script>
+

@@ -3,11 +3,10 @@
     .links a{
         padding: 0 15px;
     }
-    .search-box:hover > .search-txt {
+    .search-box:hover > .search-txt{
         width: 150px;
     }
 }
-
 
 @media (max-width: 1198px)
 {
@@ -26,32 +25,20 @@
     .languages p{
         display: none;
     }
-	.particles-section{
-		height: 400px;
-	}
-	.create-account form, 
-    .login-account form, 
-    .courses, .about-me, 
-    .portfolios, 
-    .course-description,
-    .course-view,
-    .profile-create form,
-    .course_update_form,
-    .portfolio-update,
-    .reset-password,
-    .reset-password-done
-    {
-		width: 70%;
-	}
-	.courses{
-		height: 400px;
-	}
-	.course-name, .age{
-		margin: 16px;
-	}
-	.right-header p, .left-header p, .about-us p{
-		width: 70%;
-	}
+    .particles-section{
+        height: 400px;
+    }
+    .courses{
+        height: 400px;
+        width: 80%;
+    }
+    .course-name, .age{
+        margin: 16px;
+    }
+    .modal-content{
+        width: 500px;
+        height: 700px;
+    }
 }
 
 
@@ -63,31 +50,12 @@
     .search-field{
         display: none;
     }
-    
     .languages p{
         display: none;
     }
-	.particles-section{
-		height: 350px;
-	}
-	.create-account form, 
-    .login-account form, 
-    .courses, 
-    .about-me, 
-    .portfolios, 
-    .course-description,
-    .course-view,
-    .course_update_form,
-    .profile-create form,
-    .portfolio-update,
-    .reset-password,
-    .reset-password-done
-    {
-		width: 80%;
-	}
-	.right-header p, .left-header p, .about-us p{
-		width: 80%;
-	}
+    .particles-section{
+        height: 350px;
+    }
 }
 
 @media (max-width: 740px)
@@ -98,11 +66,9 @@
     .languages{
         display: none;
     }
-
     .links {
         display: none;
     }
-
     .links-burguer{
        display: block; 
        height: 0;
@@ -111,32 +77,24 @@
         padding: 0;
     }
     .particles-section{
-		height: 300px;
+        height: 300px;
     }
-	.space-menu{
-		display: none;
-	}
-	.create-account form,
-    .login-account form, 
-    .courses,
-    .about-me, 
-    .portfolios, 
-    .course-view,
-    .course-description,
-    .profile-create form,
-    .course_update_form,
-    .portfolio-update,
-    .reset-password,
-    .reset-password-done
-    {
-		width: 90%;
-	}
-	.courses{
-		height: 350px;
-	}
-	.course-name, .age{
-		margin: 10px;
-	}
+    .space-menu{
+        display: none;
+    }
+    .courses{
+        height: 350px;
+    }
+    .course-name, .age{
+        margin: 10px;
+    }
+    .modal-content{
+        width: 400px;
+        height: 800px;
+    }
+    .modal{
+        padding-top: 60px;
+    }
 }
 
 @media(max-width: 680px)
@@ -157,12 +115,12 @@
     .price{
         margin: 0;
     }
-	.particles-section{
-		height: 250px;
-	}
-
+    .particles-section{
+        height: 250px;
+    }
 	.courses{
 		height: 300px;
+        width: 100%;
 	}
 	.header-description{
 		display: flex;
@@ -174,7 +132,9 @@
     .right-header p, 
     .left-header p, 
     .courses-paragraph, 
-    .course-description{
+    .course-description,
+    .benefits li
+    {
 		font-size: var(--text-size);
 	}
 	.logo-header{
@@ -183,6 +143,18 @@
 	.footer-info{
 		display: block;
 	}
+    .modal-content{
+        width: 300px;
+        height: 900px;
+    }
+    .modal{
+        padding-top: 50px;
+    }
+    .modal span{
+        top: 0;
+        right: 15px;
+    }
+
 }
 
 @media(max-width: 414px)
@@ -192,26 +164,21 @@
     }
 	.particles-section{
 		height: 200px;
-	}
-	.create-account form, 
-    .login-account form, 
-    .courses, 
-    .about-me, 
-    .portfolios, 
-    .course-description,
-    .course-view,
-    .profile-create form,
-    .course_update_form,
-    .portfolio-update,
-    .reset-password,
-    .reset-password-done
-    {
-		width: 95%;
-	}
+    }
 	.courses{
 		height: 250px;
 	}
 	.course-name, .age{
 		margin: 5px;
 	}
+    .modal-content{
+        width: 80%;
+    }
+    .modal{
+        padding-top: 30px;
+    }
+    .modal span{
+        top: -15px;
+        right: 0px;
+    }
 }

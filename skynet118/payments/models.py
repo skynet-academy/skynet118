@@ -43,7 +43,7 @@ class Purchase(models.Model):
     state = models.CharField(max_length=100)
     cod_state = models.CharField(max_length=100)
     course = models.CharField(max_length=100)
-    package = models.CharField(max_length=100)
+    package = models.CharField(max_length=100, blank=True)
     total = models.DecimalField(max_digits=5, decimal_places=2)
     name = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)

@@ -49,6 +49,7 @@ urlpatterns = [
         path("contact/", views.contact_view, name = "contact"),
         path("contacts/", views.contacts_view, name = "contacts"),
         path("contact_create/", views.contact_create, name = "contact-create"),
+        path("client_contact/", views.client_contact_view, name = "client-contact"),
 
         path("profile_create/", views.profile_create, name = "profile-create"),
         path("profile/<int:id>", views.profile_view, name = "profile"),

@@ -27,7 +27,8 @@ from .forms import (
         UserProfileForm,
         PortfolioForm,
         CommentForm,
-        RegisterUserForm
+        RegisterUserForm,
+        ClientContactForm
         )
 
 # importing models 
@@ -42,6 +43,13 @@ from .models import (
 # importing forms
 
 from django.contrib.auth.forms import UserCreationForm
+
+# importing serializers 
+
+from .serializers import  ClientContactSerializer
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
 
 # Create your views here.
 
@@ -250,3 +258,16 @@ def restricted_view(request):
             'user': user
             }
     return render(request, 'blog/restricted_page.html', context)
+
+@api_view(['POST'])
+def client_contact_view(request):
+    client_contact = ClientContactSerializer(data=request.data)
+    print(client_contact.is_valid())
+
+    if(client_contact.is_valid()):
+        client_contact.save()
+        return Response(client_contact.data)
+    else:
+        print(client_contact.errors)
+        return Response({'errors': client_contact.errors}, status=400)
+
