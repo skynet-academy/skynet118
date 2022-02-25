@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField 
 from ckeditor_uploader.fields import RichTextUploadingField
-
+from django.core.validators import RegexValidator
 
 # Create your models here.
 
@@ -76,15 +76,12 @@ class Comment(models.Model):
     def get_absolute_url(self):
         return f"/comment/{self.slug}"
 
-class ClientForm(models.Model):
+class ClientContact(models.Model):
     class Meta:
-        verbose_name = 'Client Form'
-        verbose_name_plural = 'Client Forms'
-    
-    name = models.CharField(max_length=200, blank=False)
-    number = models.IntegerField(blank=False)
-    age =  models.IntegerField(blank=False)
-
-
-
+        verbose_name = 'Client Contact'
+        verbose_name_plural = 'Client Contact'
+    phone_regex = RegexValidator(regex=r'\d{8,12}$', message="Phone number must contain 9-12 digits")
+    name_parent = models.CharField(max_length=200, blank=False)
+    phone_number = models.CharField(validators=[phone_regex], max_length=13, blank=False)
+    age_name_student =  models.CharField(max_length=400, blank=False)
 

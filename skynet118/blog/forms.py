@@ -3,7 +3,8 @@ from django.core.exceptions import ValidationError
 from .models import (
         UserProfile,
         Portfolio,
-        Comment
+        Comment,
+        ClientContact
         )
 
 from django.contrib.auth.forms import UserCreationForm
@@ -26,6 +27,10 @@ class CommentForm(forms.ModelForm):
         model = Comment 
         fields = '__all__'
 
+class ClientContactForm(forms.ModelForm):
+    class Meta:
+        model = ClientContact
+        fields = '__all__'
 # Models for the user registration
 
 class RegisterUserForm(UserCreationForm):
