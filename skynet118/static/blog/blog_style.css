@@ -460,3 +460,6 @@
     background-color: #f2f2f2; 
 }
 
+#errors-form p{
+    width: 100%;
+}
