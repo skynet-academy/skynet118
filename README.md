@@ -4,7 +4,7 @@
 
 [![Website](https://img.shields.io/badge/pokechallenge-python-blue)](https://github.com/skynet118/poke_challenge)
 
-[![Website](https://img.shields.io/badge/pokechallenge-python-blue)](https://img.shields.io/badge/algorithms-python-blue)
+[![Website](https://img.shields.io/badge/algorithms-python-blue)](https://img.shields.io/badge/algorithms-python-blue)
 
 ## I'm a Husband, Developer, and Teacher!!
 
