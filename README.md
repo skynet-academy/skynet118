@@ -15,13 +15,12 @@
 - ⚡ hobbies: I love working out, watch movies, and to take long walks
 - 🤓 and 🪖, a combination of militar and geek
 
-<div>
+<div style="display: block;" >
 <img align="left" alt="happy and efficient coding" width="120px" height="120px" style="display: block;" src="https://cdn.dribbble.com/users/1019864/screenshots/3079099/media/6926dbbe73b43f4ec5fe67c721489033.gif"/>
 </div>
 
 <br/>
-<br/>
-<br/>
+
 
 ### My stats
 [![Nicolas's GitHub stats](https://github-readme-stats.vercel.app/api?username=skynet118&count_private=true&show_icons=true&theme=radical)](https://github.com/skynet118?tab=repositories)
