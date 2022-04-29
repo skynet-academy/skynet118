@@ -6,6 +6,9 @@
 
 [![Website](https://img.shields.io/badge/algorithms-python-blue)](https://img.shields.io/badge/algorithms-python-blue)
 
+[![Website](https://img.shields.io/badge/darknet-neuralnetwork-red)](https://github.com/skynet118/darknet)
+
+https://img.shields.io/badge/darknet-neuralnetwork-red
 ## I'm a Husband, Developer, and Teacher!!
 
 - 🌱 I’m currently learning everything I can
