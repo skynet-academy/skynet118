@@ -2,7 +2,9 @@
 <p>
   I'm a backend developer(Django) and a JavaScript enthusiast, always looking to continuous improvement my soft and hard skills. I responsible and disciplined with my work. I have a good background in C/C++ and in the future I'd like to participate or colaborate in open source projects. 
 </p>
+
 ---
+
 ## Welcome to my Github repository
 
 [![Website](https://img.shields.io/badge/skynet118-signup-green)](https://skynet118.com/portfolios/) [![Website](https://img.shields.io/badge/pokechallenge-python-blue)](https://github.com/skynet118/poke_challenge) [![Website](https://img.shields.io/badge/algorithms-python-blue)](https://img.shields.io/badge/algorithms-python-blue) [![Website](https://img.shields.io/badge/opencv-recognition-brightgreen)](https://github.com/skynet118/opencv_practice) [![Website](https://img.shields.io/badge/darknet-neuralnetwork-red)](https://github.com/skynet118/darknet)
