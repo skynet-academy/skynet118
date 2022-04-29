@@ -1,18 +1,24 @@
 # Hello there, I'm Nicolas Sulca 👋 
 
+---
+## Welcome to my Github repository
+
 [![Website](https://img.shields.io/badge/skynet118-signup-green)](https://skynet118.com/portfolios/) [![Website](https://img.shields.io/badge/pokechallenge-python-blue)](https://github.com/skynet118/poke_challenge) [![Website](https://img.shields.io/badge/algorithms-python-blue)](https://img.shields.io/badge/algorithms-python-blue) [![Website](https://img.shields.io/badge/opencv-recognition-brightgreen)](https://github.com/skynet118/opencv_practice) [![Website](https://img.shields.io/badge/darknet-neuralnetwork-red)](https://github.com/skynet118/darknet)
 
+---
 ## I'm a Husband, Developer, and Teacher!!
 
-- 🌱 I’m currently learning everything I can
-- 👯 I’m looking to collaborate with Open source projects
-- 🥅 2022 Goals: Learn more about regex, bash, and redux
+- 🌱 I’m currently learning everything I can.
+- 📚 I love reading books.
+- 👯 I’m looking to collaborate with Open source projects.
+- 🥅 2022 Goals: Learn more about regex, bash, and redux.
 - ⚡ hobbies: I love working out, watch movies, and to take long walks
+- 🤓 and 🪖, a combination of militar and geek
 
 --- 
 ### My stats
-
 [![Nicolas's GitHub stats](https://github-readme-stats.vercel.app/api?username=skynet118&count_private=true&show_icons=true&theme=radical)](https://github.com/skynet118?tab=repositories)
+
 ### Top Languages
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=skynet118&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
@@ -34,6 +40,7 @@
 
 ### Languages and Tools I know and use:
 
+
 [<img align="left" alt="Django project" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg" style="padding-right:10px;" />][github]
 [<img align="left" alt="Linkedin" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" style="padding-right:10px;" />][linkedin]
 [<img align="left" alt="React" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" style="padding-right:10px;" />][github]
@@ -45,8 +52,7 @@
 [<img align="left" alt="reactjs" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" style="padding-right:10px;" />][github]
 [<img align="left" alt="linux" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" style="padding-right:10px;" />][github]
 
-<br />
-<br />
+[<img align="center" alt="happy and efficient coding" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdribbble.com%2Fshots%2F3079099-Coding-coding-coding&psig=AOvVaw00MEGarjsXhWpe4oP4tCVj&ust=1651335019628000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPDw_b3UufcCFQAAAAAdAAAAABAJ"/>]
 
 ---
 ### 📕 Latest github projects
