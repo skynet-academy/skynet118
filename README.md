@@ -1,5 +1,7 @@
 # Hello there, I'm Nicolas Sulca 👋 
-
+<p>
+  I'm a backend developer(Django) and a JavaScript enthusiast, always looking to continuous improvement my soft and hard skills. I responsible and disciplined with my work. I have a good background in C/C++ and in the future I'd like to participate or colaborate in open source projects. 
+</p>
 ---
 ## Welcome to my Github repository
 
