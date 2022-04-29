@@ -12,6 +12,6 @@ jobs:
             - uses: actions/checkout@v2
             - uses: guatamkrishnar/blog-post-work@master
               with:
-                  comment_tag_name: "PROJECTS"
+                  comment_tag_name: "GITHUBFLOW"
                   feed_list: "https://github.com/skynet118?tab=repositories"
 

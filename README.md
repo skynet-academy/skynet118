@@ -41,10 +41,10 @@
 <br />
 
 ---
-### 📕 Latest Blog Posts
+### 📕 Latest github projects
 
-<!--BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
+<!-- GITHUBFLOW:START -->
+<!-- GITHUBFLOW:END -->
 
 ➡️ [more blog posts...](https://skynet118.com)
 
