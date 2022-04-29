@@ -10,6 +10,13 @@
 - 🥅 2022 Goals: Learn more about regex, bash, and redux
 - ⚡ hobbies: I love working out, watch movies, and to take long walks
 
+--- 
+### My stats
+
+[![Nicolas's GitHub stats](https://github-readme-stats.vercel.app/api?username=skynet118)](https://github.com/anuraghazra/github-readme-stats)
+
+---
+
 ### Connect with me:
 
 [![website](./img/globe-light.svg)](https://skynet118.com#gh-light-mode-only)
