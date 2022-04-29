@@ -6,6 +6,9 @@
 
 [![Website](https://img.shields.io/badge/algorithms-python-blue)](https://img.shields.io/badge/algorithms-python-blue)
 
+[![Website](https://img.shields.io/badge/opencv-recognition-brightgreen)](https://github.com/skynet118/opencv_practice)
+
+
 [![Website](https://img.shields.io/badge/darknet-neuralnetwork-red)](https://github.com/skynet118/darknet)
 
 https://img.shields.io/badge/darknet-neuralnetwork-red
