@@ -2,6 +2,7 @@
 
 [![Website](https://img.shields.io/website?label=skynet118.com&style=for-the-badge&url=https%3A%2F%2Fskynet118.com)](https://skynet118.com)
 
+[![Website](https://img.shields.io/badge/pokechallenge-python-blue)](https://github.com/skynet118/poke_challenge)
 
 ## I'm a Husband, Developer, and Teacher!!
 
@@ -14,6 +15,7 @@
 ### My stats
 
 [![Nicolas's GitHub stats](https://github-readme-stats.vercel.app/api?username=skynet118&count_private=true&show_icons=true&theme=radical)](https://github.com/skynet118?tab=repositories)
+### Top Languages
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=skynet118&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
 ---
@@ -32,7 +34,7 @@
 [![website](./img/instagram-light.svg)](https://www.instagram.com/nicolas.sulca.118/#gh-light-mode-only)
 [![website](./img/instagram-dark.svg)](https://www.instagram.com/nicolas.sulca.118/#gh-dark-mode-only)
 
-### Languages and Tools:
+### Languages and Tools I know and use:
 
 [<img align="left" alt="Django project" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg" style="padding-right:10px;" />][github]
 [<img align="left" alt="Linkedin" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" style="padding-right:10px;" />][linkedin]
@@ -73,9 +75,6 @@
 
 <details>
   <summary>:zap: GitHub Stats</summary>
-
-  <img align="left" alt="codeSTACKr's GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=codeSTACKr&show_icons=true&hide_border=false&title_color=ff652f&icon_color=FFE400&bg_color=09131B&text_color=ffffff&border_color=0c1a25" />
-
 </details>
 
 [website]: https://skynet118.com
