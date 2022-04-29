@@ -21,9 +21,6 @@
 <br/>
 <br/>
 
---- 
-<br/>
-
 ### My stats
 [![Nicolas's GitHub stats](https://github-readme-stats.vercel.app/api?username=skynet118&count_private=true&show_icons=true&theme=radical)](https://github.com/skynet118?tab=repositories)
 
