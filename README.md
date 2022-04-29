@@ -51,8 +51,8 @@
 [<img align="left" alt="HTML5" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" style="padding-right:10px;" />][github]
 [<img align="left" alt="reactjs" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" style="padding-right:10px;" />][github]
 [<img align="left" alt="linux" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" style="padding-right:10px;" />][github]
-
-[<img align="center" alt="happy and efficient coding" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdribbble.com%2Fshots%2F3079099-Coding-coding-coding&psig=AOvVaw00MEGarjsXhWpe4oP4tCVj&ust=1651335019628000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPDw_b3UufcCFQAAAAAdAAAAABAJ"/>]
+<br/>
+[<img align="left" alt="happy and efficient coding" src="https://cdn.dribbble.com/users/1019864/screenshots/3079099/media/6926dbbe73b43f4ec5fe67c721489033.gif"/>]
 
 ---
 ### 📕 Latest github projects
