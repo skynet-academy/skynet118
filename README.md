@@ -16,7 +16,7 @@
 - 🤓 and 🪖, a combination of militar and geek
 
 <div>
-<img align="left" alt="happy and efficient coding" width="450px" height="450px" style="display: block;" src="https://cdn.dribbble.com/users/1019864/screenshots/3079099/media/6926dbbe73b43f4ec5fe67c721489033.gif"/>
+<img align="left" alt="happy and efficient coding" width="350px" height="350px" style="display: block;" src="https://cdn.dribbble.com/users/1019864/screenshots/3079099/media/6926dbbe73b43f4ec5fe67c721489033.gif"/>
 </div>
 
 <br/>
