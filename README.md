@@ -85,3 +85,9 @@
 
 <br/>
 ---
+[website]: https://skynet118.com
+[youtube]: https://youtube.com/codeSTACKr
+[instagram]: https://www.instagram.com/nicolas.sulca.118/
+[linkedin]: https://www.linkedin.com/in/nicolas-humberto-sulca-vega-876b2550/
+[github]: https://github.com/skynet118
+[hackerrank]: https://www.hackerrank.com/nico_8830_3
