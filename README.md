@@ -1,21 +1,4 @@
-<<<<<<< HEAD
-### Hi there 👋
 
-<!--
-**skynet118/skynet118** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
-=======
 # Hello there, I'm Nicolas Sulca 👋 
 <p>
   I'm a backend developer(Django) and a JavaScript enthusiast, always looking to continuous improvement my soft and hard skills. I responsible and disciplined with my work. I have a good background in C/C++ and in the future I'd like to participate or colaborate in open source projects. 
@@ -36,6 +19,8 @@ Here are some ideas to get you started:
 - 🥅 2022 Goals: Learn more about regex, bash, and redux.
 - ⚡ hobbies: I love working out, watch movies, and to take long walks
 - 🤓 and 🪖, a combination of militar and geek
+- 💬 Ask me about how to enjoy a cup of coffe
+
 
 <div>
 <img align="left" alt="happy and efficient coding" width="350px" height="350px" style="display: block;" src="https://cdn.dribbble.com/users/1019864/screenshots/3079099/media/6926dbbe73b43f4ec5fe67c721489033.gif"/>
